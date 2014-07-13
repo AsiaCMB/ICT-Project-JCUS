@@ -82,13 +82,13 @@ html {
     transition: all 0.7s ease 0s;
 }
 #findPromo input[type="text"]:focus {
-	background: url(/image/find.png) no-repeat 10px 6px #444;
-    color: #FFFFFF;
-    width: 200px;
-    -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(0, 0, 0, 0.9) inset;
-    -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(0, 0, 0, 0.9) inset;
-    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(0, 0, 0, 0.9) inset;
-    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+  background: url(image/find.png) no-repeat 10px 6px #444;
+  color: #FFFFFF;
+  width: 200px;
+  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(0, 0, 0, 0.9) inset;
+  -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(0, 0, 0, 0.9) inset;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(0, 0, 0, 0.9) inset;
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
 }
 
 /*navigation bar style*/
@@ -140,10 +140,97 @@ html {
   transition: all 0.5s ease;
 }
 /*change word color*/
-#cssmenu ul li a:hover {
+#cssmenu ul li a:hover{
   color: #ff0000; /*color of the title*/
   font-size: 150%;
 }
+
+/*navigation bar image*/
+#homeImage{
+  height: 0px;
+  position: absolute;
+}
+#cssmenu ul li a:hover #homeImage{
+  height: 60px;
+  left: -15px;
+  top: 0px;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+#gadgetImage{
+  height: 0px;
+  position: absolute;
+}
+#cssmenu ul li a:hover #gadgetImage{
+  height: 40px;
+  left: 0;
+  top: 3px;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+#fashionImage{
+  height: 0px;
+  position: absolute;
+}
+#cssmenu ul li a:hover #fashionImage{
+  height: 70px;
+  left: 10px;
+  top: 0px;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+#travelImage{
+  height: 0px;
+  position: absolute;
+}
+#cssmenu ul li a:hover #travelImage{
+  height: 40px;
+  left: 0px;
+  top: 5px;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+#diningImage{
+  height: 0px;
+  position: absolute;
+}
+#cssmenu ul li a:hover #diningImage{
+  height: 25px;
+  left: 0px;
+  top: 15px;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+#wellnessImage{
+  height: 0px;
+  position: absolute;
+}
+#cssmenu ul li a:hover #wellnessImage{
+  height: 35px;
+  left: -25px;
+  top: 10px;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
 /*underline long*/
 #cssmenu ul li a:hover:before {
   width: 100%;

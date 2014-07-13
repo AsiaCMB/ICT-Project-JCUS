@@ -1,74 +1,52 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:700);
 html {
-  max-width: 70%;
-  min-width: 960px;
-  margin: 0 auto;
-  background: #eee; /* Fills the page */
-  position: relative; /* Fix for absolute positioning */
+	max-width: 70%;
+  	min-width: 960px;
+  	margin: 0 auto;
+  	background: #eee; /* Fills the page */
+  	position: relative; /* Fix for absolute positioning */
 }
 
 .signupParent{
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+  	text-transform: uppercase;
+  	font-size: 12px;
 	background-color: #E3E6FF;
 	position: relative;
 	width: 100%;
 }
-
 /*welcome, register, subscribe email and login position*/
 #welcome{
 	display: inline-block;
 	position: absolute;
 	right: 10px;
-	top: -15px;
+	top: -10px;
 }
-
 #subscribeEmail{
 	display: inline-block;
 }
-
 /*shawdow box*/
 #subscribeEmail:hover{
 	-moz-box-shadow: 0 0 10px #FF8D8D;
 	-webkit-box-shadow: 0 0 10px #FF8D8D;
 	box-shadow: 0 0 10px #FF8D8D; 
 }
-
 /*login image position*/
-#loginImage{
+#loginImage, #signinImage, #registImage, #registerImage{
 	position: relative;
-	top: 2px;
 	height: 15px;
 	width: 15px;
+	text-decoration: none;
+	color: inherit;
 	-webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     -ms-transition: all 0.5s ease;
     transition: all 0.5s ease;
 }
-
 /*login image hover effect*/
-#loginImage:hover{
-	border-radius: 50%;
-	-webkit-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-    transform: rotate(360deg);
-}
-
-/*register image position*/
-#registerImage{
-	position: relative;
-	top: 2px;
-	height: 15px;
-	width: 15px;
-	-webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    -ms-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-}
-
-/*register image hover effect*/
-#registerImage:hover{
+#loginImage:hover, #signinImage:hover, #registImage:hover, #registerImage:hover{
 	border-radius: 50%;
 	-webkit-transform: rotate(360deg);
     -moz-transform: rotate(360deg);
@@ -82,14 +60,12 @@ html {
 	height: 100px;
 	display: inline-block;
 }
-
 #findPromo{
 	display: inline-block;
 	position: absolute;
 	right: 0;
 	top: 6.5em;
 }
-
 #findPromo input[type="text"] {
 	background: url(/image/find.png) no-repeat 10px 6px #444;
     border: 0 none;
@@ -105,10 +81,9 @@ html {
     -o-transition: all 0.7s ease 0s;
     transition: all 0.7s ease 0s;
 }
-
 #findPromo input[type="text"]:focus {
 	background: url(/image/find.png) no-repeat 10px 6px #444;
-    color: #6a6f75;
+    color: #FFFFFF;
     width: 200px;
     -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(0, 0, 0, 0.9) inset;
     -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(0, 0, 0, 0.9) inset;
@@ -116,8 +91,7 @@ html {
     text-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
 }
 
-/**/
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:700);
+/*navigation bar style*/
 #cssmenu {
   background: #e7e7e7;
   width: auto;
@@ -150,7 +124,7 @@ html {
   text-align: center;
 }
 #cssmenu ul li a {
-  color: #000000;
+  color: #000000; /*color of the title*/
   text-decoration: none;
   display: block;
   padding: 15px 40px;
@@ -159,23 +133,21 @@ html {
   text-transform: uppercase;
   font-size: 14px;
   position: relative;
-  -webkit-transition: color .25s;
-  -moz-transition: color .25s;
-  -ms-transition: color .25s;
-  -o-transition: color .25s;
-  transition: color .25s;
+	-webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
-
 /*change word color*/
 #cssmenu ul li a:hover {
-  color: #ff0000;
+  color: #ff0000; /*color of the title*/
+  font-size: 150%;
 }
-
 /*underline long*/
 #cssmenu ul li a:hover:before {
   width: 100%;
 }
-
 /*dot color*/
 #cssmenu ul li a:after {
   content: '';
@@ -188,7 +160,6 @@ html {
   background: #000000;
   opacity: .5;
 }
-
 /*underline color*/
 #cssmenu ul li a:before {
   content: '';
@@ -209,10 +180,9 @@ html {
 #cssmenu ul li:last-child > a:after {
   display: none;
 }
-
 /*color of word of the current page*/
 #cssmenu ul li.active a {
-  color: #ff0000;
+  color: #C50000;
 }
 #cssmenu ul li.active a:before {
   width: 100%;
@@ -269,3 +239,101 @@ html {
 	color: yellow;
 	background-color: blue;
 }*/
+
+/*banner*/
+.banner{
+}
+
+/*title of banner*/
+#banner1, #banner2, #banner3, #banner4, #banner5{
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+  	text-transform: uppercase;
+  	font-size: 180%;
+	position: relative;
+	top: -30px;
+}
+#banner1{
+	background-color: #FFD2D2;
+}
+#banner2{
+	background-color: #D7FFD2;
+}
+#banner3{
+	background-color: #FEFF92;
+}
+#banner4{
+	background-color: #FFD2FE;
+}
+#banner5{
+	background-color: #D5D2FF;
+}
+
+/*footer*/
+hr{
+	border: 0;
+    height: 5px;
+    background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
+    background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
+    background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
+    background-image:      -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
+}
+
+/*Social Media Link*/
+#socmed{
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+  	font-size: 180%;
+  	text-align: center;
+}
+#fb, #twitter, #youtube{
+	-webkit-transition: all 0.5s ease;
+  	-moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+#fb:hover, #twitter:hover, #youtube:hover{
+	height: 100px;
+}
+
+/*Footer link*/
+#footerLink{
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+  	text-transform: uppercase;
+  	font-size: 130%;
+  	text-decoration: none;
+}
+#footerLink{
+	text-align: center;
+}
+#footerLink li{
+	display: inline-block;
+  	padding: 0 4% 0 4%;
+ 	margin: 0;
+ 	text-decoration: none;
+}
+#footerLink a{
+	-webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+	text-decoration: none;
+	color: inherit;
+}
+#footerLink a:hover{
+	text-decoration: underline;
+	font-size: 1.4em;
+}
+#paymentLogo{
+	text-align: center;
+	position: relative;
+	top: -10px;
+}
+#copyright{
+	position: relative;
+	top: -10px;
+	font-size: 80%;
+}

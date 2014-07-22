@@ -1,0 +1,17 @@
+/*Social Media Link*/
+#socmedHome{
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+  	font-size: 180%;
+  	text-align: center;
+}
+#fb, #twitter, #youtube{
+	-webkit-transition: all 0.5s ease;
+  	-moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+#fb:hover, #twitter:hover, #youtube:hover{
+	height: 120px;
+}

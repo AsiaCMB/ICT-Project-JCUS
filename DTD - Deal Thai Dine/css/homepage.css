@@ -1,0 +1,183 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:700);
+html {
+	max-width: 72.5%;
+  	min-width: 980px;
+  	margin: 0 auto;
+  	position: relative; /* Fix for absolute positioning */
+}
+
+.fixed {
+    position:fixed;
+    top:0;
+	max-width: 72.5%;
+  	min-width: 970px;
+}
+
+.signupParent{
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+  	text-transform: uppercase;
+  	font-size: 12px;
+	background-color: #EABC76;
+	position: relative;
+	width: 100%;
+}
+/*welcome, register, subscribe email and login position*/
+#welcome{
+	display: inline-block;
+	position: absolute;
+	right: 10px;
+	top: -10px;
+}
+#subscribeEmail{
+	display: inline-block;
+}
+/*shawdow box*/
+#subscribeEmail:hover{
+	-moz-box-shadow: 0 0 10px #FF8D8D;
+	-webkit-box-shadow: 0 0 10px #FF8D8D;
+	box-shadow: 0 0 10px #FF8D8D; 
+}
+/*login image position*/
+#loginImage, #signinImage, #registImage, #registerImage{
+	position: relative;
+	height: 15px;
+	width: 15px;
+	text-decoration: none;
+	color: inherit;
+	-webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+/*login image hover effect*/
+#loginImage:hover, #signinImage:hover, #registImage:hover, #registerImage:hover{
+	border-radius: 50%;
+	-webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+
+/*search text*/
+#logoImage{
+	height: 100px;
+	display: inline-block;
+}
+#findPromo{
+	display: inline-block;
+	position: absolute;
+	right: 0;
+	top: 6.5em;
+}
+#findPromo input[type="text"] {
+	background: url(/image/find.png) no-repeat 10px 6px #444;
+    border: 0 none;
+    font: bold 12px Arial,Helvetica,Sans-serif;
+    color: #d7d7d7;
+    width:150px;
+    padding: 6px 15px 6px 35px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    -webkit-transition: all 0.7s ease 0s;
+    -moz-transition: all 0.7s ease 0s;
+    -o-transition: all 0.7s ease 0s;
+    transition: all 0.7s ease 0s;
+}
+#findPromo input[type="text"]:focus {
+  background: url(image/find.png) no-repeat 10px 6px #444;
+  color: #FFFFFF;
+  width: 200px;
+  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(0, 0, 0, 0.9) inset;
+  -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(0, 0, 0, 0.9) inset;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(0, 0, 0, 0.9) inset;
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+}
+
+/*.navbar {
+    background-color: #DCDCDC;
+    font-size: 1.5em;
+}
+
+.navbar li{
+	display: inline;
+	padding: 3%;
+}
+
+.navbar a{
+	text-decoration: none;
+	color: #00F;
+	padding: 1%;
+}
+
+.navbar a:hover{
+	color: yellow;
+	background-color: blue;
+}*/
+
+/*banner*/
+.banner{
+}
+
+/*title of banner*/
+#banner1, #banner2, #banner3, #banner4, #banner5{
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+  text-transform: uppercase;
+  font-size: 180%;
+	position: relative;
+  text-align: center;
+	top: -30px;
+}
+#banner1{
+	background-color: rgba(234,188,118,0.4);
+}
+
+/*footer*/
+hr{
+	border: 0;
+    height: 5px;
+    background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(114,23,4,0.75), rgba(0,0,0,0)); 
+    background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), rgba(114,23,4,0.75), rgba(0,0,0,0)); 
+    background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), rgba(114,23,4,0.75), rgba(0,0,0,0)); 
+    background-image:      -o-linear-gradient(left, rgba(0,0,0,0), rgba(114,23,4,0.75), rgba(0,0,0,0)); 
+}
+
+#paymentLogo{
+	text-align: center;
+	position: relative;
+	top: -10px;
+}
+#copyright{
+	position: relative;
+	top: -10px;
+	font-size: 80%;
+}
+
+
+/*about us box*/
+.aboutUsContent{
+	background: rgba(228,191,135,0.5);
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+#aboutUsTitle{
+	text-transform: uppercase;
+	font-size: 150%;
+	width: 100%;
+}
+
+#MyGmaps{
+	float: left;
+	background: rgba(228,191,135,0.5);
+	margin-top: 10px;
+}
+
+#contactusContent{
+	background: rgba(228,191,135,0.5);
+	height: 400px;
+	margin-left: 610px;
+	margin-top: 10px;
+}

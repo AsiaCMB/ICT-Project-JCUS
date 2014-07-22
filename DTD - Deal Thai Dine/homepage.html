@@ -3,16 +3,22 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Promochan</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src="script/stickNavBar.js"></script>
 
 <link rel="stylesheet" type="text/css" href="css/homepage.css">
+<link rel="stylesheet" type="text/css" href="css/homepageNavBar.css">
+<link rel="stylesheet" type="text/css" href="css/homepageSocMed.css">
+<link rel="stylesheet" type="text/css" href="css/otherFooter.css">
 
 <link rel="stylesheet" type="text/css" href="engine1/style.css" />
 <style type="text/css">a#vlb{display:none}</style>
 <script type="text/javascript" src="engine1/jquery.js"></script>
 <script type="text/javascript" src="engine1/wowslider.js"></script>
+
 </head>
 
-<body>
+<body background="image/bgImage.jpg">
 
 <!-- subscribe email, sign up and register section -->
 <div class="signupParent"> 
@@ -27,7 +33,7 @@
 
 <!-- logo and search button section -->
 <div class="logoParent">
-	<img id="logoImage" border="0" src="image/logo1.png" alt="Promochan Logo">
+	<img id="logoImage" border="0" src="image/logo2.png" alt="Promochan Logo">
 	<form id="findPromo">
 		<input type="text" name="find" placeholder="I'm Looking For...">
 		<input type="button" value="Search">
@@ -37,10 +43,10 @@
 <!-- navigation bar -->
 <div id='cssmenu' class='align-center'>
 <ul>
-   <li class='active'><a href='#'><img id="homeImage" border="0" src="image/home1.png" alt="home"><span>Home</span></a></li>
+   <li class='active'><a href='#'><img id="homeImage" border="0" src="image/home2.png" alt="home"><span>Home</span></a></li>
    <li><a href='#'><img id="restoImage" border="0" src="image/resto.png" alt="Thai Resto"><span>Thai Resto</span></a></li>
    <li><a href='#'><img id="promotionImage" border="0" src="image/promotion.png" alt="Promotion"><span>Promotion</span></a></li>
-   <li><a href='#'><img id="eventImage" border="0" src="image/event.png" alt="Event"><span>Events</span></a></li>
+   <li><a href='#'><img id="careerImage" border="0" src="image/career.png" alt="Career"><span>Career</span></a></li>
    <li class='last'><a href='#'><img id="aboutImage" border="0" src="image/about.png" alt="About"><span>About Us</span></a></li>
 </ul>
 </div>
@@ -76,22 +82,22 @@
 
 <!-- banner -->
 <div class="banner">
-	<p id="banner2">Restaurant</p>
+	<p id="banner1">Restaurant</p>
 	<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-	<p id="banner2">Promotion</p>
+	<p id="banner1">Promotion</p>
 	<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
 </div>
 
 <!-- footer -->
 <div class="footer">
-	<hr>
-	<p id="socmed">Connect Socially With Us:</p>
+	<hr></hr>
+	<p id="socmedHome">Connect Socially With Us:</p>
 	<div id="socmedImages" style="width:100%; text-align:center">
-		<a id="fbLink" href='#'><img id="fb" border="0" src="image/fb1.png" alt="Facebook Fan Page" height="80px"></a>
-		<a id="twitterLink" href='#'><img id="twitter" border="0" src="image/twitter1.png" alt="Twitter" height="80px"></a>
-		<a id="youtubeLink" href='#'><img id="youtube" border="0" src="image/youtube1.png" alt="Youtube Channel" height="80px"></a>
+		<a id="fbLink" href='#'><img id="fb" border="0" src="image/fb1.png" alt="Facebook Fan Page" height="100px"></a>
+		<a id="twitterLink" href='#'><img id="twitter" border="0" src="image/twitter1.png" alt="Twitter" height="100px"></a>
+		<a id="youtubeLink" href='#'><img id="youtube" border="0" src="image/youtube1.png" alt="Youtube Channel" height="100px"></a>
 	</div>
-	<hr>
+	<hr></hr>
 	<div id="footerLink">
 		<ul>
 	   		<li><a href='#'><span>About</span></a></li>
@@ -100,7 +106,7 @@
 	   		<li><a href='#'><span>Career</span></a></li>
 		</ul>
 	</div>
-	<hr>
+	<hr></hr>
 	<div id="paymentLogo" >
 		<a href="#" onclick="javascript:window.open('https://www.paypal.com/sg/cgi-bin/webscr?cmd=xpt/Marketing/popup/OLCWhatIsPayPal-outside','olcwhatispaypal','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=400, height=350');"><img  src="image/paypalLogo.png" border="0" alt="PayPal" height="50px"></a></td></tr></table>
 		<p id="copyright">Copyright© 2014 promochan.com</p>

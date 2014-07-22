@@ -1,0 +1,35 @@
+/*Footer link*/
+#footerLink{
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+  	text-transform: uppercase;
+  	font-size: 130%;
+  	text-decoration: none;
+}
+#footerLink{
+	text-align: center;
+}
+#footerLink li{
+	display: inline-block;
+  	padding: 0 4% 0 4%;
+ 	margin: 0;
+ 	text-decoration: none;
+}
+#footerLink a{
+	-webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+	text-decoration: none;
+	color: inherit;
+}
+#footerLink a:hover{
+	text-decoration: underline;
+	font-size: 1.4em;
+}
+
+#careerLink{
+	text-decoration: underline;
+	font-size: 1.4em;
+}

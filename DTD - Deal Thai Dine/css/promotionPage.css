@@ -1,0 +1,61 @@
+h1{
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+  	text-transform: uppercase;
+  	font-size: 180%;
+	background-color: rgba(234,188,118,0.4);
+	position: relative;
+	top: 20px;
+}
+.promotionPage{
+	display: inline-block;
+	overflow: hidden;
+	width: 320px;
+	height: 250px;
+	border: 5px solid rgba(234,188,118,1);
+	border-style: outset;
+	text-align: center;
+	margin-left: 15px;
+	margin-right: 10px;
+	margin-top: 5px;
+}
+.promotionPage a{
+	text-decoration: none;
+	color: #000000;
+}
+.promotionPage a:hover{
+	color: #B95835;
+}
+.promotionPage img{
+	height: 150px;
+	width: 320px;
+	opacity: 0.5;
+    filter: alpha(opacity=40);
+   	-webkit-transition: all 0.5s ease;
+   	-moz-transition: all 0.5s ease;
+   	-o-transition: all 0.5s ease;
+   	-ms-transition: all 0.5s ease;
+   	transition: all 0.5s ease;
+}
+.promotionPage:hover img{
+    opacity: 1.0;
+    filter: alpha(opacity=100);
+}
+.price{
+	float: right;
+	padding-right: 5px;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	display: inline-block;
+}
+.discount{
+	float: left;
+	padding-left: 5px;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	display: inline-block;
+}
+.promotionPage h2{
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+  	text-transform: uppercase;
+  	font-size: 17px;
+}

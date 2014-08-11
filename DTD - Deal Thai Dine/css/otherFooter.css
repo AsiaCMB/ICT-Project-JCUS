@@ -28,3 +28,6 @@
 	text-decoration: underline;
 	font-size: 1.4em;
 }
+#footerLink a:active{
+	color: #FF0000;
+}

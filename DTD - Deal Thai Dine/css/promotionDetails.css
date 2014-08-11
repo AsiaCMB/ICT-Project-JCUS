@@ -1,0 +1,89 @@
+h1{
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+  	text-transform: uppercase;
+  	font-size: 180%;
+	background-color: rgba(234,188,118,0.4);
+}
+.promotionPrice img{
+	width: 550px;
+	height: 250px;
+	float: left;
+	border-radius: 10px;
+}
+.promotionPriceSide{
+	height: 240px;
+	border: 5px solid rgba(234,188,118,1);
+	border-radius: 10px;
+	background-color: rgba(234,188,118,0.4);
+	margin-left: 560px;
+	padding-left: 10px; 
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+.promotionPriceDetails{
+	border: 5px solid rgba(234,188,118,1);
+	border-radius: 10px;
+	background-color: rgba(234,188,118,0.4);
+	margin-top: 10px;
+	padding-left: 10px;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+.promotionDetails{
+	border: 5px solid rgba(234,188,118,1);
+	border-radius: 10px;
+	background-color: rgba(234,188,118,0.4);
+	margin-top: 10px;
+	padding-left: 10px;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+#highlights{ 
+	width: 500px;
+	display: inline-block;
+	text-align: justify;
+}
+#conditions{
+	width: 500px;
+	padding-left: 10px; 
+	display: inline-block;
+	text-align: justify;
+}
+#additional{
+	width: 500px;
+	display: inline-block;
+	text-align: justify;
+}
+#redemtion{
+	padding-left: 10px; 
+	width: 500px;
+	display: inline-block;
+	text-align: justify;
+}
+.submitBtn{
+	border : solid 0px #fff700;
+	border-radius : 0px 20px 0px 20px ;
+	moz-border-radius : 0px 20px 0px 20px ;
+	-webkit-box-shadow : 4px 6px 0px rgba(0,0,0,0.2);
+	-moz-box-shadow : 4px 6px 0px rgba(0,0,0,0.2);
+	box-shadow : 4px 6px 0px rgba(0,0,0,0.2);
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	font-size : 20px;
+	color : #ffffff;
+	padding : 8px 20px;
+	background : #ffd500;
+	background : -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffd500), color-stop(100%,#ff8c00));
+	background : -moz-linear-gradient(top, #ffd500 0%, #ff8c00 100%);
+	background : -webkit-linear-gradient(top, #ffd500 0%, #ff8c00 100%);
+	background : -o-linear-gradient(top, #ffd500 0%, #ff8c00 100%);
+	background : -ms-linear-gradient(top, #ffd500 0%, #ff8c00 100%);
+	background : linear-gradient(top, #ffd500 0%, #ff8c00 100%);
+	filter : progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffd500', endColorstr='#ff8c00',GradientType=0 );
+}
+.submitBtn:hover{
+	border : solid 2px #fff700;
+}
+.promotionPriceSide img{
+	float: right;
+	height: 250px;
+	width: 250px;
+	opacity: 0.3;
+}

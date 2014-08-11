@@ -1,0 +1,15 @@
+#MyGmaps{
+	float: left;
+	background: rgba(228,191,135,0.5);
+	margin-top: 10px;
+}
+
+#contactusContent{
+	background: rgba(228,191,135,0.5);
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	padding: 5px;
+	height: 400px;
+	margin-left: 610px;
+	margin-top: 10px;
+	border-radius: 10px;
+}

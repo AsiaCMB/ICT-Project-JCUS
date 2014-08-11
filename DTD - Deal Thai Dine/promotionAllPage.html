@@ -3,23 +3,18 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Deal Thai Dine</title>
-<link rel="shortcut icon" href="icon.ico" />
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script type="text/javascript" src="script/stickNavBar.js"></script>
 
 <link rel="stylesheet" type="text/css" href="css/homepage.css">
-<link rel="stylesheet" type="text/css" href="css/aboutUs.css">
-<link rel="stylesheet" type="text/css" href="css/aboutusNavBar.css">
+<link rel="stylesheet" type="text/css" href="css/promotionNavBar.css">
+<link rel="stylesheet" type="text/css" href="css/promotionPage.css">
 <link rel="stylesheet" type="text/css" href="css/otherSocMed.css">
 <link rel="stylesheet" type="text/css" href="css/otherFooter.css">
 
-<link rel="stylesheet" type="text/css" href="engine1/style.css" />
-<style type="text/css">a#vlb{display:none}</style>
-<script type="text/javascript" src="engine1/jquery.js"></script>
-<script type="text/javascript" src="engine1/wowslider.js"></script>
 </head>
 
-<body background="image/bgImage.jpg">
+<body background="image/bgImage.jpg" onload="LoadGmaps()" onunload="GUnload()">
 
 <!-- subscribe email, sign up and register section -->
 <div class="signupParent"> 
@@ -46,25 +41,42 @@
 <ul>
    <li><a href='#'><img id="homeImage" border="0" src="image/home2.png" alt="home"><span>Home</span></a></li>
    <li><a href='#'><img id="restoImage" border="0" src="image/resto.png" alt="Thai Resto"><span>Thai Resto</span></a></li>
-   <li><a href='#'><img id="promotionImage" border="0" src="image/promotion.png" alt="Promotion"><span>Promotion</span></a></li>
+   <li class='active'><a href="#"><img id="promotionImage" border="0" src="image/promotion.png" alt="Promotion"><span>Promotion</span></a></li>
    <li><a href='#'><img id="careerImage" border="0" src="image/career.png" alt="Career"><span>Career</span></a></li>
-   <li class='active' ><a href='#'><img id="aboutImage" border="0" src="image/about.png" alt="About"><span>About Us</span></a></li>
+   <li><a href='#'><img id="aboutImage" border="0" src="image/about.png" alt="About"><span>About Us</span></a></li>
 </ul>
 </div>
 
-<div class="aboutUsContent">
-	<p id="aboutUsTitle"><span style="font-weight:900;">About Us</span></p>
-	<p>Established in 2010, DEAL.com.sg has since transformed to become Singapore’s Number One online shopping platform, offering  what you’d love to have at the best price.
- 
-	Reaching out to thousands of our customers daily, DEAL constantly seeks better ways and bargains to satisfy savvy shoppers like you!
- 
-	DEAL remains unrivalled in providing both customers and merchants with the experiences you never knew you could get in Singapore. We cherish the remarkable partnerships we have with our merchants and take pride in passing the great savings directly to our valued customers.
- 
-	At zero risk, our reputable merchants gain new customers through these partnerships, recognizing the benefits of being featured on DEAL.com.sg. The invincible DEALGuru welcomes you to check us out on Facebook  and follow @DEALGuruSG  to interact with us!
- 
- 
-	Interested in being featured on DEAL.com.sg?
-	Click here to get to know more about how you can be the next best selling deal!</p>
+<h1>Hot Deals</h1>
+<div class="promotionPage">
+	<a href="#"><img src="image/promo.jpg" alt="Promotion Image"></a>
+	<h2><a href='#'>Title Goes Here</a></h2>
+	<p class="discount">Discount <span style="font-weight:900;">90%</span> Off</p>
+	<p class="price">Price <span style="font-weight:900;">$$$</span></p>
+</div>
+<div class="promotionPage">
+	<a href="#"><img src="image/promo.jpg" alt="Promotion Image"></a>
+	<h2><a href='#'>Title Goes Here</a></h2>
+	<p class="discount">Discount <span style="font-weight:900;">90%</span> Off</p>
+	<p class="price">Price <span style="font-weight:900;">$$$</span></p>
+</div>
+<div class="promotionPage">
+	<a href="#"><img src="image/promo.jpg" alt="Promotion Image"></a>
+	<h2><a href='#'>Title Goes Here</a></h2>
+	<p class="discount">Discount <span style="font-weight:900;">90%</span> Off</p>
+	<p class="price">Price <span style="font-weight:900;">$$$</span></p>
+</div>
+<div class="promotionPage">
+	<a href="#"><img src="image/promo.jpg" alt="Promotion Image"></a>
+	<h2><a href='#'>Title Goes Here</a></h2>
+	<p class="discount">Discount <span style="font-weight:900;">90%</span> Off</p>
+	<p class="price">Price <span style="font-weight:900;">$$$</span></p>
+</div>
+<div class="promotionPage">
+	<a href="#"><img src="image/promo.jpg" alt="Promotion Image"></a>
+	<h2><a href='#'>Title Goes Here</a></h2>
+	<p class="discount">Discount <span style="font-weight:900;">90%</span> Off</p>
+	<p class="price">Price <span style="font-weight:900;">$$$</span></p>
 </div>
 
 <!-- footer -->
@@ -75,7 +87,7 @@
 	   		<li><a href='#'><span>About</span></a></li>
 	   		<li><a href='#'><span>Help</span></a></li>
 	   		<li><a href='#'><span>Contact</span></a></li>
-	   		<li><a href='#'><span>Career</span></a></li>
+	   		<li><a href='#'><span >Career</span></a></li>
 	   		<li><a id="fbLink" href='#'><img id="fb" border="0" src="image/fb1.png" alt="Facebook Fan Page" height="40px"></a>
 				<a id="twitterLink" href='#'><img id="twitter" border="0" src="image/twitter1.png" alt="Twitter" height="40px"></a>
 				<a id="youtubeLink" href='#'><img id="youtube" border="0" src="image/youtube1.png" alt="Youtube Channel" height="40px"></a></li>

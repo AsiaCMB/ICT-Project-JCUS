@@ -139,7 +139,7 @@
   transition: all 0.5s ease;
 }
 #aboutImage{
-  height: 25px;
+  height: 35px;
   left: 3px;
   top: 7px;
   position: absolute;
@@ -201,7 +201,7 @@
 /*color of word of the current page*/
 #cssmenu ul li.active a {
   color: #721704;
-
+  font-size: 120%;
 }
 #cssmenu ul li.active a:before {
   width: 100%;

@@ -55,7 +55,7 @@
 
 
 #homeImage{
-  height: 55px;
+  height: 50px;
   position: absolute;
   left: -10px;
   top: 0px;
@@ -66,9 +66,9 @@
   transition: all 0.5s ease;
 }
 #cssmenu ul li a:hover #homeImage{
-  height: 55px;
+  height: 50px;
   left: -10px;
-  top: 0px;
+  top: 2px;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;

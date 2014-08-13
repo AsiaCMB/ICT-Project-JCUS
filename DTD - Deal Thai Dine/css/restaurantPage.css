@@ -1,0 +1,26 @@
+h1{
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+  	text-transform: uppercase;
+  	font-size: 180%;
+  	position: relative;
+}
+.restaurantPage{
+	border: 5px solid rgba(234,188,118,1);
+	border-radius: 10px;
+	background-color: rgba(234,188,118,0.4);
+	margin-top: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	text-align: justify;
+}
+.restaurantTitle{
+	font-size: 20px;
+	font-weight: 800;
+}
+.restaurantPage img{
+	height: 250px;
+	width: 550px;
+	border-radius: 10px;
+}

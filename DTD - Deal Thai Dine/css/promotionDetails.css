@@ -33,7 +33,7 @@ h1{
 	border-radius: 10px;
 	background-color: rgba(234,188,118,0.4);
 	margin-top: 10px;
-	padding-left: 10px;
+	padding: 10px;
 	font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
 #highlights{ 
@@ -86,4 +86,15 @@ h1{
 	height: 250px;
 	width: 250px;
 	opacity: 0.3;
+}
+.commentSection{
+	margin-top: 10px; 
+	border: 5px solid rgba(234,188,118,1);
+	border-radius: 10px;
+	background-color: rgba(234,188,118,0.4);
+	padding: 10px; 
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+.commentSubmit{
+	margin-left: 992px;
 }

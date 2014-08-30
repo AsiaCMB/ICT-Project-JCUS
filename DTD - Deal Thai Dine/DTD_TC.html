@@ -10,7 +10,11 @@
 <link rel="stylesheet" type="text/css" href="css/footerNavBar.css">
 <link rel="stylesheet" type="text/css" href="css/otherSocMed.css">
 <link rel="stylesheet" type="text/css" href="css/otherFooter.css">
-
+<script type="text/javascript">
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+</script>
 </head>
 
 <body background="image/bgImage.jpg" onload="LoadGmaps()" onunload="GUnload()">
@@ -22,8 +26,7 @@
 		<input type="button" value="Subscribe">
 	</form>
 	<p id="welcome">Welcome to Deal Thai Dine. 
-	<a id="signinImage" href="loginpage.html">Sign In<img id="loginImage" border="0" src="image/login.png" alt="Login Here"></a>
-	/<a id="registImage" href="#">Register <img id="registerImage" border="0" src="image/register.png" alt="Register Here"> </a></p>
+	<a id="signinImage" href="loginpage.html">Sign Out<img id="loginImage" border="0" src="image/login.png" alt="Sign Out"></a></p>
 </div>
 
 <!-- logo and search button section -->
@@ -46,96 +49,67 @@
 </ul>
 </div>
 
-
-<head>
-<link rel="stylesheet" type="text/css" href="commentCSS.css">
-<meta charset="utf-8">
-<title>Seller Form</title>
-</head>
-
-<body>
-<h1>Seller Form</h1>
-<form enctype="multipart/form-data" action="sellerForm.php" method="POST">
+<!-- Register -->
+<div> 
+  <h1>Register</h1>
+<form aciton="registerTest.php" method="POST">
 <table cellspacing="2">
   <tr>
-    <td width="145"><b>Restaurant Name:</b></td>
-    <td width="599"><input name="resname" type="text" size="40"/>
-      *</td>
-  </tr>
-   <tr>
-    <td width="145"><b>Promotion Name:</b></td>
-    <td width="599"><input name="resname" type="text" size="40"/>
+    <td><b>First Name:</b></td>
+    <td><input name="userfname" type="text" size="30"/>
       *</td>
   </tr>
   <tr>
-    <td><b>Promotion Description:</b></td>
-    <td><p>
-      <textarea name="description" cols="55" rows="4"></textarea>
-      *</p></td>
-    </tr>
-  <tr>
-    <td><b>Price:</b></td>
-    <td><p>
-      <label for="number">Promotion Price:</label>
-      <label for="number2">
-        <input name="Price" type="text" size="8" id="Price"/>
-        * 
-        Full Price: </label>
-      <input name="Price1" type="text" size="8" id="Price1"/>
-      *</p></td>
-    </tr>
-  <tr>
-    <td><b>Restaurant Description:</b></td>
-    <td><p>
-      <textarea name="location3" cols="55" rows="4"></textarea>
-     *</p></td>
-    </tr>
-    <tr>
-    <td><b>Highlight:</b></td>
-    <td><p>
-      <textarea name="Highlight" cols="55" rows="2"></textarea>
-     *</p></td>
-    </tr>
-     <tr>
-    <td><b>Condition:</b></td>
-    <td><p>
-      <textarea name="Condition" cols="55" rows="2"></textarea>
-     *</p></td>
-    </tr>
-  <tr>
-    <td><b>Contact number:</b></td>
-    <td>+65
-      <input type="tel" name="contactno1" pattern="[0-9]{8}" placeholder="8 digits" size="8" id="contactno1" />
+    <td><b>Last Name :</b></td>
+    <td><input name="userlname" type="text" size="30"/>
       *</td>
-    </tr>
+  </tr>
   <tr>
-    <td><b>Location Address:</b></td>
-    <td><textarea name="location3" cols="30" rows="3"></textarea>
+    <td><b>Email :</b></td>
+    <td><input name="useremail" type="email" size="30"/>
       *</td>
-    </tr>
+  </tr>
   <tr>
-    <td height="70"><b>Restaurant Image:</b></td>
-    <td><p>
-      <input name="image2" type="file" /></p>
-      </tr>
-      <tr>
-   
-    <td height="70"><b>Promotion Image:</b></td>
-    <td><p>
-      <p>
-        <input name="image2" type="file" />
-      </p></td>
-    </tr>
+    <td><b>Password :</b></td>
+    <td>
+      <input name="userpass" type="password" />
+      *</td>
+  </tr>
+  <tr>
+    <td><b>Comfirm Password :</b></td>
+    <td><input name="usercp" type="password" />
+      *</td>
+  </tr>
+  <tr>
+    <td width="154"><b>Register As:</b></td>
+    <td width="282"><select size="1" name="usertype">
+    <option value="Buyer">Buyer</option>
+    <option value="Seller">Seller</option>
+    </select></td>
+  </tr>
+  <tr>
+    <td>
+       <b>Receive Deal Alerts:</b>
+    </td>
+    <td>
+      <select size="1" name="dealAccept">
+    <option value="Yes">Yes</option>
+    <option value="No">No</option>  
+
+  </tr>
 </table>
+  <p onclick="MM_openBrWindow('Terms&amp;Conditions.html','TermConditions','scrollbars=yes,width=350,height=450')">
+    I agree to the Terms of Use and Privacy Policy
+    <input type="checkbox" name="cfpolicy" id="checkbox2" />
+  </p>
   <p>
-    <input type="image" name="imageField" id="imageField" src="Button/Submit.jpg" />
-    <input type="image" name="imageField2" id="imageField2" src="Button/reset-button.jpg" />
+    <input type="submit" name="submit" value="Register" />
+    <input type="reset" value="Reset" />
   </p>
 </form>
 
+</div>
 
-
-</body>
 <!-- footer -->
 <div class="footer">
 	<hr></hr>
@@ -153,7 +127,7 @@
 	<hr></hr>
 	<div id="paymentLogo" >
 		<a href="#" onclick="javascript:window.open('https://www.paypal.com/sg/cgi-bin/webscr?cmd=xpt/Marketing/popup/OLCWhatIsPayPal-outside','olcwhatispaypal','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=400, height=350');"><img  src="image/paypalLogo.png" border="0" alt="PayPal" height="50px"></a></td></tr></table>
-		<p id="copyright">Copyright© 2014 promochan.com</p>
+		<p id="copyright">Copyright© 2014 dealsthaidine.com</p>
 	</div>
 </div>
 </body>

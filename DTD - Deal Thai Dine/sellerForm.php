@@ -1,4 +1,54 @@
 <?php session_start(); ?>
+
+<?php
+error_reporting(0);
+require('connectDTD.php');
+$resname=$_POST['resname'];
+$resdetail=$_POST['resdetail'];
+
+$proname=$_POST['proname'];
+$prodetail=$_POST['prodetail'];
+
+$proprice=$_POST['proprice'];
+$nomprice=$_POST['nomprice'];
+
+$highlights=$_POST['highlights'];
+$conditions=$_POST['conditions'];
+
+$location=$_POST['location'];
+$contactno=$_POST['contactno'];
+
+$resimage= addslashes(file_get_contents($_FILES['resimage']['tmp_name']));
+$resimagetype= getimagesize($_FILES['resimage']['tmp_name']);
+$resimgtype= $resimagetype['mime'];
+
+$proimage= addslashes(file_get_contents($_FILES['proimage']['tmp_name']));
+$proimagetype= getimagesize($_FILES['proimage']['tmp_name']);
+$proimgtype= $proimagetype['mime'];
+$submit=$_POST['submit'];
+
+
+function phpAlert($msg) {
+    echo '<script type="text/javascript">alert("' . $msg . '")</script>';
+}
+
+if($submit)
+{
+  if($resname&&$resdetail&&$proname&&$highlights&&$conditions&&$proprice&&$nomprice&&$location&&$contactno)
+  {        
+      $insert=mysql_query("INSERT INTO seller (resname, resdetail, proname, highlights, conditions, proprice, nomprice, location, contactno, resimage, resimgtype, proimage, proimgtype) VALUES ('$resname','$resdetail','$proname', '$highlights', '$conditions', '$proprice', '$nomprice', '$location', '$contactno', '$resimage', '$resimgtype', '$proimage', '$proimgtype')");        
+      $uploadres=move_uploaded_file($resimgtype,'userimage/'.$resimage);
+      $uploadpro=move_uploaded_file($proimgtype,'userimage/'.$proimage);
+      phpAlert("Successfully create page!");
+      header("Location: sellerPromotionAllPage.php");  
+  }
+  else
+  {
+    phpAlert("Please fill out all the necessary details!");
+  }
+}
+?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -31,8 +81,7 @@
     }
     echo "Welcome " . $_SESSION['use']. "| ";
   ?>
-  <a id="signinImage" href="DTD_LOGIN.php">Sign In<img id="loginImage" border="0" src="image/login.png" alt="Login Here"></a>
-	/<a id="registImage" href="DTD_Registration.php">Register <img id="registerImage" border="0" src="image/register.png" alt="Register Here"> </a></p>
+  <a id="signinImage" href="signOUT.php">Sign Out<img id="loginImage" border="0" src="image/login.png" alt="Sing Out"></a>
 </div>
 
 <!-- logo and search button section -->
@@ -47,11 +96,11 @@
 <!-- navigation bar -->
 <div id='cssmenu' class='align-center'>
 <ul>
-   <li><a href='index.php'><img id="homeImage" border="0" src="image/home2.png" alt="home"><span>Home</span></a></li>
-   <li><a href='restaurantPage.php'><img id="restoImage" border="0" src="image/resto.png" alt="Thai Resto"><span>Thai Resto</span></a></li>
+   <li><a href='sellerPage.php'><img id="homeImage" border="0" src="image/home2.png" alt="home"><span>Home</span></a></li>
+   <li><a href='sellerRestaurantPage.php'><img id="restoImage" border="0" src="image/resto.png" alt="Thai Resto"><span>Thai Resto</span></a></li>
    <li><a href='sellerPromotionAllPage.php'><img id="promotionImage" border="0" src="image/promotion.png" alt="Promotion"><span>Promotion</span></a></li>
    <li><a href='#'><img id="careerImage" border="0" src="image/career.png" alt="Career"><span>Career</span></a></li>
-   <li><a href='aboutUsPage.php'><img id="aboutImage" border="0" src="image/about.png" alt="About"><span>About Us</span></a></li>
+   <li><a href='sellerAboutUsPage.php'><img id="aboutImage" border="0" src="image/about.png" alt="About"><span>About Us</span></a></li>
 </ul>
 </div>
 
@@ -135,9 +184,9 @@
 	<hr></hr>
 	<div id="footerLink">
 		<ul>
-	   		<li><a href='aboutUsPage.php'><span>About</span></a></li>
-        <li><a href='helpPage.php'><span>Help</span></a></li>
-        <li><a href='contactUsPage.php'><span>Contact</span></a></li>
+	   		<li><a href='sellerAboutUsPage.php'><span>About</span></a></li>
+        <li><a href='sellerHelpPage.php'><span>Help</span></a></li>
+        <li><a href='sellerContactUsPage.php'><span>Contact</span></a></li>
         <li><a href='#'><span>Career</span></a></li>
 	   		<li><a id="fbLink" href='#'><img id="fb" border="0" src="image/fb1.png" alt="Facebook Fan Page" height="40px"></a>
 				<a id="twitterLink" href='#'><img id="twitter" border="0" src="image/twitter1.png" alt="Twitter" height="40px"></a>
@@ -153,51 +202,4 @@
 </body>
 </html>
 
-<?php
-error_reporting(0);
-require('connectDTD.php');
-$resname=$_POST['resname'];
-$resdetail=$_POST['resdetail'];
-
-$proname=$_POST['proname'];
-$prodetail=$_POST['prodetail'];
-
-$proprice=$_POST['proprice'];
-$nomprice=$_POST['nomprice'];
-
-$highlights=$_POST['highlights'];
-$conditions=$_POST['conditions'];
-
-$location=$_POST['location'];
-$contactno=$_POST['contactno'];
-
-$resimage= addslashes(file_get_contents($_FILES['resimage']['tmp_name']));
-$resimagetype= getimagesize($_FILES['resimage']['tmp_name']);
-$resimgtype= $resimagetype['mime'];
-
-$proimage= addslashes(file_get_contents($_FILES['proimage']['tmp_name']));
-$proimagetype= getimagesize($_FILES['proimage']['tmp_name']);
-$proimgtype= $proimagetype['mime'];
-$submit=$_POST['submit'];
-
-
-function phpAlert($msg) {
-    echo '<script type="text/javascript">alert("' . $msg . '")</script>';
-}
-
-if($submit)
-{
-	if($resname&&$resdetail&&$proname&&$highlights&&$conditions&&$proprice&&$nomprice&&$location&&$contactno)
-	{        
-      $insert=mysql_query("INSERT INTO seller (resname, resdetail, proname, highlights, conditions, proprice, nomprice, location, contactno, resimage, resimgtype, proimage, proimgtype) VALUES ('$resname','$resdetail','$proname', '$highlights', '$conditions', '$proprice', '$nomprice', '$location', '$contactno', '$resimage', '$resimgtype', '$proimage', '$proimgtype')");        
-      $uploadres=move_uploaded_file($resimgtype,'userimage/'.$resimage);
-      $uploadpro=move_uploaded_file($proimgtype,'userimage/'.$proimage);
-      phpAlert("Successfully create page!");  
-  }
-	else
-	{
-		phpAlert("Please fill out all the necessary details!");
-  }
-}
-?>
 

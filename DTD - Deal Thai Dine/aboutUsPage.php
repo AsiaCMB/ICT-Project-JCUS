@@ -53,15 +53,17 @@
    <li class='active'><a href='aboutUsPage.php'><img id="aboutImage" border="0" src="image/about.png" alt="About"><span>About Us</span></a></li>
 </ul>
 </div>
-
+<!-- About us website -->
 <div class="aboutUsContent">
 	<p id="aboutUsTitle"><span style="font-weight:900;">About Us</span></p>
 	<p>DTD (DealsThaiDine), the unique shopping site of thai restaurant community in Singapore, offers daily deals of 30% and more off with the best menu to eat, and drink of Thai restaurant around Singapore. Consumers can visit www.dealsthaidine.com to see the deals or sign up to receive emails and share those deals through social networks.</p>
 	<p>DealsThaiDine enables restaurants to promote their foods, beverages and desserts online through offering attractive deals available for a limited time, usually 24-72 hours. Restaurants benefit from obtaining new customers in their shops and get great marketing exposure without any upfront cost. </p>
 	<p>The company is committed to offering incredible savings and lifestyle experiences to customers, providing guaranteed results for marketers, and being socially responsible in all aspects of our business. </p>
 	<p>Found in 2014 as thai restaurant community in Singapore’ first social shopping website, With new and diverse offerings each day, we encourage members to discover everything from family aquarium outings to weekend excursions to exclusive gourmet dinners and more. We help great local businesses grow by introducing them to high-quality new customers, and give merchants the tools to make our members their regulars.!</p>
+    
 </div>
 <br>
+<!-- Showing the history comment but cannot add comment -->
 <?php
 error_reporting(0);
 require('connectDTD.php');

@@ -68,6 +68,7 @@
 	<p>Found in 2014 as thai restaurant community in Singapore’ first social shopping website, With new and diverse offerings each day, we encourage members to discover everything from family aquarium outings to weekend excursions to exclusive gourmet dinners and more. We help great local businesses grow by introducing them to high-quality new customers, and give merchants the tools to make our members their regulars.!</p>
 </div>
 <br>
+<!-- Allow buyer to add comment and keep to database,  the buyer name will show as the user login -->
 <?php
 error_reporting(0);
 require('connectDTD.php');

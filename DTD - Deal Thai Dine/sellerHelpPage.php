@@ -9,48 +9,13 @@
 <script type="text/javascript" src="script/stickNavBar.js"></script>
 
 <link rel="stylesheet" type="text/css" href="css/homepage.css">
-<link rel="stylesheet" type="text/css" href="css/contactUs.css">
+<link rel="stylesheet" type="text/css" href="css/help.css">
 <link rel="stylesheet" type="text/css" href="css/footerNavBar.css">
 <link rel="stylesheet" type="text/css" href="css/otherSocMed.css">
 <link rel="stylesheet" type="text/css" href="css/otherFooter.css">
-
-<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&language=en"></script>
-<script type="text/javascript">
-	///////////////////////////////////////////////////////////////////
-	// Powered By MapsEasy.com Maps Generator                        
-	// Please keep the author information as long as the maps in use.
-	// You can find the free service at: http://www.MapsEasy.com     
-	///////////////////////////////////////////////////////////////////
-	function LoadGmaps() {
-		var myLatlng = new google.maps.LatLng(1.3750534,103.8287147);
-		var myOptions = {
-			zoom: 16,
-			center: myLatlng,
-			disableDefaultUI: true,
-			panControl: true,
-			zoomControl: true,
-			zoomControlOptions: {
-				style: google.maps.ZoomControlStyle.DEFAULT
-			},
-
-			mapTypeControl: true,
-			mapTypeControlOptions: {
-				style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR
-			},
-			streetViewControl: true,
-			mapTypeId: google.maps.MapTypeId.ROADMAP
-			}
-		var map = new google.maps.Map(document.getElementById("MyGmaps"), myOptions);
-		var marker = new google.maps.Marker({
-			position: myLatlng,
-			map: map,
-			title:"jcu singapore"
-		});
-	}
-</script>
 </head>
 
-<body background="image/bgImage.jpg" onload="LoadGmaps()" onunload="GUnload()">
+<body background="image/bgImage.jpg">
 
 <!-- subscribe email, sign up and register section -->
 <div class="signupParent"> 
@@ -66,7 +31,7 @@
 		}
 		echo "Welcome " . $_SESSION['use']. "| ";
 	?> 
-	<a id="signinImage" href="signOUT.php">Sign Out<img id="loginImage" border="0" src="image/login.png" alt="Sing Out"></a>
+	<a id="signinImage" href="signOUT.php">Sign Out<img id="loginImage" border="0" src="image/login.png" alt="Sign Out"></a>
 	/<a id="registImage" href="sellerForm.php">Submit Promotion</a></p>
 </div>
 
@@ -90,10 +55,24 @@
 </ul>
 </div>
 
-<div id="MyGmaps" style="width:600px;height:400px;border:1px solid #CECECE;"></div>
-<div id="contactusContent">Customer Service Hotline at +65 92309067</p>
-  <p>Hotline operating hours: Mondays – Fridays 10.00 am to 7.00 pm excluding public holidays.</p>
-  <p>(Please take note that our lines are usually busy, so please email us at info@dealsthaidine.com )</p></div>
+<div class="helpPage">
+	<h1>What Is Deals Thai Dine Work?</h1>
+  <p> Every day you'll find the hot deals on Dealsthaidine.com at discounts between 30-90%.
+ 
+You would be able to purchase the DEAL before the expire date. To purchase, simply click on the 'Buy!' button. You will then be directed to the 'Checkout' page where you can make your payment.
+ 
+Immediately after your purchase you will receive an email from us with your electronic voucher (in pdf file). You can then print that voucher out for redemption at the merchant. </p>
+	<h1>How To Post My Promotion?</h1>
+  <p>Step 1. Click on register link in the top of dealsthaidine home page for register your account. </p>
+  <p>Step 2. After click link of register you will see register page.</p>
+  <p>Step 3. You need to fill your detail as seller on text box. When you fill your detail complete. click submit. </p>
+  <p>Step 4. After register is completed, you can fill the form for post your promotion. </p>
+  <h1>How To Buy The Promotion?</h1>
+  <p>Step 1. Register as a buyer and Sign up to your account. </p>
+  <p>Step 2. Buy our deals with just 3 EASY clicks; buy, make payment and get voucher. You will receive a confirmation email when your voucher is ready. </p>
+  <p>Step 3. Print your voucher through your account. Show it to the merchant and ENJOY! </p></p>
+	</div>
+
 <!-- footer -->
 <div class="footer">
 	<hr></hr>

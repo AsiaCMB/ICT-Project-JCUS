@@ -56,11 +56,20 @@
 
 <div class="helpPage">
 	<h1>What Is Deals Thai Dine Work?</h1>
-	<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+  <p> Every day you'll find the hot deals on Dealsthaidine.com at discounts between 30-90%.
+ 
+You would be able to purchase the DEAL before the expire date. To purchase, simply click on the 'Buy!' button. You will then be directed to the 'Checkout' page where you can make your payment.
+ 
+Immediately after your purchase you will receive an email from us with your electronic voucher (in pdf file). You can then print that voucher out for redemption at the merchant. </p>
 	<h1>How To Post My Promotion?</h1>
-	<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-	<h1>How To Buy The Promotion?</h1>
-	<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+  <p>Step 1. Click on register link in the top of dealsthaidine home page for register your account. </p>
+  <p>Step 2. After click link of register you will see register page.</p>
+  <p>Step 3. You need to fill your detail as seller on text box. When you fill your detail complete. click submit. </p>
+  <p>Step 4. After register is completed, you can fill the form for post your promotion. </p>
+  <h1>How To Buy The Promotion?</h1>
+  <p>Step 1. Register as a buyer and Sign up to your account. </p>
+  <p>Step 2. Buy our deals with just 3 EASY clicks; buy, make payment and get voucher. You will receive a confirmation email when your voucher is ready. </p>
+  <p>Step 3. Print your voucher through your account. Show it to the merchant and ENJOY! </p></p>
 	</div>
 
 <!-- footer -->

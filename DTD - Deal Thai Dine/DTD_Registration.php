@@ -1,7 +1,7 @@
 
 <?php
 error_reporting(0);
-require('DTD - Deal Thai Dine/ICT-Project-JCUS/DTD - Deal Thai Dine/connectDTD.php');
+require('connectDTD.php');
 $usertype=$_POST['usertype'];
 $userfname=$_POST['userfname'];
 $userlname=$_POST['userlname'];
@@ -63,18 +63,18 @@ if($submit)
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Deal Thai Dine</title>
-<link rel="shortcut icon" href="DTD - Deal Thai Dine/ICT-Project-JCUS/DTD - Deal Thai Dine/icon.ico" />
-<script type="text/javascript" src="DTD - Deal Thai Dine/ICT-Project-JCUS/DTD - Deal Thai Dine/script/stickNavBar.js"></script>
+<link rel="shortcut icon" href="icon.ico" />
+<script type="text/javascript" src="script/stickNavBar.js"></script>
 
-<link rel="stylesheet" type="text/css" href="DTD - Deal Thai Dine/ICT-Project-JCUS/DTD - Deal Thai Dine/css/homepage.css"/>
-<link rel="stylesheet" type="text/css" href="DTD - Deal Thai Dine/ICT-Project-JCUS/DTD - Deal Thai Dine/css/registerForm.css"/>
-<link rel="stylesheet" type="text/css" href="DTD - Deal Thai Dine/ICT-Project-JCUS/DTD - Deal Thai Dine/css/footerNavBar.css"/>
-<link rel="stylesheet" type="text/css" href="DTD - Deal Thai Dine/ICT-Project-JCUS/DTD - Deal Thai Dine/css/otherSocMed.css"/>
-<link rel="stylesheet" type="text/css" href="DTD - Deal Thai Dine/ICT-Project-JCUS/DTD - Deal Thai Dine/css/otherFooter.css"/>
+<link rel="stylesheet" type="text/css" href="css/homepage.css"/>
+<link rel="stylesheet" type="text/css" href="css/registerForm.css"/>
+<link rel="stylesheet" type="text/css" href="css/footerNavBar.css"/>
+<link rel="stylesheet" type="text/css" href="css/otherSocMed.css"/>
+<link rel="stylesheet" type="text/css" href="css/otherFooter.css"/>
 
 </head>
 
-<body background="DTD - Deal Thai Dine/ICT-Project-JCUS/DTD - Deal Thai Dine/image/bgImage.jpg" onload="LoadGmaps()" onunload="GUnload()">
+<body background="image/bgImage.jpg" onload="LoadGmaps()" onunload="GUnload()">
 
 <!-- subscribe email, sign up and register section -->
 <div class="signupParent"> 
@@ -83,13 +83,13 @@ if($submit)
 		<input type="button" value="Subscribe">
 	</form>
 	<p id="welcome">Welcome to Deal Thai Dine. 
-	<a id="signinImage" href="DTD - Deal Thai Dine/ICT-Project-JCUS/DTD - Deal Thai Dine/DTD_LOGIN.php">Sign In<img id="loginImage" border="0" src="DTD - Deal Thai Dine/ICT-Project-JCUS/DTD - Deal Thai Dine/image/login.png" alt="Login Here"></a>
-	/<a id="registImage" href="DTD - Deal Thai Dine/ICT-Project-JCUS/DTD - Deal Thai Dine/DTD_Registration.php">Register <img id="registerImage" border="0" src="DTD - Deal Thai Dine/ICT-Project-JCUS/DTD - Deal Thai Dine/image/register.png" alt="Register Here"> </a></p>
+	<a id="signinImage" href="DTD_LOGIN.php">Sign In<img id="loginImage" border="0" src="image/login.png" alt="Login Here"></a>
+	/<a id="registImage" href="DTD_Registration.php">Register <img id="registerImage" border="0" src="image/register.png" alt="Register Here"> </a></p>
 </div>
 
 <!-- logo and search button section -->
 <div class="logoParent">
-	<img id="logoImage" border="0" src="DTD - Deal Thai Dine/ICT-Project-JCUS/DTD - Deal Thai Dine/image/logo2.png" alt="Promochan Logo">
+	<img id="logoImage" border="0" src="image/logo2.png" alt="Promochan Logo">
 	<form id="findPromo">
 		<input type="text" name="find" placeholder="I'm Looking For...">
 		<input type="button" value="Search">
@@ -99,11 +99,11 @@ if($submit)
 <!-- navigation bar -->
 <div id='cssmenu' class='align-center'>
 <ul>
-   <li><a href='DTD - Deal Thai Dine/ICT-Project-JCUS/DTD - Deal Thai Dine/index.php'><img id="homeImage" border="0" src="DTD - Deal Thai Dine/ICT-Project-JCUS/DTD - Deal Thai Dine/image/home2.png" alt="home"><span>Home</span></a></li>
-   <li><a href='DTD - Deal Thai Dine/ICT-Project-JCUS/DTD - Deal Thai Dine/restaurantPage.php'><img id="restoImage" border="0" src="DTD - Deal Thai Dine/ICT-Project-JCUS/DTD - Deal Thai Dine/image/resto.png" alt="Thai Resto"><span>Thai Resto</span></a></li>
-   <li><a href='DTD - Deal Thai Dine/ICT-Project-JCUS/DTD - Deal Thai Dine/promotionAllPage.php'><img id="promotionImage" border="0" src="DTD - Deal Thai Dine/ICT-Project-JCUS/DTD - Deal Thai Dine/image/promotion.png" alt="Promotion"><span>Promotion</span></a></li>
-   <li><a href='#'><img id="careerImage" border="0" src="DTD - Deal Thai Dine/ICT-Project-JCUS/DTD - Deal Thai Dine/image/career.png" alt="Career"><span>Career</span></a></li>
-   <li><a href='DTD - Deal Thai Dine/ICT-Project-JCUS/DTD - Deal Thai Dine/aboutUsPage.php'><img id="aboutImage" border="0" src="DTD - Deal Thai Dine/ICT-Project-JCUS/DTD - Deal Thai Dine/image/about.png" alt="About"><span>About Us</span></a></li>
+   <li><a href='index.php'><img id="homeImage" border="0" src="image/home2.png" alt="home"><span>Home</span></a></li>
+   <li><a href='restaurantPage.php'><img id="restoImage" border="0" src="image/resto.png" alt="Thai Resto"><span>Thai Resto</span></a></li>
+   <li><a href='promotionAllPage.php'><img id="promotionImage" border="0" src="image/promotion.png" alt="Promotion"><span>Promotion</span></a></li>
+   <li><a href='#'><img id="careerImage" border="0" src="image/career.png" alt="Career"><span>Career</span></a></li>
+   <li><a href='aboutUsPage.php'><img id="aboutImage" border="0" src="image/about.png" alt="About"><span>About Us</span></a></li>
 </ul>
 </div>
 
@@ -160,8 +160,8 @@ if($submit)
     <p onclick="MM_openBrWindow('Terms&amp;Conditions.html','TermConditions','scrollbars=yes,width=350,height=450')">
       I agree to the Terms of Use and Privacy Policy
     <input type="checkbox" name="cfpolicy" id="checkbox2" />
-    </p>
     </td>
+    </p>
   </tr>
   <tr>
     <td></td>
@@ -179,18 +179,18 @@ if($submit)
 	<hr></hr>
 	<div id="footerLink">
 		<ul>
-	   		<li><a href='DTD - Deal Thai Dine/ICT-Project-JCUS/DTD - Deal Thai Dine/aboutUsPage.php'><span>About</span></a></li>
-        <li><a href='DTD - Deal Thai Dine/ICT-Project-JCUS/DTD - Deal Thai Dine/helpPage.php'><span>Help</span></a></li>
-        <li><a href='DTD - Deal Thai Dine/ICT-Project-JCUS/DTD - Deal Thai Dine/contactUsPage.php'><span>Contact</span></a></li>
+	   		<li><a href='aboutUsPage.php'><span>About</span></a></li>
+        <li><a href='helpPage.php'><span>Help</span></a></li>
+        <li><a href='contactUsPage.php'><span>Contact</span></a></li>
         <li><a href='#'><span>Career</span></a></li>
-	   		<li><a id="fbLink" href='#'><img id="fb" border="0" src="DTD - Deal Thai Dine/ICT-Project-JCUS/DTD - Deal Thai Dine/image/fb1.png" alt="Facebook Fan Page" height="40px"></a>
-				<a id="twitterLink" href='#'><img id="twitter" border="0" src="DTD - Deal Thai Dine/ICT-Project-JCUS/DTD - Deal Thai Dine/image/twitter1.png" alt="Twitter" height="40px"></a>
-				<a id="youtubeLink" href='#'><img id="youtube" border="0" src="DTD - Deal Thai Dine/ICT-Project-JCUS/DTD - Deal Thai Dine/image/youtube1.png" alt="Youtube Channel" height="40px"></a></li>
+	   		<li><a id="fbLink" href='#'><img id="fb" border="0" src="image/fb1.png" alt="Facebook Fan Page" height="40px"></a>
+				<a id="twitterLink" href='#'><img id="twitter" border="0" src="image/twitter1.png" alt="Twitter" height="40px"></a>
+				<a id="youtubeLink" href='#'><img id="youtube" border="0" src="image/youtube1.png" alt="Youtube Channel" height="40px"></a></li>
 		</ul>
 	</div>
 	<hr></hr>
 	<div id="paymentLogo" >
-		<a href="#" onclick="javascript:window.open('https://www.paypal.com/sg/cgi-bin/webscr?cmd=xpt/Marketing/popup/OLCWhatIsPayPal-outside','olcwhatispaypal','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=400, height=350');"><img  src="DTD - Deal Thai Dine/ICT-Project-JCUS/DTD - Deal Thai Dine/image/paypalLogo.png" border="0" alt="PayPal" height="50px"></a></td></tr></table>
+		<a href="#" onclick="javascript:window.open('https://www.paypal.com/sg/cgi-bin/webscr?cmd=xpt/Marketing/popup/OLCWhatIsPayPal-outside','olcwhatispaypal','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=400, height=350');"><img  src="image/paypalLogo.png" border="0" alt="PayPal" height="50px"></a></td></tr></table>
 		<p id="copyright">Copyright© 2014 promochan.com</p>
 	</div>
 </div>

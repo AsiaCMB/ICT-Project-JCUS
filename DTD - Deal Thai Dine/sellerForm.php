@@ -8,6 +8,7 @@
 <script type="text/javascript" src="script/stickNavBar.js"></script>
 
 <link rel="stylesheet" type="text/css" href="css/homepage.css">
+<link rel="stylesheet" type="text/css" href="css/sellerForm.css">
 <link rel="stylesheet" type="text/css" href="css/footerNavBar.css">
 <link rel="stylesheet" type="text/css" href="css/otherSocMed.css">
 <link rel="stylesheet" type="text/css" href="css/otherFooter.css">
@@ -46,11 +47,11 @@
 <!-- navigation bar -->
 <div id='cssmenu' class='align-center'>
 <ul>
-   <li class='active'><a href='index.php'><img id="homeImage" border="0" src="image/home2.png" alt="home"><span>Home</span></a></li>
+   <li><a href='index.php'><img id="homeImage" border="0" src="image/home2.png" alt="home"><span>Home</span></a></li>
    <li><a href='restaurantPage.php'><img id="restoImage" border="0" src="image/resto.png" alt="Thai Resto"><span>Thai Resto</span></a></li>
    <li><a href='sellerPromotionAllPage.php'><img id="promotionImage" border="0" src="image/promotion.png" alt="Promotion"><span>Promotion</span></a></li>
    <li><a href='#'><img id="careerImage" border="0" src="image/career.png" alt="Career"><span>Career</span></a></li>
-   <li class='last'><a href='aboutUsPage.php'><img id="aboutImage" border="0" src="image/about.png" alt="About"><span>About Us</span></a></li>
+   <li><a href='aboutUsPage.php'><img id="aboutImage" border="0" src="image/about.png" alt="About"><span>About Us</span></a></li>
 </ul>
 </div>
 
@@ -60,68 +61,73 @@
 <table cellspacing="2">
   <tr>
     <td><b>Restaurant Name:</b></td>
-    <td><input name="resname" type="text" size="30"/>
+    <td><input name="resname" type="text" size="30" class="text"/>
       *</td>
   </tr>
   <tr>
     <td><b>Restaurant Description:</b></td>
-    <td><textarea name="resdetail" cols="55" rows="4"></textarea>
+    <td><textarea name="resdetail" cols="55" rows="4" class="textArea"></textarea>
       *</td>
   </tr>
+</table></br>
+<table cellspacing="2" class="promotion">
   <tr>
     <td><b>Promotion Name:</b></td>
-    <td><input name="proname" type="text" size="40"/>
+    <td><input name="proname" type="text" size="40" class="textPro"/>
       *</td>
   </tr>
   <tr>
     <td><b>Highlights:</b></td>
-    <td><textarea name="highlights" cols="55" rows="4"></textarea>
+    <td><textarea name="highlights" cols="55" rows="4" class="textAreaPro"></textarea>
       *</td>
   </tr>
   <tr>
     <td><b>Conditions:</b></td>
-    <td><textarea name="conditions" cols="55" rows="4"></textarea>
+    <td><textarea name="conditions" cols="55" rows="4" class="textAreaPro"></textarea>
       *</td>
   </tr>
 
   <tr>
     <td><b>Price:</b></td>
     <td><p>
-      <label for="number">Discount Price:</label>
+      <label for="number" class="numberPos">Discount Price:</label>
       <label for="number2">
-        <input name="proprice" type="text" pattern="\d*" size="8" />
+        <input name="proprice" type="text" pattern="\d*" size="8" class="number" />
         * 
         Full Price: </label>
-      <input name="nomprice" type="text" pattern="\d*"  size="8" />
+      <input name="nomprice" type="text" pattern="\d*"  size="8" class="number"/>
       *</p></td>
    </tr>
   <tr>
   <tr>
     <td><b>Location Address:</b></td>
-    <td><textarea name="location" cols="30" rows="3"></textarea>
+    <td><textarea name="location" cols="30" rows="3" class="textAreaPro"></textarea>
       *</td>
   </tr>
   <tr>
     <td><b>Contact number:</b></td>
     <td>
-      <h5>+65 <input type="tel" name="contactno" pattern="[0-9]{8}" placeholder="8 digits" size="8" />
+      <h5 class="numberPos">+65 <input type="tel" name="contactno" pattern="[0-9]{8}" placeholder="8 digits" size="8" class="number" />
       *</td></h5>
   </tr>
   <tr>
     <td><b>Restaurant Image:</b></td>
-    <td><input name="resimage" type="file" />
+    <td><input name="resimage" type="file" class="numberPos" />
       </td>
   </tr>
   <tr>
     <td><b>Promotion Image:</b></td>
-    <td><input name="proimage" type="file" />
+    <td><input name="proimage" type="file" class="numberPos" />
       </td>
   </tr>
+  <tr>
+    <td></td>
+    <td>
+    <input type="submit" name="submit" value="Submit" class="btn"/>
+    <input type="reset" value="Reset" class="btn"/>
+    </td>
+  </tr>
 </table>
-  <p>
-    <input type="submit" name="submit" value="Submit"/>
-    <input type="reset" value="Reset" />
-  </p>
 </form>
 
 <!-- footer -->

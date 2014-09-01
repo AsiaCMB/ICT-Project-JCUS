@@ -18,4 +18,4 @@ function ws_fade(b,a){var c=jQuery;a.each(function(d){if(!d){c(this).show()}else
 // Obfuscated by Javascript Obfuscator
 // http://javascript-source.com
 //***********************************************
-jQuery("#wowslider-container1").wowSlider({effect:"fade",prev:"prev",next:"next",duration:20*100,delay:20*100,outWidth:960,outHeight:360,width:960,height:360,autoPlay:true,stopOnHover:false,loop:false,bullets:true,caption:true,controls:true});
+jQuery("#wowslider-container1").wowSlider({effect:"fade",prev:"",next:"",duration:15*100,delay:22*100,outWidth:1083,outHeight:360,width:1083,height:360,autoPlay:true,stopOnHover:false,loop:false,bullets:true,caption:true,controls:true});

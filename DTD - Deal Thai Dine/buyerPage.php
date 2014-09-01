@@ -59,31 +59,29 @@
 </ul>
 </div>
 
-<!-- Start WOWSlider.com BODY section -->
+	<!-- Start WOWSlider.com BODY section -->
 	<div id="wowslider-container1">
 	<div class="ws_images">
-<span><img src="data1/images/img_7962.jpg" alt="img_7962" title="img_7962" id="wows0"/></span>
-<span><img src="data1/images/img_7975.jpg" alt="img_7975" title="img_7975" id="wows1"/></span>
-<span><img src="data1/images/img_7978.jpg" alt="img_7978" title="img_7978" id="wows2"/></span>
-<span><img src="data1/images/img_7980.jpg" alt="img_7980" title="img_7980" id="wows3"/></span>
-<span><img src="data1/images/img_8063.jpg" alt="img_8063" title="img_8063" id="wows4"/></span>
-<span><img src="data1/images/img_8073.jpg" alt="img_8073" title="img_8073" id="wows5"/></span>
-<span><img src="data1/images/img_8078.jpg" alt="img_8078" title="img_8078" id="wows6"/></span>
-<span><img src="data1/images/img_8082.jpg" alt="img_8082" title="img_8082" id="wows7"/></span>
-<span><img src="data1/images/img_8085.jpg" alt="img_8085" title="img_8085" id="wows8"/></span>
+<span><img src="data1/images/aboutus_pic1.jpg" alt="Yhingthai Palace" title="Yhingthai Palace" id="wows0"/></span>
+<span><img src="data1/images/contactus_pic1.jpg" alt="" title="" id="wows1"/></span>
+<span><img src="data1/images/gaeng_keow_wan.jpg" alt="Gaeng Keow Wan" title="Gaeng Keow Wan" id="wows2"/></span>
+<span><img src="data1/images/khao_neow_ma_muang_mango_served_with_glutinous_rice.jpg" alt="Khao Neow Ma Muang" title="Khao Neow Ma Muang" id="wows3"/></span>
+<span><img src="data1/images/khao_neow_turian_durian_served_with_glutinous_rice_and_fresh_coconut_milk.jpg" alt="Khao Neow Durian" title="Khao Neow Durian" id="wows4"/></span>
+<span><img src="data1/images/online_pic1.jpg" alt="Thai Restaurant" title="Thai Restaurant" id="wows5"/></span>
+<span><img src="data1/images/openingpage_pic1.jpg" alt="" title="" id="wows6"/></span>
+<span><img src="data1/images/tom_yam_talay_kati_tom_yam_seafood_soup_with_coconut_milk.jpg" alt="Tom Yam Talay Kati" title="Tom Yam Talay Kati" id="wows7"/></span>
 </div>
 <div class="ws_bullets"><div>
-<a href="#wows0" title="img_7962"><img src="data1/tooltips/img_7962.jpg" alt="img_7962"/>1</a>
-<a href="#wows1" title="img_7975"><img src="data1/tooltips/img_7975.jpg" alt="img_7975"/>2</a>
-<a href="#wows2" title="img_7978"><img src="data1/tooltips/img_7978.jpg" alt="img_7978"/>3</a>
-<a href="#wows3" title="img_7980"><img src="data1/tooltips/img_7980.jpg" alt="img_7980"/>4</a>
-<a href="#wows4" title="img_8063"><img src="data1/tooltips/img_8063.jpg" alt="img_8063"/>5</a>
-<a href="#wows5" title="img_8073"><img src="data1/tooltips/img_8073.jpg" alt="img_8073"/>6</a>
-<a href="#wows6" title="img_8078"><img src="data1/tooltips/img_8078.jpg" alt="img_8078"/>7</a>
-<a href="#wows7" title="img_8082"><img src="data1/tooltips/img_8082.jpg" alt="img_8082"/>8</a>
-<a href="#wows8" title="img_8085"><img src="data1/tooltips/img_8085.jpg" alt="img_8085"/>9</a>
+<a href="#wows0" title="Yhingthai Palace"><img src="data1/tooltips/aboutus_pic1.jpg" alt="Yhingthai Palace"/>1</a>
+<a href="#wows1" title=""><img src="data1/tooltips/contactus_pic1.jpg" alt=""/>2</a>
+<a href="#wows2" title="Gaeng Keow Wan"><img src="data1/tooltips/gaeng_keow_wan.jpg" alt="Gaeng Keow Wan"/>3</a>
+<a href="#wows3" title="Khao Neow Ma Muang"><img src="data1/tooltips/khao_neow_ma_muang_mango_served_with_glutinous_rice.jpg" alt="Khao Neow Ma Muang"/>4</a>
+<a href="#wows4" title="Khao Neow Durian"><img src="data1/tooltips/khao_neow_turian_durian_served_with_glutinous_rice_and_fresh_coconut_milk.jpg" alt="Khao Neow Durian"/>5</a>
+<a href="#wows5" title="Thai Restaurant"><img src="data1/tooltips/online_pic1.jpg" alt="Thai Restaurant"/>6</a>
+<a href="#wows6" title=""><img src="data1/tooltips/openingpage_pic1.jpg" alt=""/>7</a>
+<a href="#wows7" title="Tom Yam Talay Kati"><img src="data1/tooltips/tom_yam_talay_kati_tom_yam_seafood_soup_with_coconut_milk.jpg" alt="Tom Yam Talay Kati"/>8</a>
 </div></div>
-<a style="display:none" href="http://wowslider.com">jQuery Vertical Image Scroller by WOWSlider.com v2.0</a>
+<a style="display:none" href="http://wowslider.com">HTML Image Slideshow Code by WOWSlider.com v2.0</a>
 	</div>
 	<script type="text/javascript" src="engine1/script.js"></script>
 	<!-- End WOWSlider.com BODY section -->

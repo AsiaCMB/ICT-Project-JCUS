@@ -1,0 +1,43 @@
+.text {
+  width: 199px;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  border: solid 2px #FFCF87;
+  padding: 2px;
+  border-radius: 10px;
+  font-size: 13px;
+  box-shadow: 0px 1px 3px 0px #9C9C9C;
+  background-color: #FFFFFF;
+  outline: none;
+  color: #000000;
+  text-align: left;
+}
+.text:hover  {
+  border: 2px solid #D5A65F;
+}
+.text:focus  {
+  border: solid 2px #D5A65F;
+  box-shadow: 0px 1px 2px 0px #D17D00;
+}
+.text:active  {
+  border: solid 2px #D5A65F;
+}
+
+.commentSubmit{
+  border-radius : 6px;
+  font-size : 15px;
+  color : #ffffff;
+  padding : 1px 17px;
+  background : #d5a75d;
+  background : -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d5a75d), color-stop(100%,#f7c77e));
+  background : -moz-linear-gradient(top, #d5a75d 0%, #f7c77e 100%);
+  background : -webkit-linear-gradient(top, #d5a75d 0%, #f7c77e 100%);
+  background : -o-linear-gradient(top, #d5a75d 0%, #f7c77e 100%);
+  background : -ms-linear-gradient(top, #d5a75d 0%, #f7c77e 100%);
+  background : linear-gradient(top, #d5a75d 0%, #f7c77e 100%);
+  filter : progid:DXImageTransform.Microsoft.gradient( startColorstr='#d5a75d', endColorstr='#f7c77e',GradientType=0 );
+}
+.commentSubmit:hover{
+  border : solid 2px #f29408;
+  border-radius : 6px;
+  moz-border-radius : 6px;
+}

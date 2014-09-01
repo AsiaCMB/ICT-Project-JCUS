@@ -9,6 +9,7 @@
 <script type="text/javascript" src="script/stickNavBar.js"></script>
 
 <link rel="stylesheet" type="text/css" href="css/homepage.css">
+<link rel="stylesheet" type="text/css" href="css/commentForm.css">
 <link rel="stylesheet" type="text/css" href="css/aboutUs.css">
 <link rel="stylesheet" type="text/css" href="css/aboutusNavBar.css">
 <link rel="stylesheet" type="text/css" href="css/otherSocMed.css">
@@ -51,11 +52,11 @@
 <!-- navigation bar -->
 <div id='cssmenu' class='align-center'>
 <ul>
-   <li class='active'><a href='buyerPage.php'><img id="homeImage" border="0" src="image/home2.png" alt="home"><span>Home</span></a></li>
+   <li><a href='buyerPage.php'><img id="homeImage" border="0" src="image/home2.png" alt="home"><span>Home</span></a></li>
    <li><a href='buyerRestaurantPage.php'><img id="restoImage" border="0" src="image/resto.png" alt="Thai Resto"><span>Thai Resto</span></a></li>
    <li><a href='buyerPromotionAllPage.php'><img id="promotionImage" border="0" src="image/promotion.png" alt="Promotion"><span>Promotion</span></a></li>
    <li><a href='#'><img id="careerImage" border="0" src="image/career.png" alt="Career"><span>Career</span></a></li>
-   <li class='last'><a href='buyerAboutUsPage.php'><img id="aboutImage" border="0" src="image/about.png" alt="About"><span>About Us</span></a></li>
+   <li class='active'><a href='buyerAboutUsPage.php'><img id="aboutImage" border="0" src="image/about.png" alt="About"><span>About Us</span></a></li>
 </ul>
 </div>
 
@@ -97,7 +98,7 @@ if($submit)
 
 <div class="commentSection" >
 	<form id="commentForm" action="buyerPromotionDetailsPage.php" method="POST">
-		<textarea rows="4" name="comment" form="commentForm" placeholder="Enter Review Here...."></textarea></br>
+		<textarea rows="4" name="comment" form="commentForm" placeholder="Enter Review Here...." class="text"></textarea></br>
 		<input type="submit" name="submit" value="Submit" class="commentSubmit">
 	</form>
 		<p>

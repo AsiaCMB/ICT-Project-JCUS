@@ -66,10 +66,11 @@ if($submit)
 <link rel="shortcut icon" href="icon.ico" />
 <script type="text/javascript" src="script/stickNavBar.js"></script>
 
-<link rel="stylesheet" type="text/css" href="css/homepage.css">
-<link rel="stylesheet" type="text/css" href="css/footerNavBar.css">
-<link rel="stylesheet" type="text/css" href="css/otherSocMed.css">
-<link rel="stylesheet" type="text/css" href="css/otherFooter.css">
+<link rel="stylesheet" type="text/css" href="css/homepage.css"/>
+<link rel="stylesheet" type="text/css" href="css/registerForm.css"/>
+<link rel="stylesheet" type="text/css" href="css/footerNavBar.css"/>
+<link rel="stylesheet" type="text/css" href="css/otherSocMed.css"/>
+<link rel="stylesheet" type="text/css" href="css/otherFooter.css"/>
 
 </head>
 
@@ -98,11 +99,11 @@ if($submit)
 <!-- navigation bar -->
 <div id='cssmenu' class='align-center'>
 <ul>
-   <li class='active'><a href='index.php'><img id="homeImage" border="0" src="image/home2.png" alt="home"><span>Home</span></a></li>
+   <li><a href='index.php'><img id="homeImage" border="0" src="image/home2.png" alt="home"><span>Home</span></a></li>
    <li><a href='restaurantPage.php'><img id="restoImage" border="0" src="image/resto.png" alt="Thai Resto"><span>Thai Resto</span></a></li>
    <li><a href='promotionAllPage.php'><img id="promotionImage" border="0" src="image/promotion.png" alt="Promotion"><span>Promotion</span></a></li>
    <li><a href='#'><img id="careerImage" border="0" src="image/career.png" alt="Career"><span>Career</span></a></li>
-   <li class='last'><a href='aboutUsPage.php'><img id="aboutImage" border="0" src="image/about.png" alt="About"><span>About Us</span></a></li>
+   <li><a href='aboutUsPage.php'><img id="aboutImage" border="0" src="image/about.png" alt="About"><span>About Us</span></a></li>
 </ul>
 </div>
 
@@ -113,33 +114,33 @@ if($submit)
 <table cellspacing="2">
   <tr>
     <td><b>First Name:</b></td>
-    <td><input name="userfname" type="text" size="30"/>
+    <td><input name="userfname" type="text" size="30" class="text"/>
       *</td>
   </tr>
   <tr>
     <td><b>Last Name :</b></td>
-    <td><input name="userlname" type="text" size="30"/>
+    <td><input name="userlname" type="text" size="30" class="text"/>
       *</td>
   </tr>
   <tr>
     <td><b>Email :</b></td>
-    <td><input name="useremail" type="email" size="30"/>
+    <td><input name="useremail" type="email" size="30" class="text"/>
       *</td>
   </tr>
   <tr>
     <td><b>Password :</b></td>
     <td>
-      <input name="userpass" type="password" />
+      <input name="userpass" type="password" class="text" />
       *</td>
   </tr>
   <tr>
     <td><b>Comfirm Password :</b></td>
-    <td><input name="usercp" type="password" />
+    <td><input name="usercp" type="password" class="text"/>
       *</td>
   </tr>
   <tr>
     <td width="154"><b>Register As:</b></td>
-    <td width="282"><select size="1" name="usertype">
+    <td width="282"><select size="1" name="usertype" class="dropUser">
     <option value="Buyer">Buyer</option>
     <option value="Seller">Seller</option>
     </select></td>
@@ -149,20 +150,25 @@ if($submit)
        <b>Receive Deal Alerts:</b>
     </td>
     <td>
-      <select size="1" name="dealAccept">
+      <select size="1" name="dealAccept" class="dropDeal">
     <option value="Yes">Yes</option>
     <option value="No">No</option>  
     </td>
   </tr>
-</table>
-  <p>
-    I agree to the Terms of Use and Privacy Policy
+  <tr>
+    <td colspan="2">
+      I agree to the Terms of Use and Privacy Policy
     <input type="checkbox" name="cfpolicy" id="checkbox2" />
-  </p>
-  <p>
-    <input type="submit" name="submit" value="Register" />
-    <input type="reset" value="Reset" />
-  </p>
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+    <input type="submit" name="submit" value="Register" class="btn" />
+    <input type="reset" value="Reset" class="btn" />
+    </td>
+  </tr>
+</table>
 </form>
 
 </div>

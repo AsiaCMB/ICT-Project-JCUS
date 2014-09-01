@@ -73,6 +73,7 @@ function phpAlert($msg)
 <script type="text/javascript" src="script/stickNavBar.js"></script>
 
 <link rel="stylesheet" type="text/css" href="css/homepage.css">
+<link rel="stylesheet" type="text/css" href="css/loginForm.css">
 <link rel="stylesheet" type="text/css" href="css/footerNavBar.css">
 <link rel="stylesheet" type="text/css" href="css/otherSocMed.css">
 <link rel="stylesheet" type="text/css" href="css/otherFooter.css">
@@ -104,11 +105,11 @@ function phpAlert($msg)
 <!-- navigation bar -->
 <div id='cssmenu' class='align-center'>
 <ul>
-   <li class='active'><a href='index.php'><img id="homeImage" border="0" src="image/home2.png" alt="home"><span>Home</span></a></li>
+   <li><a href='index.php'><img id="homeImage" border="0" src="image/home2.png" alt="home"><span>Home</span></a></li>
    <li><a href='restaurantPage.php'><img id="restoImage" border="0" src="image/resto.png" alt="Thai Resto"><span>Thai Resto</span></a></li>
    <li><a href='promotionAllPage.php'><img id="promotionImage" border="0" src="image/promotion.png" alt="Promotion"><span>Promotion</span></a></li>
    <li><a href='#'><img id="careerImage" border="0" src="image/career.png" alt="Career"><span>Career</span></a></li>
-   <li class='last'><a href='aboutUsPage.php'><img id="aboutImage" border="0" src="image/about.png" alt="About"><span>About Us</span></a></li>
+   <li><a href='aboutUsPage.php'><img id="aboutImage" border="0" src="image/about.png" alt="About"><span>About Us</span></a></li>
 </ul>
 </div>
 
@@ -133,14 +134,18 @@ function phpAlert($msg)
             <input type="password" name="userpass" id="pass" placeholder="Enter your password" size='30'>
           </td>
         </tr>
-      </table>
-      <p>
-        <input type="checkbox" value="remember_me" id="remember_me">
+      <tr>
+        <td colspan="2"><input type="checkbox" value="remember_me" id="remember_me">
         Keep me signed in on this computer
-      </p>
-      <p>
-        <input type="submit" name="submit">
-      </p>
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>
+        <input type="submit" name="submit" class="btn">
+        </td>
+      </tr>
+      </table>
     </form>
 </div>
 

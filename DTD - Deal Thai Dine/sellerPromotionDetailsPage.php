@@ -47,9 +47,9 @@
 <!-- navigation bar -->
 <div id='cssmenu' class='align-center'>
 <ul>
-   <li class='active'><a href='sellerPage.php'><img id="homeImage" border="0" src="image/home2.png" alt="home"><span>Home</span></a></li>
+   <li><a href='sellerPage.php'><img id="homeImage" border="0" src="image/home2.png" alt="home"><span>Home</span></a></li>
    <li><a href='sellerRestaurantPage.php'><img id="restoImage" border="0" src="image/resto.png" alt="Thai Resto"><span>Thai Resto</span></a></li>
-   <li><a href='sellerPromotionAllPage.php'><img id="promotionImage" border="0" src="image/promotion.png" alt="Promotion"><span>Promotion</span></a></li>
+   <li class='active'><a href='sellerPromotionAllPage.php'><img id="promotionImage" border="0" src="image/promotion.png" alt="Promotion"><span>Promotion</span></a></li>
    <li><a href='#'><img id="careerImage" border="0" src="image/career.png" alt="Career"><span>Career</span></a></li>
    <li class='last'><a href='sellerAboutUsPage.php'><img id="aboutImage" border="0" src="image/about.png" alt="About"><span>About Us</span></a></li>
 </ul>
@@ -86,9 +86,6 @@ while($rows=mysql_fetch_assoc($getquery))
 	echo '<p>Normal Price $'. $nomprice.'</p>';
 	echo '<p>Save $'.$save.'</p>';
 	echo '<p><span style="font-weight:900;">'. $discount.'% Off</span></p>';
-	echo '<form action="#">';
-	echo '<input class="submitBtn" type="submit" value="Buy...!!!">';
-	echo '</form>';
 	echo '</div>';
 
 	echo '<div class="promotionPriceDetails">';

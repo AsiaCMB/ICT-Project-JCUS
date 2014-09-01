@@ -1,0 +1,167 @@
+form{
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+h1{
+	text-align: center;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+table{
+  margin: 0 auto;
+  border: 5px solid rgba(234,188,118,1);
+  border-radius: 10px;
+  background-color: rgba(234,188,118,0.4);
+  padding: 5px;
+}
+table td{
+  padding: 2px;
+}
+
+.promotion{
+  width: 640px;
+}
+
+.textArea {
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  border: solid 2px #FFCF87;
+  padding: 2px;
+  border-radius: 10px;
+  font-size: 13px;
+  box-shadow: 0px 1px 3px 0px #9C9C9C;
+  background-color: #FFFFFF;
+  outline: none;
+  color: #000000;
+  text-align: left;
+}
+.textArea:hover  {
+  border: 2px solid #D5A65F;
+}
+.textArea:focus  {
+  border: solid 2px #D5A65F;
+  box-shadow: 0px 1px 2px 0px #D17D00;
+}
+.textArea:active  {
+  border: solid 2px #D5A65F;
+}
+
+.textAreaPro {
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  border: solid 2px #FFCF87;
+  padding: 2px;
+  border-radius: 10px;
+  font-size: 13px;
+  box-shadow: 0px 1px 3px 0px #9C9C9C;
+  background-color: #FFFFFF;
+  outline: none;
+  color: #000000;
+  text-align: left;
+  margin-left: 35px;
+}
+.textAreaPro:hover  {
+  border: 2px solid #D5A65F;
+}
+.textAreaPro:focus  {
+  border: solid 2px #D5A65F;
+  box-shadow: 0px 1px 2px 0px #D17D00;
+}
+.textAreaPro:active  {
+  border: solid 2px #D5A65F;
+}
+
+.numberPos{
+  margin-left: 35px;
+}
+
+.textPro {
+  width: 199px;
+  height: 18px;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  border: solid 2px #FFCF87;
+  padding: 2px;
+  border-radius: 10px;
+  font-size: 13px;
+  box-shadow: 0px 1px 3px 0px #9C9C9C;
+  background-color: #FFFFFF;
+  outline: none;
+  color: #000000;
+  text-align: left;
+  margin-left: 35px;
+}
+.textPro:hover  {
+  border: 2px solid #D5A65F;
+}
+.textPro:focus  {
+  border: solid 2px #D5A65F;
+  box-shadow: 0px 1px 2px 0px #D17D00;
+}
+.textPro:active  {
+  border: solid 2px #D5A65F;
+}
+
+.number {
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  border: solid 2px #FFCF87;
+  padding: 2px;
+  border-radius: 10px;
+  font-size: 13px;
+  box-shadow: 0px 1px 3px 0px #9C9C9C;
+  background-color: #FFFFFF;
+  outline: none;
+  color: #000000;
+  text-align: left;
+}
+.number:hover  {
+  border: 2px solid #D5A65F;
+}
+.number:focus  {
+  border: solid 2px #D5A65F;
+  box-shadow: 0px 1px 2px 0px #D17D00;
+}
+.number:active  {
+  border: solid 2px #D5A65F;
+}
+
+.text {
+  width: 199px;
+  height: 18px;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  border: solid 2px #FFCF87;
+  padding: 2px;
+  border-radius: 10px;
+  font-size: 13px;
+  box-shadow: 0px 1px 3px 0px #9C9C9C;
+  background-color: #FFFFFF;
+  outline: none;
+  color: #000000;
+  text-align: left;
+}
+.text:hover  {
+  border: 2px solid #D5A65F;
+}
+.text:focus  {
+  border: solid 2px #D5A65F;
+  box-shadow: 0px 1px 2px 0px #D17D00;
+}
+.text:active  {
+  border: solid 2px #D5A65F;
+}
+
+.btn{
+  margin-left: 35px;
+  border-radius : 6px;
+  font-size : 20px;
+  color : #ffffff;
+  padding : 1px 17px;
+  background : #d5a75d;
+  background : -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d5a75d), color-stop(100%,#f7c77e));
+  background : -moz-linear-gradient(top, #d5a75d 0%, #f7c77e 100%);
+  background : -webkit-linear-gradient(top, #d5a75d 0%, #f7c77e 100%);
+  background : -o-linear-gradient(top, #d5a75d 0%, #f7c77e 100%);
+  background : -ms-linear-gradient(top, #d5a75d 0%, #f7c77e 100%);
+  background : linear-gradient(top, #d5a75d 0%, #f7c77e 100%);
+  filter : progid:DXImageTransform.Microsoft.gradient( startColorstr='#d5a75d', endColorstr='#f7c77e',GradientType=0 );
+}
+.btn:hover{
+  border : solid 2px #f29408;
+  border-radius : 6px;
+  moz-border-radius : 6px;
+}

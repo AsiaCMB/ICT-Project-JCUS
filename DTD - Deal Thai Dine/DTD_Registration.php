@@ -157,7 +157,6 @@ if($submit)
   </tr>
   <tr>
     <td colspan="2">
-    <p onclick="MM_openBrWindow('Terms&amp;Conditions.html','TermConditions','scrollbars=yes,width=350,height=450')">
       I agree to the Terms of Use and Privacy Policy
     <input type="checkbox" name="cfpolicy" id="checkbox2" />
     </td>

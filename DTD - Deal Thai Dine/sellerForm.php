@@ -27,15 +27,17 @@ $proimagetype= getimagesize($_FILES['proimage']['tmp_name']);
 $proimgtype= $proimagetype['mime'];
 $submit=$_POST['submit'];
 
-
+//Alert message function
 function phpAlert($msg) {
     echo '<script type="text/javascript">alert("' . $msg . '")</script>';
 }
 
 if($submit)
 {
+  //Check whether all neccesary detail has been filled
   if($resname&&$resdetail&&$proname&&$highlights&&$conditions&&$proprice&&$nomprice&&$location&&$contactno)
   {        
+      //Upload information and picture to database
       $insert=mysql_query("INSERT INTO seller (resname, resdetail, proname, highlights, conditions, proprice, nomprice, location, contactno, resimage, resimgtype, proimage, proimgtype) VALUES ('$resname','$resdetail','$proname', '$highlights', '$conditions', '$proprice', '$nomprice', '$location', '$contactno', '$resimage', '$resimgtype', '$proimage', '$proimgtype')");        
       $uploadres=move_uploaded_file($resimgtype,'userimage/'.$resimage);
       $uploadpro=move_uploaded_file($proimgtype,'userimage/'.$proimage);
@@ -75,10 +77,12 @@ if($submit)
 	</form>
 	<p id="welcome">
     <?php 
+    //Check user login, if not redirect user to login page
     if(!isset($_SESSION['use']))
     {
       header("Location: DTD_LOGIN.php");
     }
+    //Display welcome message by th retrieved user name
     echo "Welcome " . $_SESSION['use']. "| ";
   ?>
   <a id="signinImage" href="signOUT.php">Sign Out<img id="loginImage" border="0" src="image/login.png" alt="Sing Out"></a>

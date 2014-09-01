@@ -49,6 +49,7 @@
 
 <!-- Promotion Details -->
 <?php
+//Retrive promotion details to display
 require('connectDTD.php');
 $sellerID=$_GET['id'];
 $getquery=mysql_query("SELECT * FROM seller WHERE id='$sellerID'");
@@ -66,9 +67,9 @@ while($rows=mysql_fetch_assoc($getquery))
 	$location=$rows['location'];
 	$contactno=$rows['contactno'];
 	$save = $nomprice - $proprice;
+	//Calculate percentage of discounted price
 	$discount = ($save/$nomprice)*100;
-	//$reslink="<a href=\"resLink.php?id=" . $id . "\"> resname </a>";	
-	//echo '<h1>'.  $resname . '</h1> <br />' . $description . '<br />' . $location . '<br />' . $contactno . '<br />' . '<hr align="left" width="500px" />';
+
 	echo '<br />';
 	echo '<div class="promotionPrice">';
 	echo '<img src="data:image/jpeg;base64,'.base64_encode($proimage).'"/>';

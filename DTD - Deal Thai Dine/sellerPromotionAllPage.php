@@ -1,3 +1,4 @@
+<!--Initiate session to retrieve user name-->
 <?php session_start(); ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -25,10 +26,12 @@
 	</form>
 	<p id="welcome">
 		<?php 
+		//Check user login, if not redirect user to login page
 		if(!isset($_SESSION['use']))
 		{
 			header("Location: DTD_LOGIN.php");
 		}
+		//Display welcome message by th retrieved user name
 		echo "Welcome " . $_SESSION['use']. "| ";
 	?>
 	<a id="signinImage" href="signOUT.php">Sign Out<img id="loginImage" border="0" src="image/login.png" alt="Sing Out"></a>
@@ -58,6 +61,7 @@
 
 <h1>Hot Deals</h1>
 <?php
+//Retrive promotion information to be display
 error_reporting(0);
 require('connectDTD.php');
 
@@ -71,26 +75,17 @@ while($rows=mysql_fetch_array($getquery))
 	$nomprice=$rows['nomprice'];
 	$save = $nomprice - $proprice;
 	$disprice= ($save/$nomprice)*100;
-	
-	//$reslink="<a href=\"promotionDetailsPage.php?id=" . $id . "\"> Click </a>";	
+		
 	$link="<a href=\"sellerPromotionDetailsPage.php?id=" . $id . "\">";
 	echo '<div class="promotionPage">';
 	echo $link.'<img src="data:image/jpeg;base64,'.base64_encode($proimage).'"/></a>';
 	echo $link.'<h2>'. $proname . '</h2></a>';
-	//echo '</br></br>';
 	echo '<p class="discount">Discount <span style="font-weight:900;">'. $disprice .'%</span> Off</p>';
 	echo '<p class="price">Price <span style="font-weight:900;">$'. $proprice.'</span></p>';
 	echo '</div>';
-
 }
 ?>
-<!--
-<div class="promotionPage">
-	<a href="#"><img src="image/promo.jpg" alt="Promotion Image"></a>
-	<h2><a href='#'>Title Goes Here</a></h2>
-	<p class="discount">Discount <span style="font-weight:900;">90%</span> Off</p>
-	<p class="price">Price <span style="font-weight:900;">$$$</span></p>
-</div>-->
+
 
 <!-- footer -->
 <div class="footer">

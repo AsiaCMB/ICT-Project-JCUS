@@ -50,6 +50,7 @@
 
 <h1>Hot Deals</h1>
 <?php
+//Retrive promotion information from database to display 
 error_reporting(0);
 require('connectDTD.php');
 
@@ -62,6 +63,7 @@ while($rows=mysql_fetch_array($getquery))
 	$proprice=$rows['proprice'];
 	$nomprice=$rows['nomprice'];
 	$save = $nomprice - $proprice;
+	//Calculate percentage of discounted price
 	$disprice= ($save/$nomprice)*100;
 	
 	//$reslink="<a href=\"promotionDetailsPage.php?id=" . $id . "\"> Click </a>";	
@@ -69,20 +71,12 @@ while($rows=mysql_fetch_array($getquery))
 	echo '<div class="promotionPage">';
 	echo $link.'<img src="data:image/jpeg;base64,'.base64_encode($proimage).'"/></a>';
 	echo $link.'<h2>'. $proname . '</h2></a>';
-	//echo '</br></br>';
 	echo '<p class="discount">Discount <span style="font-weight:900;">'. $disprice .'%</span> Off</p>';
 	echo '<p class="price">Price <span style="font-weight:900;">$'. $proprice.'</span></p>';
 	echo '</div>';
 
 }
 ?>
-<!--
-<div class="promotionPage">
-	<a href="#"><img src="image/promo.jpg" alt="Promotion Image"></a>
-	<h2><a href='#'>Title Goes Here</a></h2>
-	<p class="discount">Discount <span style="font-weight:900;">90%</span> Off</p>
-	<p class="price">Price <span style="font-weight:900;">$$$</span></p>
-</div>-->
 
 <!-- footer -->
 <div class="footer">

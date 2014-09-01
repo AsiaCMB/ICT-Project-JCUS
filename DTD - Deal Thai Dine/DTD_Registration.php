@@ -12,7 +12,7 @@ $dealAccept=$_POST['dealAccept'];
 $submit=$_POST['submit'];
 $cfpolicy=$_POST['cfpolicy'];
 
-
+//Alert message function
 function phpAlert($msg) {
     echo '<script type="text/javascript">alert("' . $msg . '")</script>';
 }
@@ -20,13 +20,16 @@ function phpAlert($msg) {
 
 if($submit)
 {
+  //Check whether all neccesary detail has been filled
   if($usertype&&$userfname&&$userlname&&$useremail&&$userpass&&$usercp)
   {
+    //Upload registered username and password to database
     $query = mysql_query("SELECT * FROM user WHERE useremail='$useremail'");
     $numrow = mysql_num_rows($query);
     
     if($numrow != 0)
       {
+        //Check the existed email registered in database
         while($row = mysql_fetch_assoc($query))
         {
           $useremail = $row['useremail'];
@@ -35,16 +38,19 @@ if($submit)
       }
       else
       {
+        //Check the confirmation password
         if($userpass!=$usercp)
         {
           phpAlert("The confirmation password is not match!");
         }
+        //Check whether user acknowledge the term and policy
         elseif ($cfpolicy != 'on') 
         {
           phpAlert("Please accept the term of use and policy!");
         }
         else
         {
+          //Upload information to database and redirect user to login page
           $insert=mysql_query("INSERT INTO user (userfname, userlname, useremail, userpass, usertype, dealAccept) VALUES ('$userfname','$userlname','$useremail','$userpass', '$usertype', '$dealAccept')");
           phpAlert("Successfully register!");
           header("Location: DTD_LOGIN.php");
@@ -53,6 +59,7 @@ if($submit)
   }
   else
   {
+    //Alert if user do not fill in all neccessary detail
     phpAlert("Please fill out all the necessary details!");
   }
 }

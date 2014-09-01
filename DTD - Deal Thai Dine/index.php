@@ -83,6 +83,7 @@
 <div class="banner">
 	<p id="banner1">Restaurant</p>
 	<?php
+	//Retrieve restaurant and promotion information to be display
 	require('connectDTD.php');
 	$getquery=mysql_query("SELECT * FROM seller LIMIT 3");
 

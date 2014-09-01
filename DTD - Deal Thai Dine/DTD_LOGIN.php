@@ -1,8 +1,5 @@
-<!--Initiate session to retrieve user name-->
-<?php session_start(); ?>
-
-<!--Check username and password then redirect user according to user type-->
 <?php
+//Check username and password then redirect user according to user type-
 error_reporting(1);
 require('connectDTD.php');
 $useremail=$_POST['useremail'];

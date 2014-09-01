@@ -159,6 +159,7 @@ if($submit)
     <td colspan="2">
       I agree to the Terms of Use and Privacy Policy
     <input type="checkbox" name="cfpolicy" id="checkbox2" />
+    </p>
     </td>
   </tr>
   <tr>

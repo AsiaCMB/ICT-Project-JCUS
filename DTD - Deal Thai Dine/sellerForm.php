@@ -1,3 +1,4 @@
+<!--Initiate session to retrieve user name-->
 <?php session_start(); ?>
 
 <?php

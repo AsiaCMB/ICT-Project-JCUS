@@ -1,79 +1,21 @@
-
-<?php
-error_reporting(0);
-require('connectDTD.php');
-$usertype=$_POST['usertype'];
-$userfname=$_POST['userfname'];
-$userlname=$_POST['userlname'];
-$useremail=$_POST['useremail'];
-$userpass=$_POST['userpass'];
-$usercp=$_POST['usercp'];
-$dealAccept=$_POST['dealAccept'];
-$submit=$_POST['submit'];
-$cfpolicy=$_POST['cfpolicy'];
-
-
-function phpAlert($msg) {
-    echo '<script type="text/javascript">alert("' . $msg . '")</script>';
-}
-
-
-if($submit)
-{
-  if($usertype&&$userfname&&$userlname&&$useremail&&$userpass&&$usercp)
-  {
-    $query = mysql_query("SELECT * FROM user WHERE useremail='$useremail'");
-    $numrow = mysql_num_rows($query);
-    
-    if($numrow != 0)
-      {
-        while($row = mysql_fetch_assoc($query))
-        {
-          $useremail = $row['useremail'];
-          phpAlert("This email has already been used!");    
-        }  
-      }
-      else
-      {
-        if($userpass!=$usercp)
-        {
-          phpAlert("The confirmation password is not match!");
-        }
-        elseif ($cfpolicy != 'on') 
-        {
-          phpAlert("Please accept the term of use and policy!");
-        }
-        else
-        {
-          $insert=mysql_query("INSERT INTO user (userfname, userlname, useremail, userpass, usertype, dealAccept) VALUES ('$userfname','$userlname','$useremail','$userpass', '$usertype', '$dealAccept')");
-          phpAlert("Successfully register!");
-          header("Location: DTD_LOGIN.php");
-        }
-    }
-  }
-  else
-  {
-    phpAlert("Please fill out all the necessary details!");
-  }
-}
-?>
-
+<?php session_start(); ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Deal Thai Dine</title>
 <link rel="shortcut icon" href="icon.ico" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script type="text/javascript" src="script/stickNavBar.js"></script>
 
 <link rel="stylesheet" type="text/css" href="css/homepage.css">
+<link rel="stylesheet" type="text/css" href="css/help.css">
 <link rel="stylesheet" type="text/css" href="css/footerNavBar.css">
 <link rel="stylesheet" type="text/css" href="css/otherSocMed.css">
 <link rel="stylesheet" type="text/css" href="css/otherFooter.css">
-
 </head>
 
-<body background="image/bgImage.jpg" onload="LoadGmaps()" onunload="GUnload()">
+<body background="image/bgImage.jpg">
 
 <!-- subscribe email, sign up and register section -->
 <div class="signupParent"> 
@@ -106,75 +48,24 @@ if($submit)
 </ul>
 </div>
 
-<!-- login -->
-<div>
-  <h1>Register</h1>
-<form aciton="registerTest.php" method="POST">
-<table cellspacing="2">
-  <tr>
-    <td><b>First Name:</b></td>
-    <td><input name="userfname" type="text" size="30"/>
-      *</td>
-  </tr>
-  <tr>
-    <td><b>Last Name :</b></td>
-    <td><input name="userlname" type="text" size="30"/>
-      *</td>
-  </tr>
-  <tr>
-    <td><b>Email :</b></td>
-    <td><input name="useremail" type="email" size="30"/>
-      *</td>
-  </tr>
-  <tr>
-    <td><b>Password :</b></td>
-    <td>
-      <input name="userpass" type="password" />
-      *</td>
-  </tr>
-  <tr>
-    <td><b>Comfirm Password :</b></td>
-    <td><input name="usercp" type="password" />
-      *</td>
-  </tr>
-  <tr>
-    <td width="154"><b>Register As:</b></td>
-    <td width="282"><select size="1" name="usertype">
-    <option value="Buyer">Buyer</option>
-    <option value="Seller">Seller</option>
-    </select></td>
-  </tr>
-  <tr>
-    <td>
-       <b>Receive Deal Alerts:</b>
-    </td>
-    <td>
-      <select size="1" name="dealAccept">
-    <option value="Yes">Yes</option>
-    <option value="No">No</option>  
-    </td>
-  </tr>
-</table>
-  <p>
-    I agree to the Terms of Use and Privacy Policy
-    <input type="checkbox" name="cfpolicy" id="checkbox2" />
-  </p>
-  <p>
-    <input type="submit" name="submit" value="Register" />
-    <input type="reset" value="Reset" />
-  </p>
-</form>
+<div class="helpPage">
+	<h1>What Is Deals Thai Dine Work?</h1>
+	<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+	<h1>How To Post My Promotion?</h1>
+	<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+	<h1>How To Buy The Promotion?</h1>
+	<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+	</div>
 
-</div>
 <!-- footer -->
 <div class="footer">
 	<hr></hr>
 	<div id="footerLink">
 		<ul>
 	   		<li><a href='aboutUsPage.php'><span>About</span></a></li>
-        <li><a href='helpPage.php'><span>Help</span></a></li>
-        <li><a href='contactUsPage.php'><span>Contact</span></a></li>
-        <li><a href='#'><span>Career</span></a></li>
+	   		<li><a href='helpPage.php'><span>Help</span></a></li>
+	   		<li><a href='contactUsPage.php'><span>Contact</span></a></li>
+	   		<li><a href='#'><span>Career</span></a></li>
 	   		<li><a id="fbLink" href='#'><img id="fb" border="0" src="image/fb1.png" alt="Facebook Fan Page" height="40px"></a>
 				<a id="twitterLink" href='#'><img id="twitter" border="0" src="image/twitter1.png" alt="Twitter" height="40px"></a>
 				<a id="youtubeLink" href='#'><img id="youtube" border="0" src="image/youtube1.png" alt="Youtube Channel" height="40px"></a></li>
@@ -183,7 +74,7 @@ if($submit)
 	<hr></hr>
 	<div id="paymentLogo" >
 		<a href="#" onclick="javascript:window.open('https://www.paypal.com/sg/cgi-bin/webscr?cmd=xpt/Marketing/popup/OLCWhatIsPayPal-outside','olcwhatispaypal','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=400, height=350');"><img  src="image/paypalLogo.png" border="0" alt="PayPal" height="50px"></a></td></tr></table>
-		<p id="copyright">Copyright© 2014 promochan.com</p>
+		<p id="copyright">Copyright© 2014 dealsthaidine.com</p>
 	</div>
 </div>
 </body>

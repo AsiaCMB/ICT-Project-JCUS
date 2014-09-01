@@ -1,3 +1,69 @@
+<?php session_start(); ?>
+<?php
+error_reporting(1);
+require('connectDTD.php');
+$useremail=$_POST['useremail'];
+$userpass=$_POST['userpass'];
+$submit=$_POST['submit'];
+
+function phpAlert($msg) 
+{
+  echo '<script type="text/javascript">alert("' . $msg . '")</script>';
+}
+//IF user already login go to homepage
+//if(isset($_SESSION['use']))
+  //{
+    //header("Location:homepage.html");
+  //}
+
+  
+  if($submit)
+  {
+    if($useremail&&$userpass)
+    {
+      $query = mysql_query("SELECT * FROM user WHERE useremail='$useremail' AND userpass='$userpass'");
+      $numrow = mysql_num_rows($query);
+
+      if($numrow != 0)
+      {
+      
+
+        while($row = mysql_fetch_assoc($query))
+        {
+          $id=$row['id'];
+          $useremail = $row['useremail'];
+          $userpass = $row['userpass'];
+          $usertype = $row['usertype'];
+          $userfname = $row['userfname'];
+
+          //phpAlert("Login!"); 
+          if ($usertype == "Seller")
+          {
+            $_SESSION['use']=$userfname;
+            header("Location: sellerPage.php");
+
+          }
+          else
+          {
+            $_SESSION['use']=$userfname;
+            header("Location: buyerPage.php");
+
+          }
+        }  
+      }
+      else
+      {
+        phpAlert("Incorrect username or password!");
+        //header("Location: DTD_LOGIN.php");
+      }
+    }
+    else
+    {
+      phpAlert("Please provide your email or password!");
+    }
+   }
+?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -22,8 +88,8 @@
 		<input type="button" value="Subscribe">
 	</form>
 	<p id="welcome">Welcome to Deal Thai Dine. 
-	<a id="signinImage" href="loginpage.html">Sign In<img id="loginImage" border="0" src="image/login.png" alt="Login Here"></a>
-	/<a id="registImage" href="#">Register <img id="registerImage" border="0" src="image/register.png" alt="Register Here"> </a></p>
+	<a id="signinImage" href="DTD_LOGIN.php">Sign In<img id="loginImage" border="0" src="image/login.png" alt="Login Here"></a>
+	/<a id="registImage" href="DTD_Registration.php">Register <img id="registerImage" border="0" src="image/register.png" alt="Register Here"> </a></p>
 </div>
 
 <!-- logo and search button section -->
@@ -38,18 +104,18 @@
 <!-- navigation bar -->
 <div id='cssmenu' class='align-center'>
 <ul>
-   <li><a href='#'><img id="homeImage" border="0" src="image/home2.png" alt="home"><span>Home</span></a></li>
-   <li><a href='#'><img id="restoImage" border="0" src="image/resto.png" alt="Thai Resto"><span>Thai Resto</span></a></li>
-   <li><a href='#'><img id="promotionImage" border="0" src="image/promotion.png" alt="Promotion"><span>Promotion</span></a></li>
+   <li class='active'><a href='index.php'><img id="homeImage" border="0" src="image/home2.png" alt="home"><span>Home</span></a></li>
+   <li><a href='restaurantPage.php'><img id="restoImage" border="0" src="image/resto.png" alt="Thai Resto"><span>Thai Resto</span></a></li>
+   <li><a href='promotionAllPage.php'><img id="promotionImage" border="0" src="image/promotion.png" alt="Promotion"><span>Promotion</span></a></li>
    <li><a href='#'><img id="careerImage" border="0" src="image/career.png" alt="Career"><span>Career</span></a></li>
-   <li><a href='#'><img id="aboutImage" border="0" src="image/about.png" alt="About"><span>About Us</span></a></li>
+   <li class='last'><a href='aboutUsPage.php'><img id="aboutImage" border="0" src="image/about.png" alt="About"><span>About Us</span></a></li>
 </ul>
 </div>
 
 <!-- login -->
 <div>
 	<h1>Sign in</h1>
-    <form action="loginTest.php" method="POST">
+    <form action="DTD_LOGIN.php" method="POST">
       <table cellspacing="2">
         <tr>
           <td width="84">
@@ -83,10 +149,10 @@
 	<hr></hr>
 	<div id="footerLink">
 		<ul>
-	   		<li><a href='#'><span>About</span></a></li>
-	   		<li><a href='#'><span>Help</span></a></li>
-	   		<li><a href='#'><span>Contact</span></a></li>
-	   		<li><a href='#'><span >Career</span></a></li>
+	   		<li><a href='aboutUsPage.php'><span>About</span></a></li>
+        <li><a href='helpPage.php'><span>Help</span></a></li>
+        <li><a href='contactUsPage.php'><span>Contact</span></a></li>
+        <li><a href='#'><span>Career</span></a></li>
 	   		<li><a id="fbLink" href='#'><img id="fb" border="0" src="image/fb1.png" alt="Facebook Fan Page" height="40px"></a>
 				<a id="twitterLink" href='#'><img id="twitter" border="0" src="image/twitter1.png" alt="Twitter" height="40px"></a>
 				<a id="youtubeLink" href='#'><img id="youtube" border="0" src="image/youtube1.png" alt="Youtube Channel" height="40px"></a></li>
@@ -100,6 +166,7 @@
 </div>
 </body>
 </html>
+
 
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
   <script>
@@ -131,47 +198,7 @@
           localStorage.usrname = '';
           localStorage.pass = '';
           localStorage.chkbx = '';
-        }
+          }
       });
     }); 
 </script>
-
-<?php
-error_reporting(0);
-require('connectDTD.php');
-$useremail=$_POST['useremail'];
-$userpass=$_POST['userpass'];
-$submit=$_POST['submit'];
-
-function phpAlert($msg) 
-{
-  echo '<script type="text/javascript">alert("' . $msg . '")</script>';
-}
-
-  if($submit)
-  {
-    if($useremail&&$userpass)
-    {
-      $query = mysql_query("SELECT * FROM user WHERE useremail='$useremail' AND userpass='$userpass'");
-      $numrow = mysql_num_rows($query);
-
-      if($numrow != 0)
-      {
-        while($row = mysql_fetch_assoc($query))
-        {
-          $useremail = $row['useremail'];
-          $userpass = $row['userpass'];
-          phpAlert("Login!");    
-        }  
-      }
-      else
-      {
-        phpAlert("Incorrect username or password!");
-      }
-    }
-    else
-    {
-      phpAlert("Please provide your email or password!");
-    }
-  }
-?>

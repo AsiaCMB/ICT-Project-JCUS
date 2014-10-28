@@ -1,4 +1,3 @@
-<!--Initiate session to retrieve user name-->
 <?php session_start(); ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -31,12 +30,10 @@
 	</form>
 	<p id="welcome">
 		<?php 
-		//Check user login, if not redirect user to login page
 		if(!isset($_SESSION['use']))
 		{
 			header("Location: DTD_LOGIN.php");
 		}
-		//Display welcome message by th retrieved user name
 		echo "Welcome " . $_SESSION['use']. "| ";
 	?>
 	<a id="signinImage" href="signOUT.php">Sign Out<img id="loginImage" border="0" src="image/login.png" alt="Sign Out"></a></p>
@@ -93,7 +90,6 @@
 <div class="banner">
 	<p id="banner1">Restaurant</p>
 	<?php
-	//Retrieve restaurant and promotion information to be display
 	require('connectDTD.php');
 	$getquery=mysql_query("SELECT * FROM seller LIMIT 3");
 

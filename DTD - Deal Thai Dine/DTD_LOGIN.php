@@ -1,5 +1,5 @@
+<?php session_start(); ?>
 <?php
-//Check username and password then redirect user according to user type-
 error_reporting(1);
 require('connectDTD.php');
 $useremail=$_POST['useremail'];
@@ -10,7 +10,13 @@ function phpAlert($msg)
 {
   echo '<script type="text/javascript">alert("' . $msg . '")</script>';
 }
-  //Check user name and password from database
+//IF user already login go to homepage
+//if(isset($_SESSION['use']))
+  //{
+    //header("Location:homepage.html");
+  //}
+
+  
   if($submit)
   {
     if($useremail&&$userpass)
@@ -21,6 +27,7 @@ function phpAlert($msg)
       if($numrow != 0)
       {
       
+
         while($row = mysql_fetch_assoc($query))
         {
           $id=$row['id'];
@@ -29,7 +36,7 @@ function phpAlert($msg)
           $usertype = $row['usertype'];
           $userfname = $row['userfname'];
 
-          // Redirect users to another page according to user type
+          //phpAlert("Login!"); 
           if ($usertype == "Seller")
           {
             $_SESSION['use']=$userfname;
@@ -47,6 +54,7 @@ function phpAlert($msg)
       else
       {
         phpAlert("Incorrect username or password!");
+        //header("Location: DTD_LOGIN.php");
       }
     }
     else
@@ -164,7 +172,7 @@ function phpAlert($msg)
 </body>
 </html>
 
-<!--Remember username and password feature-->
+
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
   <script>
     $(function() 

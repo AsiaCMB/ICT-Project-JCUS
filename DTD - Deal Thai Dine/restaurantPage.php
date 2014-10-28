@@ -51,7 +51,6 @@
 
 <h1>Thai Restaurants in Singapore</h1>
 <?php
-//Retrive restaurant information to be display
 error_reporting(0);
 require('connectDTD.php');
 
@@ -62,10 +61,14 @@ while($rows=mysql_fetch_array($getquery))
 	$resname=$rows['resname'];
 	$resdetail=$rows['resdetail'];
 	$resimage=$rows['resimage'];
-		
+	
+	//$reslink="<a href=\"promotionDetailsPage.php?id=" . $id . "\"> Click </a>";	
+	
 	echo '<div class="restaurantPage">';
 	echo '<p class="restaurantTitle">'.$resname.'</p>';
+	//echo $link.'<img src="data:image/jpeg;base64,'.base64_encode($image).'"/></a>';
 	echo '<img src="data:image/jpeg;base64,'.base64_encode($resimage).'"/>';
+	//echo '</br></br>';
 	echo '<p>' . $resdetail . '</p>';
 	echo '</div>';
 

@@ -1,4 +1,3 @@
-<!--Initiate session to retrieve user name-->
 <?php session_start(); ?>
 
 <?php
@@ -12,6 +11,9 @@ $prodetail=$_POST['prodetail'];
 
 $proprice=$_POST['proprice'];
 $nomprice=$_POST['nomprice'];
+
+$prostart=$_POST['prostart'];
+$proend=$_POST['proend'];
 
 $highlights=$_POST['highlights'];
 $conditions=$_POST['conditions'];
@@ -28,18 +30,16 @@ $proimagetype= getimagesize($_FILES['proimage']['tmp_name']);
 $proimgtype= $proimagetype['mime'];
 $submit=$_POST['submit'];
 
-//Alert message function
+
 function phpAlert($msg) {
     echo '<script type="text/javascript">alert("' . $msg . '")</script>';
 }
 
 if($submit)
 {
-  //Check whether all neccesary detail has been filled
-  if($resname&&$resdetail&&$proname&&$highlights&&$conditions&&$proprice&&$nomprice&&$location&&$contactno)
+  if($resname&&$resdetail&&$proname&&$highlights&&$conditions&&$proprice&&$nomprice&&$prostart&&$proend&&$location&&$contactno)
   {        
-      //Upload information and picture to database
-      $insert=mysql_query("INSERT INTO seller (resname, resdetail, proname, highlights, conditions, proprice, nomprice, location, contactno, resimage, resimgtype, proimage, proimgtype) VALUES ('$resname','$resdetail','$proname', '$highlights', '$conditions', '$proprice', '$nomprice', '$location', '$contactno', '$resimage', '$resimgtype', '$proimage', '$proimgtype')");        
+      $insert=mysql_query("INSERT INTO seller (resname, resdetail, proname, highlights, conditions, proprice, nomprice, prostart, proend, location, contactno, resimage, resimgtype, proimage, proimgtype) VALUES ('$resname','$resdetail','$proname', '$highlights', '$conditions', '$proprice', '$nomprice', '$prostart', '$proend', '$location', '$contactno', '$resimage', '$resimgtype', '$proimage', '$proimgtype')");        
       $uploadres=move_uploaded_file($resimgtype,'userimage/'.$resimage);
       $uploadpro=move_uploaded_file($proimgtype,'userimage/'.$proimage);
       phpAlert("Successfully create page!");
@@ -78,12 +78,10 @@ if($submit)
 	</form>
 	<p id="welcome">
     <?php 
-    //Check user login, if not redirect user to login page
     if(!isset($_SESSION['use']))
     {
       header("Location: DTD_LOGIN.php");
     }
-    //Display welcome message by th retrieved user name
     echo "Welcome " . $_SESSION['use']. "| ";
   ?>
   <a id="signinImage" href="signOUT.php">Sign Out<img id="loginImage" border="0" src="image/login.png" alt="Sing Out"></a>
@@ -153,6 +151,16 @@ if($submit)
       *</p></td>
    </tr>
   <tr>
+    <td><b>Promotion Period:</b></td>
+    <td><p>
+      <label for="number" class="numberPos">Start:</label>
+      <label for="number2">
+        <input name="prostart" type="date" class="number"/>
+        * 
+        End: </label>
+      <input name="proend" type="date" class="number"/>
+      *</p></td>
+   </tr>
   <tr>
     <td><b>Location Address:</b></td>
     <td><textarea name="location" cols="30" rows="3" class="textAreaPro"></textarea>
@@ -177,6 +185,7 @@ if($submit)
   <tr>
     <td></td>
     <td>
+    <br>
     <input type="submit" name="submit" value="Submit" class="btn"/>
     <input type="reset" value="Reset" class="btn"/>
     </td>

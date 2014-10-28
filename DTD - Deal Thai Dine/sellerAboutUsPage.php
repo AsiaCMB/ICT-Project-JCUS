@@ -1,4 +1,3 @@
-<!--Initiate session to retrieve user name-->
 <?php session_start(); ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -32,12 +31,10 @@
 	</form>
 	<p id="welcome">
 		<?php 
-		//Check user login, if not redirect user to login page
 		if(!isset($_SESSION['use']))
 		{
 			header("Location: DTD_LOGIN.php");
 		}
-		//Display welcome message by th retrieved user name
 		echo "Welcome " . $_SESSION['use']. "| ";
 	?>
 	<a id="signinImage" href="signOUT.php">Sign Out<img id="loginImage" border="0" src="image/login.png" alt="Sing Out"></a>
@@ -66,53 +63,19 @@
 
 <div class="aboutUsContent">
 	<p id="aboutUsTitle"><span style="font-weight:900;">About Us</span></p>
-	<p>DTD (DealsThaiDine), the unique shopping site of thai restaurant community in Singapore, offers daily deals of 30% and more off with the best menu to eat, and drink of Thai restaurant around Singapore. Consumers can visit www.dealsthaidine.com to see the deals or sign up to receive emails and share those deals through social networks.</p>
-	<p>DealsThaiDine enables restaurants to promote their foods, beverages and desserts online through offering attractive deals available for a limited time, usually 24-72 hours. Restaurants benefit from obtaining new customers in their shops and get great marketing exposure without any upfront cost. </p>
-	<p>The company is committed to offering incredible savings and lifestyle experiences to customers, providing guaranteed results for marketers, and being socially responsible in all aspects of our business. </p>
-	<p>Found in 2014 as thai restaurant community in Singapore’ first social shopping website, With new and diverse offerings each day, we encourage members to discover everything from family aquarium outings to weekend excursions to exclusive gourmet dinners and more. We help great local businesses grow by introducing them to high-quality new customers, and give merchants the tools to make our members their regulars.!</p>
+	<p>Established in 2010, DEAL.com.sg has since transformed to become Singapore’s Number One online shopping platform, offering  what you’d love to have at the best price.
+ 
+	Reaching out to thousands of our customers daily, DEAL constantly seeks better ways and bargains to satisfy savvy shoppers like you!
+ 
+	DEAL remains unrivalled in providing both customers and merchants with the experiences you never knew you could get in Singapore. We cherish the remarkable partnerships we have with our merchants and take pride in passing the great savings directly to our valued customers.
+ 
+	At zero risk, our reputable merchants gain new customers through these partnerships, recognizing the benefits of being featured on DEAL.com.sg. The invincible DEALGuru welcomes you to check us out on Facebook  and follow @DEALGuruSG  to interact with us!
+ 
+ 
+	Interested in being featured on DEAL.com.sg?
+	Click here to get to know more about how you can be the next best selling deal!</p>
 </div>
 <br>
-<!-- Allow seller to add comment and keep to database,  the seller name will show as the user login -->
-<?php
-error_reporting(0);
-require('connectDTD.php');
-
-$name=$_SESSION['use'];
-$comment=$_POST['comment'];
-$submit=$_POST['submit'];
-
-if($submit)
-{
-	if($name&&$comment)
-	{
-		$insert=mysql_query("INSERT INTO comment (name, comment) VALUES ('$name','$comment')");
-	}
-	else
-	{
-		echo "Please fill out all the fields";
-	}
-}
-?>
-
-<div class="commentSection" >
-	<form id="commentForm" action="sellerAboutUsPage.php" method="POST">
-		<textarea rows="4" name="comment" form="commentForm" placeholder="Enter Review Here...." class="text"></textarea></br>
-		<input type="submit" name="submit" value="Submit" class="commentSubmit">
-	</form>
-		<p>
-			<?php
-			$getquery=mysql_query("SELECT * FROM comment ORDER BY id DESC");
-			while($rows=mysql_fetch_assoc($getquery))
-			{
-				$id=$rows['id'];
-				$name=$rows['name'];
-				$comment=$rows['comment'];
-				//$dellink="<a href=\"delete.php?id=" . $id . "\"> Delete </a>";	
-				echo '<b>Name: '.$name . '</b><br />' . '<br />' . $comment .  '<br />' . '<hr align="left" width="500px" />';
-			}
-			?>
-		</p>
-</div>
 
 <!-- footer -->
 <div class="footer">

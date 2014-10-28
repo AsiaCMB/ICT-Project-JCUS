@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -83,9 +84,7 @@
 </div>
 
 <div id="MyGmaps" style="width:600px;height:400px;border:1px solid #CECECE;"></div>
-<div id="contactusContent">Customer Service Hotline at +65 92309067</p>
-  <p>Hotline operating hours: Mondays – Fridays 10.00 am to 7.00 pm excluding public holidays.</p>
-  <p>(Please take note that our lines are usually busy, so please email us at info@dealsthaidine.com )</p></div>
+<div id="contactusContent">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
 <!-- footer -->
 <div class="footer">
 	<hr></hr>

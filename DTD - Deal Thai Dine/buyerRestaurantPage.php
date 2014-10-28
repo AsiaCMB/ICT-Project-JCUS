@@ -1,5 +1,14 @@
-<!--Initiate session to retrieve user name-->
 <?php session_start(); ?>
+<!--<script>
+if ($_SESSION['use']== 'Seller')
+{
+	$(document).ready(function(){$('p').hide();});
+}
+else
+{
+	$(document).ready(function(){$('p').show();});
+}
+</script>-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -26,12 +35,10 @@
 	</form>
 	<p id="welcome">
 		<?php 
-		//Check user login, if not redirect user to login page
 		if(!isset($_SESSION['use']))
 		{
 			header("Location: DTD_LOGIN.php");
 		}
-		//Display welcome message by th retrieved user name
 		echo "Welcome " . $_SESSION['use']. "| ";
 	?>
 	<a id="signinImage" href="signOUT.php">Sign Out<img id="loginImage" border="0" src="image/login.png" alt="Sign Out"></a></p>
@@ -60,7 +67,6 @@
 
 <h1>Thai Restaurants in Singapore</h1>
 <?php
-//Retrive restaurant information to be display
 error_reporting(0);
 require('connectDTD.php');
 
@@ -72,11 +78,13 @@ while($rows=mysql_fetch_array($getquery))
 	$resdetail=$rows['resdetail'];
 	$resimage=$rows['resimage'];
 	
-
+	//$reslink="<a href=\"promotionDetailsPage.php?id=" . $id . "\"> Click </a>";	
 	
 	echo '<div class="restaurantPage">';
 	echo '<p class="restaurantTitle">'.$resname.'</p>';
+	//echo $link.'<img src="data:image/jpeg;base64,'.base64_encode($image).'"/></a>';
 	echo '<img src="data:image/jpeg;base64,'.base64_encode($resimage).'"/>';
+	//echo '</br></br>';
 	echo '<p>' . $resdetail . '</p>';
 	echo '</div>';
 

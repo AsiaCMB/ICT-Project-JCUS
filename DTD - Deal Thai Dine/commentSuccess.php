@@ -9,7 +9,7 @@
 
 <link rel="stylesheet" type="text/css" href="css/homepage.css">
 <link rel="stylesheet" type="text/css" href="css/promotionNavBar.css">
-<link rel="stylesheet" type="text/css" href="css/promotionPage.css">
+<link rel="stylesheet" type="text/css" href="css/promotionDetails.css">
 <link rel="stylesheet" type="text/css" href="css/otherSocMed.css">
 <link rel="stylesheet" type="text/css" href="css/otherFooter.css">
 
@@ -31,8 +31,7 @@
 		}
 		echo "Welcome " . $_SESSION['use']. "| ";
 	?>
-	<a id="signinImage" href="signOUT.php">Sign Out<img id="loginImage" border="0" src="image/login.png" alt="Sing Out"></a>
-	/<a id="registImage" href="sellerForm.php">Submit Promotion</a></p>
+	<a id="signinImage" href="signOUT.php">Sign Out<img id="loginImage" border="0" src="image/login.png" alt="Sign Out"></a></p>
 </div>
 
 <!-- logo and search button section -->
@@ -44,62 +43,29 @@
 	</form>
 </div>
 
+
 <!-- navigation bar -->
 <div id='cssmenu' class='align-center'>
 <ul>
-   <li><a href='sellerPage.php'><img id="homeImage" border="0" src="image/home2.png" alt="home"><span>Home</span></a></li>
-   <li><a href='sellerRestaurantPage.php'><img id="restoImage" border="0" src="image/resto.png" alt="Thai Resto"><span>Thai Resto</span></a></li>
-   <li class='active'><a href='sellerPromotionAllPage.php'><img id="promotionImage" border="0" src="image/promotion.png" alt="Promotion"><span>Promotion</span></a></li>
+   <li><a href='buyerPage.php'><img id="homeImage" border="0" src="image/home2.png" alt="home"><span>Home</span></a></li>
+   <li><a href='buyerRestaurantPage.php'><img id="restoImage" border="0" src="image/resto.png" alt="Thai Resto"><span>Thai Resto</span></a></li>
+   <li class='active'><a href='buyerPromotionAllPage.php'><img id="promotionImage" border="0" src="image/promotion.png" alt="Promotion"><span>Promotion</span></a></li>
    <li><a href='#'><img id="careerImage" border="0" src="image/career.png" alt="Career"><span>Career</span></a></li>
-   <li class='last'><a href='sellerAboutUsPage.php'><img id="aboutImage" border="0" src="image/about.png" alt="About"><span>About Us</span></a></li>
+   <li class='last'><a href='buyerAboutUsPage.php'><img id="aboutImage" border="0" src="image/about.png" alt="About"><span>About Us</span></a></li>
 </ul>
 </div>
 
+<div align=center class="commentSection"> <h1> Comment Success! </h1> </div>
 
-<h1>Hot Deals</h1>
-<?php
-error_reporting(0);
-require('connectDTD.php');
-
-$getquery=mysql_query("SELECT * FROM seller ORDER BY id DESC");
-while($rows=mysql_fetch_array($getquery))
-{
-	$id=$rows['id'];
-	$proname=$rows['proname'];
-	$proimage=$rows['proimage'];
-	$proprice=$rows['proprice'];
-	$nomprice=$rows['nomprice'];
-	$save = $nomprice - $proprice;
-	$disprice= ($save/$nomprice)*100;
-	
-	//$reslink="<a href=\"promotionDetailsPage.php?id=" . $id . "\"> Click </a>";	
-	$link="<a href=\"sellerPromotionDetailsPage.php?id=" . $id . "\">";
-	echo '<div class="promotionPage">';
-	echo $link.'<img src="data:image/jpeg;base64,'.base64_encode($proimage).'"/></a>';
-	echo $link.'<h2>'. $proname . '</h2></a>';
-	//echo '</br></br>';
-	echo '<p class="discount">Discount <span style="font-weight:900;">'. $disprice .'%</span> Off</p>';
-	echo '<p class="price">Price <span style="font-weight:900;">$'. $proprice.'</span></p>';
-	echo '</div>';
-
-}
-?>
-<!--
-<div class="promotionPage">
-	<a href="#"><img src="image/promo.jpg" alt="Promotion Image"></a>
-	<h2><a href='#'>Title Goes Here</a></h2>
-	<p class="discount">Discount <span style="font-weight:900;">90%</span> Off</p>
-	<p class="price">Price <span style="font-weight:900;">$$$</span></p>
-</div>-->
 
 <!-- footer -->
 <div class="footer">
 	<hr></hr>
 	<div id="footerLink">
 		<ul>
-	   		<li><a href='sellerAboutUsPage.php'><span>About</span></a></li>
-	   		<li><a href='sellerHelpPage.php'><span>Help</span></a></li>
-	   		<li><a href='sellerContactUsPage.php'><span>Contact</span></a></li>
+	   		<li><a href='buyerAboutUsPage.php'><span>About</span></a></li>
+	   		<li><a href='buyerHelpPage.php'><span>Help</span></a></li>
+	   		<li><a href='buyerContactUsPage.php'><span>Contact</span></a></li>
 	   		<li><a href='#'><span>Career</span></a></li>
 	   		<li><a id="fbLink" href='#'><img id="fb" border="0" src="image/fb1.png" alt="Facebook Fan Page" height="40px"></a>
 				<a id="twitterLink" href='#'><img id="twitter" border="0" src="image/twitter1.png" alt="Twitter" height="40px"></a>

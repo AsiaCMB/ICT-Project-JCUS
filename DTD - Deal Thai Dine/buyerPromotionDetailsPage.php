@@ -9,6 +9,7 @@
 <script type="text/javascript" src="script/stickNavBar.js"></script>
 
 <link rel="stylesheet" type="text/css" href="css/homepage.css">
+<link rel="stylesheet" type="text/css" href="css/commentForm.css">
 <link rel="stylesheet" type="text/css" href="css/promotionNavBar.css">
 <link rel="stylesheet" type="text/css" href="css/promotionDetails.css">
 <link rel="stylesheet" type="text/css" href="css/otherSocMed.css">
@@ -113,6 +114,7 @@ while($rows=mysql_fetch_assoc($getquery))
 ?>
 
 <div class="commentSection" >
+	<p><span style="font-weight:900; text-decoration:underline;">Customers: Review</span></p>
 	<form id="commentForm" action="buyerPromotionDetailsPage.php" method="POST">
 		<textarea rows="4" name="comment" form="commentForm" placeholder="Enter Review Here...." class="text"></textarea></br>
 		<input type="submit" name="submit" value="Submit" class="commentSubmit">

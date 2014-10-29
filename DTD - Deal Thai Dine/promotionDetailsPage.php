@@ -102,6 +102,7 @@ while($rows=mysql_fetch_assoc($getquery))
 ?>
 
 <div class="commentSection" >
+	<p><span style="font-weight:900; text-decoration:underline;">Customers: Review</span></p>
 
 		<p>
 			<?php

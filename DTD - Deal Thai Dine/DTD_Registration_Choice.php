@@ -1,50 +1,104 @@
 <?php
 error_reporting(0);
 require('connectDTD.php');
-$usertype=$_POST['usertype'];
-$userfname=$_POST['userfname'];
-$userlname=$_POST['userlname'];
-$useremail=$_POST['useremail'];
-$userpass=$_POST['userpass'];
-$usercp=$_POST['usercp'];
-$dealAccept=$_POST['dealAccept'];
-$submit=$_POST['submit'];
-$cfpolicy=$_POST['cfpolicy'];
+$resname=$_POST['resname'];
+$resdetail=$_POST['resdetail'];
+$usertypeS="Seller";
+$userfnameS=$_POST['userfnameS'];
+$userlnameS=$_POST['userlnameS'];
+$useremailS=$_POST['useremailS'];
+$userpassS=$_POST['userpassS'];
+$usercpS=$_POST['usercpS'];
+$dealAcceptS=$_POST['dealAcceptS'];
+$submitS=$_POST['submitS'];
+$cfpolicyS=$_POST['cfpolicyS'];
 
+
+
+$usertypeB="Buyer";
+$userfnameB=$_POST['userfnameB'];
+$userlnameB=$_POST['userlnameB'];
+$useremailB=$_POST['useremailB'];
+$userpassB=$_POST['userpassB'];
+$usercpB=$_POST['usercpB'];
+$dealAcceptB=$_POST['dealAcceptB'];
+$submitB=$_POST['submitB'];
+$cfpolicyB=$_POST['cfpolicyB'];
 
 function phpAlert($msg) {
     echo '<script type="text/javascript">alert("' . $msg . '")</script>';
 }
 
 
-if($submit)
+if($submitS)
 {
-  if($usertype&&$userfname&&$userlname&&$useremail&&$userpass&&$usercp)
+  if($userfnameS&&$userlnameS&&$useremailS&&$userpassS&&$usercpS&&$resname&&$resdetail)
   {
-    $query = mysql_query("SELECT * FROM user WHERE useremail='$useremail'");
+    $query = mysql_query("SELECT * FROM user WHERE useremail='$useremailS'");
     $numrow = mysql_num_rows($query);
     
     if($numrow != 0)
       {
         while($row = mysql_fetch_assoc($query))
         {
-          $useremail = $row['useremail'];
+          $useremailS = $row['useremail'];
           phpAlert("This email has already been used!");    
         }  
       }
       else
       {
-        if($userpass!=$usercp)
+        if($userpassS!=$usercpS)
         {
           phpAlert("The confirmation password is not match!");
         }
-        elseif ($cfpolicy != 'on') 
+        elseif ($cfpolicyS != 'on') 
         {
           phpAlert("Please accept the term of use and policy!");
         }
         else
         {
-          $insert=mysql_query("INSERT INTO user (userfname, userlname, useremail, userpass, usertype, dealAccept) VALUES ('$userfname','$userlname','$useremail','$userpass', '$usertype', '$dealAccept')");
+          $insert=mysql_query("INSERT INTO user (userfname, userlname, useremail, userpass, usertype, dealAccept) VALUES ('$userfnameS','$userlnameS','$useremailS','$userpassS', '$usertypeS', '$dealAcceptS')");
+          $insert2=mysql_query("INSERT INTO seller (resname, resdetail) VALUES ('$resname', '$resdetail')");
+          phpAlert("Successfully register!");
+          header("Location: DTD_LOGIN.php");
+        }
+    }
+  }
+  else
+  {
+    phpAlert("Please fill out all the necessary details!");
+  }
+}
+
+
+if($submitB)
+{
+  if($userfnameB&&$userlnameB&&$useremailB&&$userpassB&&$usercpB)
+  {
+    $query = mysql_query("SELECT * FROM user WHERE useremail='$useremailB'");
+    $numrow = mysql_num_rows($query);
+    
+    if($numrow != 0)
+      {
+        while($row = mysql_fetch_assoc($query))
+        {
+          $useremailB = $row['useremail'];
+          phpAlert("This email has already been used!");    
+        }  
+      }
+      else
+      {
+        if($userpassB!=$usercpB)
+        {
+          phpAlert("The confirmation password is not match!");
+        }
+        elseif ($cfpolicyB != 'on') 
+        {
+          phpAlert("Please accept the term of use and policy!");
+        }
+        else
+        {
+          $insert=mysql_query("INSERT INTO user (userfname, userlname, useremail, userpass, usertype, dealAccept) VALUES ('$userfnameB','$userlnameB','$useremailB','$userpassB', '$usertypeB', '$dealAcceptB')");
           phpAlert("Successfully register!");
           header("Location: DTD_LOGIN.php");
         }
@@ -145,40 +199,40 @@ $(document).ready(function(){
   </tr>
   <tr>
     <td><b>First Name:</b></td>
-    <td><input name="userfname" type="text" size="30" class="text"/>
+    <td><input name="userfnameS" type="text" size="30" class="text"/>
       *</td>
   </tr>
   <tr>
     <td><b>Last Name :</b></td>
-    <td><input name="userlname" type="text" size="30" class="text"/>
+    <td><input name="userlnameS" type="text" size="30" class="text"/>
       *</td>
   </tr>
   <tr>
     <td><b>Email :</b></td>
-    <td><input name="useremail" type="email" size="30" class="text"/>
+    <td><input name="useremailS" type="email" size="30" class="text"/>
       *</td>
   </tr>
   <tr>
     <td><b>Password :</b></td>
     <td>
-      <input name="userpass" type="password" class="text" />
+      <input name="userpassS" type="password" class="text" />
       *</td>
   </tr>
   <tr>
     <td><b>Comfirm Password :</b></td>
-    <td><input name="usercp" type="password" class="text"/>
+    <td><input name="usercpS" type="password" class="text"/>
       *</td>
   </tr>
   <tr>
     <td width="154"><b>Register As:</b></td>
-    <td><input name="usertype" type="text" size="30" disabled class="text" value="Seller"></td>
+    <td><input name="usertypeS" type="text" size="30" disabled class="text" value="Seller"></td>
   </tr>
   <tr>
     <td>
        <b>Receive Deal Alerts:</b>
     </td>
     <td>
-      <select size="1" name="dealAccept" class="dropDeal">
+      <select size="1" name="dealAcceptS" class="dropDeal">
     <option value="Yes">Yes</option>
     <option value="No">No</option>  
     </td>
@@ -186,58 +240,60 @@ $(document).ready(function(){
   <tr>
     <td colspan="2">
       I agree to the Terms of Use and Privacy Policy
-    <input type="checkbox" name="cfpolicy" id="checkbox2" />
+    <input type="checkbox" name="cfpolicyS" id="checkbox2" />
     </td>
   </tr>
   <tr>
     <td></td>
     <td>
-    <input type="submit" name="submit" value="Register" class="btn" />
+    <input type="submit" name="submitS" value="Register" class="btn" />
     <input type="reset" value="Reset" class="btn" />
     </td>
   </tr>
 </table>
 </form>
 
-<!--Register as buyer -->
+
+
+<!-- Register as buyer -->
 <form aciton="registerTest.php" method="POST" id="formBuyer">
 <table cellspacing="2">
   <tr>
     <td><b>First Name:</b></td>
-    <td><input name="userfname" type="text" size="30" class="text"/>
+    <td><input name="userfnameB" type="text" size="30" class="text"/>
       *</td>
   </tr>
   <tr>
     <td><b>Last Name :</b></td>
-    <td><input name="userlname" type="text" size="30" class="text"/>
+    <td><input name="userlnameB" type="text" size="30" class="text"/>
       *</td>
   </tr>
   <tr>
     <td><b>Email :</b></td>
-    <td><input name="useremail" type="email" size="30" class="text"/>
+    <td><input name="useremailB" type="email" size="30" class="text"/>
       *</td>
   </tr>
   <tr>
     <td><b>Password :</b></td>
     <td>
-      <input name="userpass" type="password" class="text" />
+      <input name="userpassB" type="password" class="text" />
       *</td>
   </tr>
   <tr>
     <td><b>Comfirm Password :</b></td>
-    <td><input name="usercp" type="password" class="text"/>
+    <td><input name="usercpB" type="password" class="text"/>
       *</td>
   </tr>
   <tr>
     <td width="154"><b>Register As:</b></td>
-    <td><input name="usertype" type="text" size="30" disabled class="text" value="Buyer"></td>
+    <td><input name="usertypeB" type="text" size="30" disabled class="text" value="Buyer"></td>
   </tr>
   <tr>
     <td>
        <b>Receive Deal Alerts:</b>
     </td>
     <td>
-      <select size="1" name="dealAccept" class="dropDeal">
+      <select size="1" name="dealAcceptB" class="dropDeal">
     <option value="Yes">Yes</option>
     <option value="No">No</option>  
     </td>
@@ -245,20 +301,18 @@ $(document).ready(function(){
   <tr>
     <td colspan="2">
       I agree to the Terms of Use and Privacy Policy
-    <input type="checkbox" name="cfpolicy" id="checkbox2" />
+    <input type="checkbox" name="cfpolicyB" id="checkbox2" />
     </td>
   </tr>
   <tr>
     <td></td>
     <td>
-    <input type="submit" name="submit" value="Register" class="btn" />
+    <input type="submit" name="submitB" value="Register" class="btn" />
     <input type="reset" value="Reset" class="btn" />
     </td>
   </tr>
 </table>
 </form>
-
-
 
 </div>
 <!-- footer -->

@@ -29,10 +29,10 @@
 		{
 			header("Location: DTD_LOGIN.php");
 		}
-		echo "Welcome " . $_SESSION['use']. "| ";
-	?> 
-	<a id="signinImage" href="signOUT.php">Sign Out<img id="loginImage" border="0" src="image/login.png" alt="Sing Out"></a>
-	/<a id="registImage" href="proForm.php">Submit Promotion</a></p>
+		echo 'Welcome <a id="configImage" href="buyerSettings.php">' . $_SESSION['use']. '<img id="settingsImage" border="0" src="image/settings.png" alt="settings"></a>';
+		echo '| ';
+	?>
+	<a id="signinImage" href="signOUT.php">Sign Out<img id="loginImage" border="0" src="image/login.png" alt="Sign Out"></a></p>
 </div>
 
 <!-- logo and search button section -->
@@ -47,11 +47,11 @@
 <!-- navigation bar -->
 <div id='cssmenu' class='align-center'>
 <ul>
-   <li><a href='sellerPage.php'><img id="homeImage" border="0" src="image/home2.png" alt="home"><span>Home</span></a></li>
-   <li><a href='sellerRestaurantPage.php'><img id="restoImage" border="0" src="image/resto.png" alt="Thai Resto"><span>Thai Resto</span></a></li>
-   <li class='active'><a href='sellerPromotionAllPage.php'><img id="promotionImage" border="0" src="image/promotion.png" alt="Promotion"><span>Promotion</span></a></li>
+   <li><a href='buyerPage.php'><img id="homeImage" border="0" src="image/home2.png" alt="home"><span>Home</span></a></li>
+   <li><a href='buyerRestaurantPage.php'><img id="restoImage" border="0" src="image/resto.png" alt="Thai Resto"><span>Thai Resto</span></a></li>
+   <li class='active'><a href='buyerPromotionAllPage.php'><img id="promotionImage" border="0" src="image/promotion.png" alt="Promotion"><span>Promotion</span></a></li>
    <li><a href='#'><img id="careerImage" border="0" src="image/career.png" alt="Career"><span>Career</span></a></li>
-   <li class='last'><a href='sellerAboutUsPage.php'><img id="aboutImage" border="0" src="image/about.png" alt="About"><span>About Us</span></a></li>
+   <li class='last'><a href='buyeraboutUsPage.php'><img id="aboutImage" border="0" src="image/about.png" alt="About"><span>About Us</span></a></li>
 </ul>
 </div>
 
@@ -85,7 +85,7 @@ while($rows=mysql_fetch_array($getquery))
 	$disprice= ($save/$nomprice)*100;
 	
 	//$reslink="<a href=\"promotionDetailsPage.php?id=" . $id . "\"> Click </a>";	
-	$link="<a href=\"sellerPromotionDetailsPage.php?id=" . $id . "\">";
+	$link="<a href=\"buyerPromotionDetailsPage.php?id=" . $id . "\">";
 	echo '<div class="promotionPage">';
 	echo $link.'<img src="data:image/jpeg;base64,'.base64_encode($proimage).'"/></a>';
 	echo $link.'<h2>'. $proname . '</h2></a>';
@@ -110,9 +110,9 @@ while($rows=mysql_fetch_array($getquery))
 	<hr></hr>
 	<div id="footerLink">
 		<ul>
-	   		<li><a href='sellerAboutUsPage.php'><span>About</span></a></li>
-	   		<li><a href='sellerHelpPage.php'><span>Help</span></a></li>
-	   		<li><a href='sellerContactUsPage.php'><span>Contact</span></a></li>
+	   		<li><a href='buyerAboutUsPage.php'><span>About</span></a></li>
+	   		<li><a href='buyerHelpPage.php'><span>Help</span></a></li>
+	   		<li><a href='buyerContactUsPage.php'><span>Contact</span></a></li>
 	   		<li><a href='#'><span>Career</span></a></li>
 	   		<li><a id="fbLink" href='#'><img id="fb" border="0" src="image/fb1.png" alt="Facebook Fan Page" height="40px"></a>
 				<a id="twitterLink" href='#'><img id="twitter" border="0" src="image/twitter1.png" alt="Twitter" height="40px"></a>

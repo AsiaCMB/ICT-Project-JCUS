@@ -4,18 +4,18 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Deal Thai Dine</title>
+<link rel="shortcut icon" href="icon.ico" />
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script type="text/javascript" src="script/stickNavBar.js"></script>
 
 <link rel="stylesheet" type="text/css" href="css/homepage.css">
-<link rel="stylesheet" type="text/css" href="css/promotionNavBar.css">
-<link rel="stylesheet" type="text/css" href="css/promotionPage.css">
+<link rel="stylesheet" type="text/css" href="css/footerNavBar.css">
+<link rel="stylesheet" type="text/css" href="css/settingsForm.css">
 <link rel="stylesheet" type="text/css" href="css/otherSocMed.css">
 <link rel="stylesheet" type="text/css" href="css/otherFooter.css">
-
 </head>
 
-<body background="image/bgImage.jpg" onload="LoadGmaps()" onunload="GUnload()">
+<body background="image/bgImage.jpg">
 
 <!-- subscribe email, sign up and register section -->
 <div class="signupParent"> 
@@ -29,11 +29,12 @@
 		{
 			header("Location: DTD_LOGIN.php");
 		}
-		echo 'Welcome <a id="configImage" href="sellerSettings.php">' . $_SESSION['use']. '<img id="settingsImage" border="0" src="image/settings.png" alt="settings"></a>';
+		echo 'Welcome <a id="configImage" href="#">' . $_SESSION['use']. '<img id="settingsImage" border="0" src="image/settings.png" alt="settings"></a>';
 		echo '| ';
 	?>
-	<a id="signinImage" href="signOUT.php">Sign Out<img id="loginImage" border="0" src="image/login.png" alt="Sing Out"></a>
+	<a id="signinImage" href="signOUT.php">Sign Out<img id="loginImage" border="0" src="image/login.png" alt="Sign Out"></a>
 	/<a id="registImage" href="sellerForm.php">Submit Promotion</a></p>
+
 </div>
 
 <!-- logo and search button section -->
@@ -50,48 +51,64 @@
 <ul>
    <li><a href='sellerPage.php'><img id="homeImage" border="0" src="image/home2.png" alt="home"><span>Home</span></a></li>
    <li><a href='sellerRestaurantPage.php'><img id="restoImage" border="0" src="image/resto.png" alt="Thai Resto"><span>Thai Resto</span></a></li>
-   <li class='active'><a href='sellerPromotionAllPage.php'><img id="promotionImage" border="0" src="image/promotion.png" alt="Promotion"><span>Promotion</span></a></li>
+   <li><a href='sellerPromotionAllPage.php'><img id="promotionImage" border="0" src="image/promotion.png" alt="Promotion"><span>Promotion</span></a></li>
    <li><a href='#'><img id="careerImage" border="0" src="image/career.png" alt="Career"><span>Career</span></a></li>
-   <li class='last'><a href='sellerAboutUsPage.php'><img id="aboutImage" border="0" src="image/about.png" alt="About"><span>About Us</span></a></li>
+   <li><a href='sellerAboutUsPage.php'><img id="aboutImage" border="0" src="image/about.png" alt="About"><span>About Us</span></a></li>
 </ul>
 </div>
 
-
-<h1>Hot Deals</h1>
-<?php
-error_reporting(0);
-require('connectDTD.php');
-
-$getquery=mysql_query("SELECT * FROM seller ORDER BY id DESC");
-while($rows=mysql_fetch_array($getquery))
-{
-	$id=$rows['id'];
-	$proname=$rows['proname'];
-	$proimage=$rows['proimage'];
-	$proprice=$rows['proprice'];
-	$nomprice=$rows['nomprice'];
-	$save = $nomprice - $proprice;
-	$disprice= ($save/$nomprice)*100;
-	
-	//$reslink="<a href=\"promotionDetailsPage.php?id=" . $id . "\"> Click </a>";	
-	$link="<a href=\"sellerPromotionDetailsPage.php?id=" . $id . "\">";
-	echo '<div class="promotionPage">';
-	echo $link.'<img src="data:image/jpeg;base64,'.base64_encode($proimage).'"/></a>';
-	echo $link.'<h2>'. $proname . '</h2></a>';
-	//echo '</br></br>';
-	echo '<p class="discount">Discount <span style="font-weight:900;">'. $disprice .'%</span> Off</p>';
-	echo '<p class="price">Price <span style="font-weight:900;">$'. $proprice.'</span></p>';
-	echo '</div>';
-
-}
-?>
-<!--
-<div class="promotionPage">
-	<a href="#"><img src="image/promo.jpg" alt="Promotion Image"></a>
-	<h2><a href='#'>Title Goes Here</a></h2>
-	<p class="discount">Discount <span style="font-weight:900;">90%</span> Off</p>
-	<p class="price">Price <span style="font-weight:900;">$$$</span></p>
-</div>-->
+<h1>Account Settings</h1>
+<div class="userSettings">
+	<form method="POST">
+		<table cellspacing="2">
+		  <tr>
+		    <td><b>Restaurant Name:</b></td>
+		    <td><input name="resname" type="text" size="30" class="text"/></td>
+		  </tr>
+		  <tr>
+		    <td><b>Restaurant Description:</b></td>
+		    <td><textarea name="resdetail" cols="55" rows="4" class="textArea"></textarea></td>
+		  </tr>
+		  <tr>
+		    <td><b>First Name:</b></td>
+		    <td><input name="userfname" type="text" size="30" class="text"/></td>
+		  </tr>
+		  <tr>
+		    <td><b>Last Name :</b></td>
+		    <td><input name="userlname" type="text" size="30" class="text"/></td>
+		  </tr>
+		  <tr>
+		    <td><b>Email :</b></td>
+		    <td><input name="useremail" type="email" size="30" class="text"/></td>
+		  </tr>
+		  <tr>
+		    <td><b>Old Password :</b></td>
+		    <td>
+		      <input name="useroldpass" type="password" class="text" /></td>
+		  </tr>
+		  <tr>
+		    <td><b>New Password :</b></td>
+		    <td>
+		      <input name="usernewpass" type="password" class="text" /></td>
+		  </tr>
+		  <tr>
+		    <td><b>Confirm New Password :</b></td>
+		    <td><input name="usercnp" type="password" class="text"/></td>
+		  </tr>
+		  <tr>
+		    <td width="154"><b>Register As:</b></td>
+		    <td><input name="usertype" type="text" size="30" disabled class="text" value="Seller"></td>
+		  </tr>
+		  <tr>
+		    <td></td>
+		    <td>
+		    <input type="submit" name="submit" value="Submit" class="btn" />
+		    <input type="reset" value="Cancel" class="btn" />
+		    </td>
+		  </tr>
+		</table>
+	</form>
+</div>
 
 <!-- footer -->
 <div class="footer">

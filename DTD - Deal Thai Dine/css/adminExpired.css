@@ -43,8 +43,8 @@ table td{
 	border-width:0px 1px 1px 0px;
 	text-align:left;
 	padding:10px;
-	font-size:10px;
-	font-family:Arial;
+	font-size:12px;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
 	font-weight:normal;
 	color:#000000;
 }
@@ -67,7 +67,7 @@ table td{
 	text-align:center;
 	border-width:0px 0px 1px 1px;
 	font-size:14px;
-	font-family:Arial;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
 	font-weight:bold;
 	color:#ffffff;
 }

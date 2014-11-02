@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -50,7 +52,33 @@
 			<tr><br>
 				<td>Username</td>
 				<td>E-mail</td>
+				<td>User Type</td>
+				<td>Send Message</td>
+				<td></td>
 			</tr>
+
+			<?php
+			error_reporting(0);
+			require('connectDTD.php');
+
+			$getquery=mysql_query("SELECT * FROM user ORDER BY usertype ASC");
+			while($rows=mysql_fetch_array($getquery))
+			{
+				$id=$rows['id'];
+				$userfname=$rows['userfname'];
+				$userlname=$rows['userlname'];
+				$useremail=$rows['useremail'];
+				$usertype=$rows['usertype'];
+
+				echo '<tr>';
+				echo '<td>'. $userfname .' '. $userlname .'</td>';
+				echo '<td>'. $useremail .'</td>';
+				echo '<td>'. $usertype .'</td>';
+				echo '<td><a href="#">Send Message</a></td>';
+				echo '<td><input type="submit" name="delete" value="Deactivate"/></td>';
+				echo '</tr>';
+			}
+			?>
 		</table>
 	</form>
 </div>

@@ -9,16 +9,10 @@
 <script type="text/javascript" src="script/stickNavBar.js"></script>
 
 <link rel="stylesheet" type="text/css" href="css/homepage.css">
-<link rel="stylesheet" type="text/css" href="css/commentForm.css">
-<link rel="stylesheet" type="text/css" href="css/aboutUs.css">
-<link rel="stylesheet" type="text/css" href="css/aboutusNavBar.css">
+<link rel="stylesheet" type="text/css" href="css/settingsForm.css">
+<link rel="stylesheet" type="text/css" href="css/footerNavBar.css">
 <link rel="stylesheet" type="text/css" href="css/otherSocMed.css">
 <link rel="stylesheet" type="text/css" href="css/otherFooter.css">
-
-<link rel="stylesheet" type="text/css" href="engine1/style.css" />
-<style type="text/css">a#vlb{display:none}</style>
-<script type="text/javascript" src="engine1/jquery.js"></script>
-<script type="text/javascript" src="engine1/wowslider.js"></script>
 </head>
 
 <body background="image/bgImage.jpg">
@@ -35,9 +29,9 @@
 		{
 			header("Location: DTD_LOGIN.php");
 		}
-		echo 'Welcome <a id="configImage" href="buyerSettings.php">' . $_SESSION['use']. '<img id="settingsImage" border="0" src="image/settings.png" alt="settings"></a>';
+		echo 'Welcome <a id="configImage" href="#">' . $_SESSION['use']. '<img id="settingsImage" border="0" src="image/settings.png" alt="settings"></a>';
 		echo '| ';
-	?>
+	?> 
 	<a id="signinImage" href="signOUT.php">Sign Out<img id="loginImage" border="0" src="image/login.png" alt="Sign Out"></a></p>
 </div>
 
@@ -57,25 +51,54 @@
    <li><a href='buyerRestaurantPage.php'><img id="restoImage" border="0" src="image/resto.png" alt="Thai Resto"><span>Thai Resto</span></a></li>
    <li><a href='buyerPromotionAllPage.php'><img id="promotionImage" border="0" src="image/promotion.png" alt="Promotion"><span>Promotion</span></a></li>
    <li><a href='#'><img id="careerImage" border="0" src="image/career.png" alt="Career"><span>Career</span></a></li>
-   <li class='active'><a href='buyerAboutUsPage.php'><img id="aboutImage" border="0" src="image/about.png" alt="About"><span>About Us</span></a></li>
+   <li><a href='buyerAboutUsPage.php'><img id="aboutImage" border="0" src="image/about.png" alt="About"><span>About Us</span></a></li>
 </ul>
 </div>
 
-<div class="aboutUsContent">
-	<p id="aboutUsTitle"><span style="font-weight:900;">About Us</span></p>
-	<p>Established in 2010, DEAL.com.sg has since transformed to become Singapore’s Number One online shopping platform, offering  what you’d love to have at the best price.
- 
-	Reaching out to thousands of our customers daily, DEAL constantly seeks better ways and bargains to satisfy savvy shoppers like you!
- 
-	DEAL remains unrivalled in providing both customers and merchants with the experiences you never knew you could get in Singapore. We cherish the remarkable partnerships we have with our merchants and take pride in passing the great savings directly to our valued customers.
- 
-	At zero risk, our reputable merchants gain new customers through these partnerships, recognizing the benefits of being featured on DEAL.com.sg. The invincible DEALGuru welcomes you to check us out on Facebook  and follow @DEALGuruSG  to interact with us!
- 
- 
-	Interested in being featured on DEAL.com.sg?
-	Click here to get to know more about how you can be the next best selling deal!</p>
+<h1>Account Settings</h1>
+<div class="userSettings">
+	<form method="POST">
+		<table cellspacing="2">
+		  <tr>
+		    <td><b>First Name:</b></td>
+		    <td><input name="userfname" type="text" size="30" class="text"/></td>
+		  </tr>
+		  <tr>
+		    <td><b>Last Name :</b></td>
+		    <td><input name="userlname" type="text" size="30" class="text"/></td>
+		  </tr>
+		  <tr>
+		    <td><b>Email :</b></td>
+		    <td><input name="useremail" type="email" size="30" class="text"/></td>
+		  </tr>
+		  <tr>
+		    <td><b>Old Password :</b></td>
+		    <td>
+		      <input name="useroldpass" type="password" class="text" /></td>
+		  </tr>
+		  <tr>
+		    <td><b>New Password :</b></td>
+		    <td>
+		      <input name="usernewpass" type="password" class="text" /></td>
+		  </tr>
+		  <tr>
+		    <td><b>Confirm New Password :</b></td>
+		    <td><input name="usercnp" type="password" class="text"/></td>
+		  </tr>
+		  <tr>
+		    <td width="154"><b>Register As:</b></td>
+		    <td><input name="usertype" type="text" size="30" disabled class="text" value="Buyer"></td>
+		  </tr>
+		  <tr>
+		    <td></td>
+		    <td>
+		    <input type="submit" name="submit" value="Submit" class="btn" />
+		    <input type="reset" value="Cancel" class="btn" />
+		    </td>
+		  </tr>
+		</table>
+	</form>
 </div>
-<br>
 
 <!-- footer -->
 <div class="footer">

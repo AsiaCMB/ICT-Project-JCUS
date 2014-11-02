@@ -34,7 +34,8 @@
 		{
 			header("Location: DTD_LOGIN.php");
 		}
-		echo "Welcome " . $_SESSION['use']. "| ";
+		echo 'Welcome <a id="configImage" href="sellerSettings.php">' . $_SESSION['use']. '<img id="settingsImage" border="0" src="image/settings.png" alt="settings"></a>';
+		echo '| ';
 	?>
 
 	<a id="signinImage" href="signOUT.php">Sign Out<img id="loginImage" border="0" src="image/login.png" alt="Sing Out"></a>

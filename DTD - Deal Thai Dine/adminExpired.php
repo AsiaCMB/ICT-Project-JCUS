@@ -53,6 +53,24 @@
 				<td>End Date</td>
 				<td>Expired Status</td>
 			</tr>
+			<?php
+			error_reporting(0);
+			require('connectDTD.php');
+
+			$getquery=mysql_query("SELECT * FROM seller ORDER BY id ASC");
+			while($rows=mysql_fetch_array($getquery))
+			{
+				$id=$rows['id'];
+				$proname=$rows['proname'];
+
+				echo '<tr>';
+				echo '<td>'. $proname .'</td>';
+				echo '<td></td>';
+				echo '<td></td>';
+				echo '<td></td>';
+				echo '</tr>';
+			}
+			?>
 		</table>
 	</form>
 </div>

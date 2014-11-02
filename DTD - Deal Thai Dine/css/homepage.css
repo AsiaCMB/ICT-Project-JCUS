@@ -39,7 +39,7 @@ html {
 	box-shadow: 0 0 10px #FF8D8D; 
 }
 /*login image position*/
-#loginImage, #signinImage, #registImage, #registerImage{
+#loginImage, #signinImage, #registImage, #registerImage, #settingsImage, #configImage{
 	position: relative;
 	height: 15px;
 	width: 15px;
@@ -52,7 +52,7 @@ html {
     transition: all 0.5s ease;
 }
 /*login image hover effect*/
-#loginImage:hover, #signinImage:hover, #registImage:hover, #registerImage:hover{
+#loginImage:hover, #signinImage:hover, #registImage:hover, #registerImage:hover , #settingsImage:hover, #configImage:hover{
 	border-radius: 50%;
 	-webkit-transform: rotate(360deg);
     -moz-transform: rotate(360deg);

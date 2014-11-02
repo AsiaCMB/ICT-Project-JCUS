@@ -44,10 +44,12 @@
 </ul>
 </div>
 
+<h1>Deals' Report</h1>
+
 <div class="report">
 	<form>
 		<table cellspacing="2">
-			<tr><br>
+			<tr>
 				<td>Promotion</td>
 				<td>Start Date</td>
 				<td>End Date</td>
@@ -57,6 +59,29 @@
 				<td>Profit</td>
 				<td>Debt to Seller</td>
 			</tr>
+			<?php
+			error_reporting(0);
+			require('connectDTD.php');
+
+			$getquery=mysql_query("SELECT * FROM seller ORDER BY id ASC");
+			while($rows=mysql_fetch_array($getquery))
+			{
+				$id=$rows['id'];
+				$proname=$rows['proname'];
+				$proprice=$rows['proprice'];
+
+				echo '<tr>';
+				echo '<td>'. $proname .'</td>';
+				echo '<td></td>';
+				echo '<td></td>';
+				echo '<td></td>';
+				echo '<td>$'. $proprice .'</td>';
+				echo '<td></td>';
+				echo '<td></td>';
+				echo '<td></td>';
+				echo '</tr>';
+			}
+			?>
 		</table>
 	</form>
 </div>

@@ -1,7 +1,7 @@
 <?php session_start(); ?>
 <?php
 error_reporting(1);
-require('connectDTD.php');
+require('connectDTD2.php');
 $useremail=$_POST['useremail'];
 $userpass=$_POST['userpass'];
 $submit=$_POST['submit'];
@@ -90,7 +90,7 @@ function phpAlert($msg)
 	</form>
 	<p id="welcome">Welcome to Deal Thai Dine. 
 	<a id="signinImage" href="DTD_LOGIN.php">Sign In<img id="loginImage" border="0" src="image/login.png" alt="Login Here"></a>
-	/<a id="registImage" href="DTD_Registration.php">Register <img id="registerImage" border="0" src="image/register.png" alt="Register Here"> </a></p>
+	/<a id="registImage" href="DTD_Registration_Choice.php">Register <img id="registerImage" border="0" src="image/register.png" alt="Register Here"> </a></p>
 </div>
 
 <!-- logo and search button section -->

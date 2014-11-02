@@ -1,9 +1,13 @@
 <?php
 error_reporting(0);
-require('connectDTD.php');
+require('connectDTD2.php');
 $resname=$_POST['resname'];
 $resdetail=$_POST['resdetail'];
+$resimage= addslashes(file_get_contents($_FILES['resimage']['tmp_name']));
+$resimagetype= getimagesize($_FILES['resimage']['tmp_name']);
+$resimgtype= $resimagetype['mime'];
 $usertypeS="Seller";
+$resuser=$_POST['userfnameS'];
 $userfnameS=$_POST['userfnameS'];
 $userlnameS=$_POST['userlnameS'];
 $useremailS=$_POST['useremailS'];
@@ -58,7 +62,8 @@ if($submitS)
         else
         {
           $insert=mysql_query("INSERT INTO user (userfname, userlname, useremail, userpass, usertype, dealAccept) VALUES ('$userfnameS','$userlnameS','$useremailS','$userpassS', '$usertypeS', '$dealAcceptS')");
-          $insert2=mysql_query("INSERT INTO seller (resname, resdetail) VALUES ('$resname', '$resdetail')");
+          $insert2=mysql_query("INSERT INTO restaurant (resuser, resname, resdetail, resimage, resimgtype) VALUES ('$resuser', '$resname', '$resdetail','$resimage','$resimgtype')");
+          $uploadres=move_uploaded_file($resimgtype,'userimage/'.$resimage);
           phpAlert("Successfully register!");
           header("Location: DTD_LOGIN.php");
         }
@@ -185,7 +190,7 @@ $(document).ready(function(){
 
 
 <!-- Register as seller -->
-<form aciton="registerTest.php" method="POST" id="formSeller">
+<form enctype="multipart/form-data" action="DTD_Registration_Choice.php" method="POST" id="formSeller">
 <table cellspacing="2">
   <tr>
     <td><b>Restaurant Name:</b></td>
@@ -196,6 +201,11 @@ $(document).ready(function(){
     <td><b>Restaurant Description:</b></td>
     <td><textarea name="resdetail" cols="55" rows="4" class="textArea"></textarea>
       *</td>
+  </tr>
+  <tr>
+    <td><b>Restaurant Image:</b></td>
+    <td><input name="resimage" type="file" class="numberPos" />
+      </td>
   </tr>
   <tr>
     <td><b>First Name:</b></td>
@@ -256,7 +266,7 @@ $(document).ready(function(){
 
 
 <!-- Register as buyer -->
-<form aciton="registerTest.php" method="POST" id="formBuyer">
+<form aciton="DTD_Registration_Choice.php" method="POST" id="formBuyer">
 <table cellspacing="2">
   <tr>
     <td><b>First Name:</b></td>

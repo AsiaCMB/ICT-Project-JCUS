@@ -91,8 +91,8 @@
 <div class="banner">
 	<p id="banner1">Restaurant</p>
 	<?php
-	require('connectDTD.php');
-	$getquery=mysql_query("SELECT * FROM seller LIMIT 3");
+	require('connectDTD2.php');
+	$getquery=mysql_query("SELECT * FROM restaurant LIMIT 3");
 
 	while($rows=mysql_fetch_assoc($getquery))
 	{
@@ -100,8 +100,8 @@
 		$resname=$rows['resname'];
 		$resdetail=$rows['resdetail'];
 		$resimage=$rows['resimage'];
-		$location=$rows['location'];
-		$contactno=$rows['contactno'];
+		//$location=$rows['location'];
+		//$contactno=$rows['contactno'];
 
 		
 		echo '<div class="homeBanner homeBanner-image">';  
@@ -122,18 +122,18 @@
 	<p id="banner1">Promotion</p>
 	
 	<?php
-	require('connectDTD.php');
-	$getquery=mysql_query("SELECT * FROM seller LIMIT 3");
+	require('connectDTD2.php');
+	$getquery=mysql_query("SELECT * FROM promotion LIMIT 3");
 
 	while($rows=mysql_fetch_assoc($getquery))
 	{
 		$id=$rows['id'];
-		$resname=$rows['resname'];
-		$resdetail=$rows['resdetail'];
+		//$resname=$rows['resname'];
+		//$resdetail=$rows['resdetail'];
 		$proname=$rows['proname'];
 		$proimage=$rows['proimage'];
-		$location=$rows['location'];
-		$contactno=$rows['contactno'];
+		//$location=$rows['location'];
+		//$contactno=$rows['contactno'];
 
 		
 		echo '<div class="homeBanner homeBanner-image">';  

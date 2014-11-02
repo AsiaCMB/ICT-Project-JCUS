@@ -1,4 +1,3 @@
-<?php session_start(); ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -25,7 +24,7 @@
 	</form>
 	<p id="welcome">Welcome to Deal Thai Dine. 
 	<a id="signinImage" href="DTD_LOGIN.php">Sign In<img id="loginImage" border="0" src="image/login.png" alt="Login Here"></a>
-	/<a id="registImage" href="DTD_Registration.php">Register <img id="registerImage" border="0" src="image/register.png" alt="Register Here"> </a></p>
+	/<a id="registImage" href="DTD_Registration_Choice.php">Register <img id="registerImage" border="0" src="image/register.png" alt="Register Here"> </a></p>
 </div>
 
 <!-- logo and search button section -->
@@ -52,9 +51,9 @@
 <h1>Thai Restaurants in Singapore</h1>
 <?php
 error_reporting(0);
-require('connectDTD.php');
+require('connectDTD2.php');
 
-$getquery=mysql_query("SELECT * FROM seller ORDER BY id DESC");
+$getquery=mysql_query("SELECT * FROM restaurant ORDER BY id DESC");
 while($rows=mysql_fetch_array($getquery))
 {
 	$id=$rows['id'];
@@ -62,12 +61,12 @@ while($rows=mysql_fetch_array($getquery))
 	$resdetail=$rows['resdetail'];
 	$resimage=$rows['resimage'];
 	
-	//$reslink="<a href=\"promotionDetailsPage.php?id=" . $id . "\"> Click </a>";	
+	$reslink="<a href=\"restaurantPro.php?resname=" . $resname . "\">";	
 	
 	echo '<div class="restaurantPage">';
 	echo '<p class="restaurantTitle">'.$resname.'</p>';
 	//echo $link.'<img src="data:image/jpeg;base64,'.base64_encode($image).'"/></a>';
-	echo '<img src="data:image/jpeg;base64,'.base64_encode($resimage).'"/>';
+	echo $reslink. '<img src="data:image/jpeg;base64,'.base64_encode($resimage).'"/> </a>';
 	//echo '</br></br>';
 	echo '<p>' . $resdetail . '</p>';
 	echo '</div>';

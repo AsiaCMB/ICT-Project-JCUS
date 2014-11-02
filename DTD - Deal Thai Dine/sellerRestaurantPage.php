@@ -33,7 +33,7 @@
 		echo '| ';
 	?>
 	<a id="signinImage" href="signOUT.php">Sign Out<img id="loginImage" border="0" src="image/login.png" alt="Sing Out"></a>
-	/<a id="registImage" href="sellerForm.php">Submit Promotion</a></p>
+	/<a id="registImage" href="proForm.php">Submit Promotion</a></p>
 </div>
 
 <!-- logo and search button section -->
@@ -60,9 +60,9 @@
 <h1>Thai Restaurants in Singapore</h1>
 <?php
 error_reporting(0);
-require('connectDTD.php');
+require('connectDTD2.php');
 
-$getquery=mysql_query("SELECT * FROM seller ORDER BY id DESC");
+$getquery=mysql_query("SELECT * FROM restaurant ORDER BY id DESC");
 while($rows=mysql_fetch_array($getquery))
 {
 	$id=$rows['id'];
@@ -70,12 +70,12 @@ while($rows=mysql_fetch_array($getquery))
 	$resdetail=$rows['resdetail'];
 	$resimage=$rows['resimage'];
 	
-	//$reslink="<a href=\"promotionDetailsPage.php?id=" . $id . "\"> Click </a>";	
+	$reslink="<a href=\"sellerRestaurantPro.php?resname=" . $resname . "\">";	
 	
 	echo '<div class="restaurantPage">';
 	echo '<p class="restaurantTitle">'.$resname.'</p>';
 	//echo $link.'<img src="data:image/jpeg;base64,'.base64_encode($image).'"/></a>';
-	echo '<img src="data:image/jpeg;base64,'.base64_encode($resimage).'"/>';
+	echo $reslink. '<img src="data:image/jpeg;base64,'.base64_encode($resimage).'"/> </a>';
 	//echo '</br></br>';
 	echo '<p>' . $resdetail . '</p>';
 	echo '</div>';

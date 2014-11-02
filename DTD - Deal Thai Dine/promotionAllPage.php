@@ -24,7 +24,7 @@
 	</form>
 	<p id="welcome">Welcome to Deal Thai Dine. 
 	<a id="signinImage" href="DTD_LOGIN.php">Sign In<img id="loginImage" border="0" src="image/login.png" alt="Login Here"></a>
-	/<a id="registImage" href="DTD_Registration.php">Register <img id="registerImage" border="0" src="image/register.png" alt="Register Here"> </a></p>
+	/<a id="registImage" href="DTD_Registration_Choice.php">Register <img id="registerImage" border="0" src="image/register.png" alt="Register Here"> </a></p>
 </div>
 
 <!-- logo and search button section -->
@@ -51,9 +51,9 @@
 <h1>Hot Deals</h1>
 <?php
 error_reporting(0);
-require('connectDTD.php');
+require('connectDTD2.php');
 
-$getquery=mysql_query("SELECT * FROM seller ORDER BY id DESC");
+$getquery=mysql_query("SELECT * FROM promotion ORDER BY id DESC");
 while($rows=mysql_fetch_array($getquery))
 {
 	$id=$rows['id'];
@@ -70,7 +70,7 @@ while($rows=mysql_fetch_array($getquery))
 	echo $link.'<img src="data:image/jpeg;base64,'.base64_encode($proimage).'"/></a>';
 	echo $link.'<h2>'. $proname . '</h2></a>';
 	//echo '</br></br>';
-	echo '<p class="discount">Discount <span style="font-weight:900;">'. $disprice .'%</span> Off</p>';
+	echo '<p class="discount">Discount <span style="font-weight:900;">'. round($disprice,2) .'%</span> Off</p>';
 	echo '<p class="price">Price <span style="font-weight:900;">$'. $proprice.'</span></p>';
 	echo '</div>';
 

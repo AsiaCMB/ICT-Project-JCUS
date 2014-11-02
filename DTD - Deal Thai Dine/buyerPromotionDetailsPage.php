@@ -9,7 +9,6 @@
 <script type="text/javascript" src="script/stickNavBar.js"></script>
 
 <link rel="stylesheet" type="text/css" href="css/homepage.css">
-<link rel="stylesheet" type="text/css" href="css/commentForm.css">
 <link rel="stylesheet" type="text/css" href="css/promotionNavBar.css">
 <link rel="stylesheet" type="text/css" href="css/promotionDetails.css">
 <link rel="stylesheet" type="text/css" href="css/otherSocMed.css">
@@ -60,18 +59,18 @@
 <!-- Promotion Details -->
 <?php
 error_reporting(0);
-require('connectDTD.php');
+require('connectDTD2.php');
 $sellerID=$_GET['id'];
-$getquery=mysql_query("SELECT * FROM seller WHERE id='$sellerID'");
+$getquery=mysql_query("SELECT * FROM promotion WHERE id='$sellerID'");
 
 while($rows=mysql_fetch_assoc($getquery))
 {
 	$id=$rows['id'];
-	$resname=$rows['resname'];
-	$resdetail=$rows['resdetail'];
 	$proimage=$rows['proimage'];
 	$proprice=$rows['proprice'];
 	$nomprice=$rows['nomprice'];
+	$prostart=$rows['prostart'];
+	$proend=$rows['proend'];
 	$highlights=$rows['highlights'];
 	$conditions=$rows['conditions'];
 	$location=$rows['location'];
@@ -85,10 +84,11 @@ while($rows=mysql_fetch_assoc($getquery))
 	echo '<img src="data:image/jpeg;base64,'.base64_encode($proimage).'"/>';
 	echo '<div class="promotionPriceSide">';
 	echo '<img src="image/home2.png">';
+	echo '<p><span style="font-weight:900;">Available till '.$proend.'</span></p>';
 	echo '<p><span style="font-weight:900;">Promotion Price $'. $proprice.'</span></p>';
 	echo '<p>Normal Price $'. $nomprice.'</p>';
 	echo '<p>Save $'.$save.'</p>';
-	echo '<p><span style="font-weight:900;">'. $discount.'% Off</span></p>';
+	echo '<p><span style="font-weight:900;">'. round($discount,2).'% Off</span></p>';
 	echo '<form action="#">';
 	echo '<input class="submitBtn" type="submit" value="Buy...!!!">';
 	echo '</form>';
@@ -115,7 +115,6 @@ while($rows=mysql_fetch_assoc($getquery))
 ?>
 
 <div class="commentSection" >
-	<p><span style="font-weight:900; text-decoration:underline;">Customers: Review</span></p>
 	<form id="commentForm" action="buyerPromotionDetailsPage.php" method="POST">
 		<textarea rows="4" name="comment" form="commentForm" placeholder="Enter Review Here...." class="text"></textarea></br>
 		<input type="submit" name="submit" value="Submit" class="commentSubmit">
@@ -124,7 +123,7 @@ while($rows=mysql_fetch_assoc($getquery))
 
 		<?php
 		error_reporting(0);
-		require('connectDTD.php');
+		require('connectDTD2.php');
 		$name=$_SESSION['use'];
 		$comment=$_POST['comment'];
 		$submit=$_POST['submit'];	
@@ -147,7 +146,7 @@ while($rows=mysql_fetch_assoc($getquery))
 		?>
 
 		<p>
-			<?php
+			<p><span style="font-weight:900; text-decoration:underline;">Customers: Review</span></p>			<?php
 			$ID=$_GET['id'];
 			$getquery=mysql_query("SELECT * FROM comment WHERE proID='$ID' ORDER BY id DESC");			
 			while($rows=mysql_fetch_assoc($getquery))

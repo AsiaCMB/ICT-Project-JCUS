@@ -9,7 +9,7 @@
 
 <link rel="stylesheet" type="text/css" href="css/homepage.css">
 <link rel="stylesheet" type="text/css" href="css/promotionNavBar.css">
-<link rel="stylesheet" type="text/css" href="css/promotionDetails.css">
+<link rel="stylesheet" type="text/css" href="css/promotionPage.css">
 <link rel="stylesheet" type="text/css" href="css/otherSocMed.css">
 <link rel="stylesheet" type="text/css" href="css/otherFooter.css">
 
@@ -43,7 +43,6 @@
 	</form>
 </div>
 
-
 <!-- navigation bar -->
 <div id='cssmenu' class='align-center'>
 <ul>
@@ -51,21 +50,60 @@
    <li><a href='buyerRestaurantPage.php'><img id="restoImage" border="0" src="image/resto.png" alt="Thai Resto"><span>Thai Resto</span></a></li>
    <li class='active'><a href='buyerPromotionAllPage.php'><img id="promotionImage" border="0" src="image/promotion.png" alt="Promotion"><span>Promotion</span></a></li>
    <li><a href='#'><img id="careerImage" border="0" src="image/career.png" alt="Career"><span>Career</span></a></li>
-   <li class='last'><a href='buyerAboutUsPage.php'><img id="aboutImage" border="0" src="image/about.png" alt="About"><span>About Us</span></a></li>
+   <li class='last'><a href='buyeraboutUsPage.php'><img id="aboutImage" border="0" src="image/about.png" alt="About"><span>About Us</span></a></li>
 </ul>
 </div>
 
-<div align=center class="commentSection"> 
-	<h1> Comment Success! </h1> 
-	<button onclick="goBack()">Go Back</button>
+<?php
+error_reporting(0);
+require('connectDTD2.php');
+$resname=$_GET['resname'];
+$getquery=mysql_query("SELECT * FROM promotion WHERE resname='$resname' ORDER BY id DESC");
+if($rows=mysql_fetch_array($getquery))
+{
+	$resuser=$rows['resname'];
+	echo '<h1>'. $resname .': Hot deals</h1>';
 
-</div>
-
-<script>
-function goBack() {
-    window.history.back()
 }
-</script>
+?>
+
+<?php
+error_reporting(0);
+require('connectDTD2.php');
+$resname=$_GET['resname'];
+$getquery=mysql_query("SELECT * FROM promotion WHERE resname='$resname' ORDER BY id DESC");
+while($rows=mysql_fetch_array($getquery))
+{
+	$id=$rows['id'];
+	$resuser=$rows['resname'];
+	$proname=$rows['proname'];
+	$proimage=$rows['proimage'];
+	$proprice=$rows['proprice'];
+	$nomprice=$rows['nomprice'];
+	$save = $nomprice - $proprice;
+	$disprice= ($save/$nomprice)*100;
+	
+	//$reslink="<a href=\"promotionDetailsPage.php?id=" . $id . "\"> Click </a>";	
+	$link="<a href=\"buyerPromotionDetailsPage.php?id=" . $id . "\">";
+	echo '<div class="promotionPage">';
+	echo $link.'<img src="data:image/jpeg;base64,'.base64_encode($proimage).'"/></a>';
+	echo $link.'<h2>'. $proname . '</h2></a>';
+	//echo '</br></br>';
+	echo '<p class="discount">Discount <span style="font-weight:900;">'. round($disprice,2) .'%</span> Off</p>';
+	echo '<p class="price">Price <span style="font-weight:900;">$'. $proprice.'</span></p>';
+	echo '</div>';
+
+}
+
+?>
+<!--
+<div class="promotionPage">
+	<a href="#"><img src="image/promo.jpg" alt="Promotion Image"></a>
+	<h2><a href='#'>Title Goes Here</a></h2>
+	<p class="discount">Discount <span style="font-weight:900;">90%</span> Off</p>
+	<p class="price">Price <span style="font-weight:900;">$$$</span></p>
+</div>-->
+
 <!-- footer -->
 <div class="footer">
 	<hr></hr>

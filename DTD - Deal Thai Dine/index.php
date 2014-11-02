@@ -29,7 +29,7 @@
 	</form>
 	<p id="welcome">Welcome to Deal Thai Dine. 
 	<a id="signinImage" href="DTD_LOGIN.php">Sign In<img id="loginImage" border="0" src="image/login.png" alt="Login Here"></a>
-	/<a id="registImage" href="DTD_Registration.php">Register <img id="registerImage" border="0" src="image/register.png" alt="Register Here"> </a></p>
+	/<a id="registImage" href="DTD_Registration_Choice.php">Register <img id="registerImage" border="0" src="image/register.png" alt="Register Here"> </a></p>
 </div>
 
 <!-- logo and search button section -->
@@ -83,8 +83,8 @@
 <div class="banner">
 	<p id="banner1">Restaurant</p>
 	<?php
-	require('connectDTD.php');
-	$getquery=mysql_query("SELECT * FROM seller LIMIT 3");
+	require('connectDTD2.php');
+	$getquery=mysql_query("SELECT * FROM restaurant LIMIT 3");
 
 	while($rows=mysql_fetch_assoc($getquery))
 	{
@@ -92,8 +92,8 @@
 		$resname=$rows['resname'];
 		$resdetail=$rows['resdetail'];
 		$resimage=$rows['resimage'];
-		$location=$rows['location'];
-		$contactno=$rows['contactno'];
+		//$location=$rows['location'];
+		//$contactno=$rows['contactno'];
 
 		
 		echo '<div class="homeBanner homeBanner-image">';  
@@ -114,18 +114,18 @@
 	<p id="banner1">Promotion</p>
 	
 	<?php
-	require('connectDTD.php');
-	$getquery=mysql_query("SELECT * FROM seller LIMIT 3");
+	require('connectDTD2.php');
+	$getquery=mysql_query("SELECT * FROM promotion LIMIT 3");
 
 	while($rows=mysql_fetch_assoc($getquery))
 	{
 		$id=$rows['id'];
-		$resname=$rows['resname'];
-		$resdetail=$rows['resdetail'];
+		//$resname=$rows['resname'];
+		//$resdetail=$rows['resdetail'];
 		$proname=$rows['proname'];
 		$proimage=$rows['proimage'];
-		$location=$rows['location'];
-		$contactno=$rows['contactno'];
+		//$location=$rows['location'];
+		//$contactno=$rows['contactno'];
 
 		
 		echo '<div class="homeBanner homeBanner-image">';  

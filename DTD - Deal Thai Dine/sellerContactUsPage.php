@@ -68,7 +68,7 @@
 		echo '| ';
 	?> 
 	<a id="signinImage" href="signOUT.php">Sign Out<img id="loginImage" border="0" src="image/login.png" alt="Sing Out"></a>
-	/<a id="registImage" href="sellerForm.php">Submit Promotion</a></p>
+	/<a id="registImage" href="proForm.php">Submit Promotion</a></p>
 </div>
 
 <!-- logo and search button section -->

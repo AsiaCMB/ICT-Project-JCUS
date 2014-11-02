@@ -58,7 +58,7 @@ else
 <div id='cssmenu' class='align-center'>
 <ul>
    <li><a href='buyerPage.php'><img id="homeImage" border="0" src="image/home2.png" alt="home"><span>Home</span></a></li>
-   <li class='active'><a href='buyerRestaurantPage.html'><img id="restoImage" border="0" src="image/resto.png" alt="Thai Resto"><span>Thai Resto</span></a></li>
+   <li class='active'><a href='buyerRestaurantPage.php'><img id="restoImage" border="0" src="image/resto.png" alt="Thai Resto"><span>Thai Resto</span></a></li>
    <li><a href='buyerPromotionAllPage.php'><img id="promotionImage" border="0" src="image/promotion.png" alt="Promotion"><span>Promotion</span></a></li>
    <li><a href='#'><img id="careerImage" border="0" src="image/career.png" alt="Career"><span>Career</span></a></li>
    <li class='last'><a href='buyerAboutUsPage.php'><img id="aboutImage" border="0" src="image/about.png" alt="About"><span>About Us</span></a></li>
@@ -69,9 +69,9 @@ else
 <h1>Thai Restaurants in Singapore</h1>
 <?php
 error_reporting(0);
-require('connectDTD.php');
+require('connectDTD2.php');
 
-$getquery=mysql_query("SELECT * FROM seller ORDER BY id DESC");
+$getquery=mysql_query("SELECT * FROM restaurant ORDER BY id DESC");
 while($rows=mysql_fetch_array($getquery))
 {
 	$id=$rows['id'];
@@ -79,12 +79,12 @@ while($rows=mysql_fetch_array($getquery))
 	$resdetail=$rows['resdetail'];
 	$resimage=$rows['resimage'];
 	
-	//$reslink="<a href=\"promotionDetailsPage.php?id=" . $id . "\"> Click </a>";	
+	$reslink="<a href=\"buyerRestaurantPro.php?resname=" . $resname . "\">";	
 	
 	echo '<div class="restaurantPage">';
 	echo '<p class="restaurantTitle">'.$resname.'</p>';
 	//echo $link.'<img src="data:image/jpeg;base64,'.base64_encode($image).'"/></a>';
-	echo '<img src="data:image/jpeg;base64,'.base64_encode($resimage).'"/>';
+	echo $reslink. '<img src="data:image/jpeg;base64,'.base64_encode($resimage).'"/> </a>';
 	//echo '</br></br>';
 	echo '<p>' . $resdetail . '</p>';
 	echo '</div>';

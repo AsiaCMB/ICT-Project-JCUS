@@ -24,7 +24,7 @@
 	</form>
 	<p id="welcome">Welcome to Deal Thai Dine.
 	<a id="signinImage" href="DTD_LOGIN.php">Sign In<img id="loginImage" border="0" src="image/login.png" alt="Login Here"></a>
-	/<a id="registImage" href="DTD_Registration.php">Register <img id="registerImage" border="0" src="image/register.png" alt="Register Here"> </a></p>
+	/<a id="registImage" href="DTD_Registration_Choice.php">Register <img id="registerImage" border="0" src="image/register.png" alt="Register Here"> </a></p>
 </div>
 
 <!-- logo and search button section -->
@@ -49,18 +49,18 @@
 
 <!-- Promotion Details -->
 <?php
-require('connectDTD.php');
+require('connectDTD2.php');
 $sellerID=$_GET['id'];
-$getquery=mysql_query("SELECT * FROM seller WHERE id='$sellerID'");
+$getquery=mysql_query("SELECT * FROM promotion WHERE id='$sellerID'");
 
 while($rows=mysql_fetch_assoc($getquery))
 {
 	$id=$rows['id'];
-	$resname=$rows['resname'];
-	$resdetail=$rows['resdetail'];
 	$proimage=$rows['proimage'];
 	$proprice=$rows['proprice'];
 	$nomprice=$rows['nomprice'];
+	$prostart=$rows['prostart'];
+	$proend=$rows['proend'];
 	$highlights=$rows['highlights'];
 	$conditions=$rows['conditions'];
 	$location=$rows['location'];
@@ -74,10 +74,11 @@ while($rows=mysql_fetch_assoc($getquery))
 	echo '<img src="data:image/jpeg;base64,'.base64_encode($proimage).'"/>';
 	echo '<div class="promotionPriceSide">';
 	echo '<img src="image/home2.png">';
+	echo '<p><span style="font-weight:900;">Available till '.$proend.'</span></p>';
 	echo '<p><span style="font-weight:900;">Promotion Price $'. $proprice.'</span></p>';
 	echo '<p>Normal Price $'. $nomprice.'</p>';
 	echo '<p>Save $'.$save.'</p>';
-	echo '<p><span style="font-weight:900;">'. $discount.'% Off</span></p>';
+	echo '<p><span style="font-weight:900;">'. round($discount,2).'% Off</span></p>';
 	echo '<form action="#">';
 	echo '<input class="submitBtn" type="submit" value="Buy...!!!">';
 	echo '</form>';
@@ -102,8 +103,7 @@ while($rows=mysql_fetch_assoc($getquery))
 ?>
 
 <div class="commentSection" >
-	<p><span style="font-weight:900; text-decoration:underline;">Customers: Review</span></p>
-
+	<p><span style="font-weight:900; text-decoration:underline;">Customers: Review</span></p>		
 		<p>
 			<?php
 			$ID=$_GET['id'];

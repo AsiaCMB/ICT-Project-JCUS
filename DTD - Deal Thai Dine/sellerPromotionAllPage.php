@@ -33,7 +33,7 @@
 		echo '| ';
 	?>
 	<a id="signinImage" href="signOUT.php">Sign Out<img id="loginImage" border="0" src="image/login.png" alt="Sing Out"></a>
-	/<a id="registImage" href="sellerForm.php">Submit Promotion</a></p>
+	/<a id="registImage" href="proForm.php">Submit Promotion</a></p>
 </div>
 
 <!-- logo and search button section -->
@@ -60,9 +60,9 @@
 <h1>Hot Deals</h1>
 <?php
 error_reporting(0);
-require('connectDTD.php');
+require('connectDTD2.php');
 
-$getquery=mysql_query("SELECT * FROM seller ORDER BY id DESC");
+$getquery=mysql_query("SELECT * FROM promotion ORDER BY id DESC");
 while($rows=mysql_fetch_array($getquery))
 {
 	$id=$rows['id'];
@@ -79,7 +79,7 @@ while($rows=mysql_fetch_array($getquery))
 	echo $link.'<img src="data:image/jpeg;base64,'.base64_encode($proimage).'"/></a>';
 	echo $link.'<h2>'. $proname . '</h2></a>';
 	//echo '</br></br>';
-	echo '<p class="discount">Discount <span style="font-weight:900;">'. $disprice .'%</span> Off</p>';
+	echo '<p class="discount">Discount <span style="font-weight:900;">'. round($disprice,2) .'%</span> Off</p>';
 	echo '<p class="price">Price <span style="font-weight:900;">$'. $proprice.'</span></p>';
 	echo '</div>';
 

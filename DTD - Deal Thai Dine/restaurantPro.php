@@ -1,4 +1,3 @@
-<?php session_start(); ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -23,16 +22,9 @@
 		<input type="text" name="subsemail" placeholder="Enter Your Email Here...">
 		<input type="button" value="Subscribe">
 	</form>
-	<p id="welcome">
-		<?php 
-		if(!isset($_SESSION['use']))
-		{
-			header("Location: DTD_LOGIN.php");
-		}
-		echo 'Welcome <a id="configImage" href="buyerSettings.php">' . $_SESSION['use']. '<img id="settingsImage" border="0" src="image/settings.png" alt="settings"></a>';
-		echo '| ';
-	?>	
-	<a id="signinImage" href="signOUT.php">Sign Out<img id="loginImage" border="0" src="image/login.png" alt="Sign Out"></a></p>
+	<p id="welcome">Welcome to Deal Thai Dine. 
+	<a id="signinImage" href="DTD_LOGIN.php">Sign In<img id="loginImage" border="0" src="image/login.png" alt="Login Here"></a>
+	/<a id="registImage" href="DTD_Registration_Choice.php">Register <img id="registerImage" border="0" src="image/register.png" alt="Register Here"> </a></p>
 </div>
 
 <!-- logo and search button section -->
@@ -47,24 +39,36 @@
 <!-- navigation bar -->
 <div id='cssmenu' class='align-center'>
 <ul>
-   <li><a href='buyerPage.php'><img id="homeImage" border="0" src="image/home2.png" alt="home"><span>Home</span></a></li>
-   <li><a href='buyerRestaurantPage.php'><img id="restoImage" border="0" src="image/resto.png" alt="Thai Resto"><span>Thai Resto</span></a></li>
-   <li class='active'><a href='buyerPromotionAllPage.php'><img id="promotionImage" border="0" src="image/promotion.png" alt="Promotion"><span>Promotion</span></a></li>
+   <li><a href='index.php'><img id="homeImage" border="0" src="image/home2.png" alt="home"><span>Home</span></a></li>
+   <li><a href='restaurantPage.php'><img id="restoImage" border="0" src="image/resto.png" alt="Thai Resto"><span>Thai Resto</span></a></li>
+   <li class='active'><a href='promotionAllPage.php'><img id="promotionImage" border="0" src="image/promotion.png" alt="Promotion"><span>Promotion</span></a></li>
    <li><a href='#'><img id="careerImage" border="0" src="image/career.png" alt="Career"><span>Career</span></a></li>
-   <li class='last'><a href='buyerAboutUsPage.php'><img id="aboutImage" border="0" src="image/about.png" alt="About"><span>About Us</span></a></li>
+   <li class='last'><a href='aboutUsPage.php'><img id="aboutImage" border="0" src="image/about.png" alt="About"><span>About Us</span></a></li>
 </ul>
 </div>
 
-
-<h1>Hot Deals</h1>
 <?php
 error_reporting(0);
 require('connectDTD2.php');
+$resname=$_GET['resname'];
+$getquery=mysql_query("SELECT * FROM promotion WHERE resname='$resname' ORDER BY id DESC");
+if($rows=mysql_fetch_array($getquery))
+{
+	$resuser=$rows['resname'];
+	echo '<h1>'. $resname .': Hot deals</h1>';
 
-$getquery=mysql_query("SELECT * FROM promotion ORDER BY id DESC");
+}
+?>
+
+<?php
+error_reporting(0);
+require('connectDTD2.php');
+$resname=$_GET['resname'];
+$getquery=mysql_query("SELECT * FROM promotion WHERE resname='$resname' ORDER BY id DESC");
 while($rows=mysql_fetch_array($getquery))
 {
 	$id=$rows['id'];
+	$resuser=$rows['resname'];
 	$proname=$rows['proname'];
 	$proimage=$rows['proimage'];
 	$proprice=$rows['proprice'];
@@ -73,18 +77,18 @@ while($rows=mysql_fetch_array($getquery))
 	$disprice= ($save/$nomprice)*100;
 	
 	//$reslink="<a href=\"promotionDetailsPage.php?id=" . $id . "\"> Click </a>";	
-	$link="<a href=\"buyerPromotionDetailsPage.php?id=" . $id . "\">";
+	$link="<a href=\"promotionDetailsPage.php?id=" . $id . "\">";
 	echo '<div class="promotionPage">';
 	echo $link.'<img src="data:image/jpeg;base64,'.base64_encode($proimage).'"/></a>';
 	echo $link.'<h2>'. $proname . '</h2></a>';
 	//echo '</br></br>';
-	echo '<p class="discount">Discount <span style="font-weight:900;">'. round($disprice,2) .'%</span> Off</p>';
+	echo '<p class="discount">Discount <span style="font-weight:900;">'. $disprice .'%</span> Off</p>';
 	echo '<p class="price">Price <span style="font-weight:900;">$'. $proprice.'</span></p>';
 	echo '</div>';
 
 }
-?>
 
+?>
 <!--
 <div class="promotionPage">
 	<a href="#"><img src="image/promo.jpg" alt="Promotion Image"></a>
@@ -98,9 +102,9 @@ while($rows=mysql_fetch_array($getquery))
 	<hr></hr>
 	<div id="footerLink">
 		<ul>
-	   		<li><a href='buyerAboutUsPage.php'><span>About</span></a></li>
-	   		<li><a href='buyerHelpPage.php'><span>Help</span></a></li>
-	   		<li><a href='buyerContactUsPage.php'><span>Contact</span></a></li>
+	   		<li><a href='aboutUsPage.php'><span>About</span></a></li>
+	   		<li><a href='helpPage.php'><span>Help</span></a></li>
+	   		<li><a href='contactUsPage.php'><span>Contact</span></a></li>
 	   		<li><a href='#'><span>Career</span></a></li>
 	   		<li><a id="fbLink" href='#'><img id="fb" border="0" src="image/fb1.png" alt="Facebook Fan Page" height="40px"></a>
 				<a id="twitterLink" href='#'><img id="twitter" border="0" src="image/twitter1.png" alt="Twitter" height="40px"></a>

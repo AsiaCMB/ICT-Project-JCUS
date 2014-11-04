@@ -40,12 +40,14 @@ function phpAlert($msg)
           if ($usertype == "Seller")
           {
             $_SESSION['use']=$userfname;
+            $_SESSION['email']=$useremail;
             header("Location: sellerPage.php");
 
           }
           else
           {
             $_SESSION['use']=$userfname;
+            $_SESSION['email']=$useremail;
             header("Location: buyerPage.php");
 
           }

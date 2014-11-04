@@ -3,6 +3,7 @@ error_reporting(0);
 require('connectDTD2.php');
 $resname=$_POST['resname'];
 $resdetail=$_POST['resdetail'];
+$reslocation=$_POST['reslocation'];
 $resimage= addslashes(file_get_contents($_FILES['resimage']['tmp_name']));
 $resimagetype= getimagesize($_FILES['resimage']['tmp_name']);
 $resimgtype= $resimagetype['mime'];
@@ -36,7 +37,7 @@ function phpAlert($msg) {
 
 if($submitS)
 {
-  if($userfnameS&&$userlnameS&&$useremailS&&$userpassS&&$usercpS&&$resname&&$resdetail)
+  if($userfnameS&&$userlnameS&&$useremailS&&$userpassS&&$usercpS&&$resname&&$resdetail&&$reslocation)
   {
     $query = mysql_query("SELECT * FROM user WHERE useremail='$useremailS'");
     $numrow = mysql_num_rows($query);
@@ -62,7 +63,7 @@ if($submitS)
         else
         {
           $insert=mysql_query("INSERT INTO user (userfname, userlname, useremail, userpass, usertype, dealAccept) VALUES ('$userfnameS','$userlnameS','$useremailS','$userpassS', '$usertypeS', '$dealAcceptS')");
-          $insert2=mysql_query("INSERT INTO restaurant (resuser, resname, resdetail, resimage, resimgtype) VALUES ('$resuser', '$resname', '$resdetail','$resimage','$resimgtype')");
+          $insert2=mysql_query("INSERT INTO restaurant (resuser, resname, resdetail, resimage, resimgtype, reslocation, useremail) VALUES ('$resuser', '$resname', '$resdetail','$resimage','$resimgtype','$reslocation','$useremailS')");
           $uploadres=move_uploaded_file($resimgtype,'userimage/'.$resimage);
           phpAlert("Successfully register!");
           header("Location: DTD_LOGIN.php");
@@ -200,6 +201,11 @@ $(document).ready(function(){
   <tr>
     <td><b>Restaurant Description:</b></td>
     <td><textarea name="resdetail" cols="55" rows="4" class="textArea"></textarea>
+      *</td>
+  </tr>
+  <tr>
+    <td><b>Restaurant Location: </b></td>
+    <td><input name="reslocation" type="text" size="30" class="text"/>
       *</td>
   </tr>
   <tr>

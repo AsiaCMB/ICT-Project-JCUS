@@ -78,10 +78,9 @@ if($submit)
 
 <!-- subscribe email, sign up and register section -->
 <div class="signupParent"> 
-	<form id="subscribeEmail">
-		<input type="text" name="subsemail" placeholder="Enter Your Email Here...">
-		<input type="button" value="Subscribe">
-	</form>
+  <form id="subscribeEmail">
+    <input type="text" name="subsemail">
+  </form>
 	<p id="welcome">Welcome to Deal Thai Dine. 
 	<a id="signinImage" href="DTD_LOGIN.php">Sign In<img id="loginImage" border="0" src="image/login.png" alt="Login Here"></a>
 	/<a id="registImage" href="DTD_Registration.php">Register <img id="registerImage" border="0" src="image/register.png" alt="Register Here"> </a></p>
@@ -90,10 +89,6 @@ if($submit)
 <!-- logo and search button section -->
 <div class="logoParent">
 	<img id="logoImage" border="0" src="image/logo2.png" alt="Promochan Logo">
-	<form id="findPromo">
-		<input type="text" name="find" placeholder="I'm Looking For...">
-		<input type="button" value="Search">
-	</form>
 </div>
 
 <!-- navigation bar -->

@@ -9,8 +9,8 @@
 <script type="text/javascript" src="script/stickNavBar.js"></script>
 
 <link rel="stylesheet" type="text/css" href="css/homepage.css">
-<link rel="stylesheet" type="text/css" href="css/footerNavBar.css">
-<link rel="stylesheet" type="text/css" href="css/settingsForm.css">
+<link rel="stylesheet" type="text/css" href="css/careerPage.css">
+<link rel="stylesheet" type="text/css" href="css/careerPageNavBar.css">
 <link rel="stylesheet" type="text/css" href="css/otherSocMed.css">
 <link rel="stylesheet" type="text/css" href="css/otherFooter.css">
 </head>
@@ -47,72 +47,53 @@
    <li><a href='sellerPage.php'><img id="homeImage" border="0" src="image/home2.png" alt="home"><span>Home</span></a></li>
    <li><a href='sellerRestaurantPage.php'><img id="restoImage" border="0" src="image/resto.png" alt="Thai Resto"><span>Thai Resto</span></a></li>
    <li><a href='sellerPromotionAllPage.php'><img id="promotionImage" border="0" src="image/promotion.png" alt="Promotion"><span>Promotion</span></a></li>
-   <li><a href='sellerCareerPage.php'><img id="careerImage" border="0" src="image/career.png" alt="Career"><span>Career</span></a></li>
+   <li class='active'><a href='#'><img id="careerImage" border="0" src="image/career.png" alt="Career"><span>Career</span></a></li>
    <li><a href='sellerAboutUsPage.php'><img id="aboutImage" border="0" src="image/about.png" alt="About"><span>About Us</span></a></li>
 </ul>
 </div>
 
-<h1>Account Settings</h1>
-<div class="userSettings">
-	<form method="POST">
-		<table cellspacing="2">
-		  <tr>
-		    <td><b>Restaurant Name:</b></td>
-		    <td><input name="resname" type="text" size="30" class="text"/></td>
-		  </tr>
-		  <tr>
-		    <td><b>Restaurant Description:</b></td>
-		    <td><textarea name="resdetail" cols="55" rows="4" class="textArea"></textarea></td>
-		  </tr>
-		  <tr>
-		    <td><b>First Name:</b></td>
-		    <td><input name="userfname" type="text" size="30" class="text"/></td>
-		  </tr>
-		  <tr>
-		    <td><b>Last Name :</b></td>
-		    <td><input name="userlname" type="text" size="30" class="text"/></td>
-		  </tr>
-		  <tr>
-		    <td><b>Email :</b></td>
-		    <td><input name="useremail" type="email" size="30" class="text"/></td>
-		  </tr>
-		  <tr>
-		    <td><b>Old Password :</b></td>
-		    <td>
-		      <input name="useroldpass" type="password" class="text" /></td>
-		  </tr>
-		  <tr>
-		    <td><b>New Password :</b></td>
-		    <td>
-		      <input name="usernewpass" type="password" class="text" /></td>
-		  </tr>
-		  <tr>
-		    <td><b>Confirm New Password :</b></td>
-		    <td><input name="usercnp" type="password" class="text"/></td>
-		  </tr>
-		  <tr>
-		    <td width="154"><b>Register As:</b></td>
-		    <td><input name="usertype" type="text" size="30" disabled class="text" value="Seller"></td>
-		  </tr>
-		  <tr>
-		    <td></td>
-		    <td>
-		    <input type="submit" name="submit" value="Submit" class="btn" />
-		    <input type="reset" value="Cancel" class="btn" />
-		    </td>
-		  </tr>
-		</table>
-	</form>
-</div>
+	<?php
+	error_reporting(0);
+	require('connectDTD2.php');
+
+	$getquery=mysql_query("SELECT * FROM career ORDER BY id DESC");
+	while($rows=mysql_fetch_array($getquery))
+	{
+		$id=$rows['id'];
+		$resuser=$rows['resuser'];
+		$resname=$rows['resname'];
+		$reslocation=$rows['reslocation'];
+		$jobtitle=$rows['jobtitle'];
+		$jobdescription=$rows['jobdescription'];
+		$requirements=$rows['requirements'];
+		$expyears=$rows['expyears'];
+		$resume=$rows['resume'];
+		$useremail=$rows['useremail'];
+		$jobposition=$rows['jobposition'];
+
+		echo '<div class="career">';
+		echo '<h1>'. $jobtitle .'</h1>';
+		echo '<p><span style="font-weight:900;">'. $resname .'</span></p>';
+		echo '<p><span style="font-weight:900;">Address:</span> '. $reslocation. ', based in Singapore</p>';
+		echo '<p><span style="font-weight:900;">Job Position:</span> '. $jobposition. '</p>';
+		echo '<p><span style="font-weight:900;">Job Description: </span></p>';
+		echo '<p>'. $jobdescription . '</p>';
+		echo '<p><span style="font-weight:900;">Requirements:</span></p>';
+		echo '<p>'. $requirements . '</p>';
+		echo '<p>Minimum '. $expyears . ' year(s) of experience in the same field</p>';
+		echo '<p>If you are interested, please forward your resume to: <span style="font-weight:900;">'. $resume .'</span></p>';
+		echo '</div>';
+	}
+	?>
 
 <!-- footer -->
 <div class="footer">
 	<hr></hr>
 	<div id="footerLink">
 		<ul>
-	   		<li><a href='sellerAboutUsPage.php'><span>About</span></a></li>
-	   		<li><a href='sellerHelpPage.php'><span>Help</span></a></li>
-	   		<li><a href='sellerContactUsPage.php'><span>Contact</span></a></li>
+	   		<li><a href='aboutUsPage.php'><span>About</span></a></li>
+	   		<li><a href='helpPage.php'><span>Help</span></a></li>
+	   		<li><a href='contactUsPage.php'><span>Contact</span></a></li>
 	   		<li><a href='sellerCareerPage.php'><span>Career</span></a></li>
 	   		<li><a id="fbLink" href='#'><img id="fb" border="0" src="image/fb1.png" alt="Facebook Fan Page" height="40px"></a>
 				<a id="twitterLink" href='#'><img id="twitter" border="0" src="image/twitter1.png" alt="Twitter" height="40px"></a>

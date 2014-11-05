@@ -24,10 +24,9 @@
 
 <!-- subscribe email, sign up and register section -->
 <div class="signupParent"> 
-	<form id="subscribeEmail">
-		<input type="text" name="subsemail" placeholder="Enter Your Email Here...">
-		<input type="button" value="Subscribe">
-	</form>
+  <form id="subscribeEmail">
+    <input type="text" name="subsemail">
+  </form>
 	<p id="welcome">
 		<?php 
 		if(!isset($_SESSION['use']))
@@ -42,11 +41,7 @@
 
 <!-- logo and search button section -->
 <div class="logoParent">
-	<img id="logoImage" border="0" src="image/logo2.png" alt="Promochan Logo">
-	<form id="findPromo">
-		<input type="text" name="find" placeholder="I'm Looking For...">
-		<input type="button" value="Search">
-	</form>
+	<a href="buyerPage.php"><img id="logoImage" border="0" src="image/logo2.png" alt="Promochan Logo"></a>
 </div>
 
 <!-- navigation bar -->
@@ -55,7 +50,7 @@
    <li class='active'><a href='#'><img id="homeImage" border="0" src="image/home2.png" alt="home"><span>Home</span></a></li>
    <li><a href='buyerRestaurantPage.php'><img id="restoImage" border="0" src="image/resto.png" alt="Thai Resto"><span>Thai Resto</span></a></li>
    <li><a href='buyerPromotionAllPage.php'><img id="promotionImage" border="0" src="image/promotion.png" alt="Promotion"><span>Promotion</span></a></li>
-   <li><a href='#'><img id="careerImage" border="0" src="image/career.png" alt="Career"><span>Career</span></a></li>
+   <li><a href='buyerCareerPage.php'><img id="careerImage" border="0" src="image/career.png" alt="Career"><span>Career</span></a></li>
    <li class='last'><a href='buyerAboutUsPage.php'><img id="aboutImage" border="0" src="image/about.png" alt="About"><span>About Us</span></a></li>
 </ul>
 </div>
@@ -169,7 +164,7 @@
 	   		<li><a href='buyerAboutUsPage.php'><span>About</span></a></li>
 	   		<li><a href='buyerHelpPage.php'><span>Help</span></a></li>
 	   		<li><a href='buyerContactUsPage.php'><span>Contact</span></a></li>
-	   		<li><a href='#'><span>Career</span></a></li>
+	   		<li><a href='buyerCareerPage.php'><span>Career</span></a></li>
 		</ul>
 	</div>
 	<hr></hr>

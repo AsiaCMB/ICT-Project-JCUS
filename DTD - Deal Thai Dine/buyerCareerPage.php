@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -21,24 +22,31 @@
   <form id="subscribeEmail">
     <input type="text" name="subsemail">
   </form>
-	<p id="welcome">Welcome to Deal Thai Dine. 
-	<a id="signinImage" href="DTD_LOGIN.php">Sign In<img id="loginImage" border="0" src="image/login.png" alt="Login Here"></a>
-	/<a id="registImage" href="DTD_Registration_Choice.php">Register <img id="registerImage" border="0" src="image/register.png" alt="Register Here"> </a></p>
+	<p id="welcome">
+		<?php 
+		if(!isset($_SESSION['use']))
+		{
+			header("Location: DTD_LOGIN.php");
+		}
+		echo 'Welcome <a id="configImage" href="buyerSettings.php">' . $_SESSION['use']. '<img id="settingsImage" border="0" src="image/settings.png" alt="settings"></a>';
+		echo '| ';
+	?> 
+	<a id="signinImage" href="signOUT.php">Sign Out<img id="loginImage" border="0" src="image/login.png" alt="Sing Out"></a>
 </div>
 
 <!-- logo and search button section -->
 <div class="logoParent">
-	<a href="index.php"><img id="logoImage" border="0" src="image/logo2.png" alt="Promochan Logo"></a>
+	<a href="buyerPage.php"><img id="logoImage" border="0" src="image/logo2.png" alt="Promochan Logo"></a>
 </div>
 
 <!-- navigation bar -->
 <div id='cssmenu' class='align-center'>
 <ul>
-   <li><a href='index.php'><img id="homeImage" border="0" src="image/home2.png" alt="home"><span>Home</span></a></li>
-   <li><a href='restaurantPage.php'><img id="restoImage" border="0" src="image/resto.png" alt="Thai Resto"><span>Thai Resto</span></a></li>
-   <li><a href='promotionAllPage.php'><img id="promotionImage" border="0" src="image/promotion.png" alt="Promotion"><span>Promotion</span></a></li>
-   <li class="active"><a href='#'><img id="careerImage" border="0" src="image/career.png" alt="Career"><span>Career</span></a></li>
-   <li><a href='aboutUsPage.php'><img id="aboutImage" border="0" src="image/about.png" alt="About"><span>About Us</span></a></li>
+   <li><a href='buyerPage.php'><img id="homeImage" border="0" src="image/home2.png" alt="home"><span>Home</span></a></li>
+   <li><a href='buyerRestaurantPage.php'><img id="restoImage" border="0" src="image/resto.png" alt="Thai Resto"><span>Thai Resto</span></a></li>
+   <li><a href='buyerPromotionAllPage.php'><img id="promotionImage" border="0" src="image/promotion.png" alt="Promotion"><span>Promotion</span></a></li>
+   <li class='active'><a href='buyerCareerPage.php'><img id="careerImage" border="0" src="image/career.png" alt="Career"><span>Career</span></a></li>
+   <li class='last'><a href='buyerAboutUsPage.php'><img id="aboutImage" border="0" src="image/about.png" alt="About"><span>About Us</span></a></li>
 </ul>
 </div>
 
@@ -81,10 +89,10 @@
 	<hr></hr>
 	<div id="footerLink">
 		<ul>
-	   		<li><a href='aboutUsPage.php'><span>About</span></a></li>
-	   		<li><a href='helpPage.php'><span>Help</span></a></li>
-	   		<li><a href='contactUsPage.php'><span>Contact</span></a></li>
-	   		<li><a href='careerPage.php'><span>Career</span></a></li>
+	   		<li><a href='buyerAboutUsPage.php'><span>About</span></a></li>
+	   		<li><a href='buyerHelpPage.php'><span>Help</span></a></li>
+	   		<li><a href='buyerContactUsPage.php'><span>Contact</span></a></li>
+	   		<li><a href='buyerCareerPage.php'><span>Career</span></a></li>
 	   		<li><a id="fbLink" href='#'><img id="fb" border="0" src="image/fb1.png" alt="Facebook Fan Page" height="40px"></a>
 				<a id="twitterLink" href='#'><img id="twitter" border="0" src="image/twitter1.png" alt="Twitter" height="40px"></a>
 				<a id="youtubeLink" href='#'><img id="youtube" border="0" src="image/youtube1.png" alt="Youtube Channel" height="40px"></a></li>

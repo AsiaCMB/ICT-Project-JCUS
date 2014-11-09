@@ -3,13 +3,15 @@
 <?php
 error_reporting(0);
 require('connectDTD2.php');
+$resname=$POST['resname'];
 $jobtitle=$_POST['jobtitle'];
+$jobposition=$_POST['jobposition'];
 $jobdescription=$_POST['jobdescription'];
 $requirements=$_POST['requirements'];
 $resume=$_POST['resume'];
 $expyears=$_POST['expyears'];
 $submit=$_POST['submit'];
-$jobposition=$_POST['jobposition'];
+
 $useremail=$_SESSION['email'];
 
 function phpAlert($msg) {
@@ -19,11 +21,11 @@ function phpAlert($msg) {
 
 if($submit)
 {
-  if($jobtitle&&$jobdescription&&$requirements&&$resume&&$expyears&&$jobposition)
+  if($jobtitle&&$jobposition&&$jobdescription&&$requirements&&$resume&&$expyears)
   {
-  	$insert=mysql_query("INSERT INTO career (jobtitle, jobposition, jobdescription, requirements, expyears, resume, useremail, resuser, resname, reslocation) SELECT '$jobtitle','$jobposition','$jobdescription','$requirements','$expyears','$resume','$useremail',resuser,resname,reslocation FROM restaurant WHERE useremail='$useremail'");
+  	$insert=mysql_query("INSERT INTO career (resname, jobtitle, jobposition, jobdescription, requirements, expyears, resume) VALUES ('$resname','$jobtitle','$jobposition','$jobdescription','$requirements','$expyears','$resume')");
     phpAlert("Job Vacancy Posted");
-    header("Location: careerPage.php");
+    header("Location: sellerCareerPage.php");
   }
   else
   {
@@ -86,50 +88,67 @@ if($submit)
 </div>
 
 <h1>Job Vacancy Form</h1>
-<div class="jobform">
-	<form method="POST">
-		<table cellspacing="2">
+<?php
+error_reporting(1);
+require('connectDTD2.php');
+$useremail=$_SESSION['email'];
+
+$getquery1=mysql_query("SELECT * FROM restaurant WHERE useremail='$useremail' ORDER BY id DESC");			
+while($rows=mysql_fetch_assoc($getquery1))
+{
+	$resname=$rows['resname'];
+	$uemail=$rows['useremail'];	
+
+echo "<div class='jobform'>
+	<form method='POST'>
+		<table cellspacing='2'>
+		  <tr>
+		    <td><b>Restaurant Name:</b></td>
+		    <td><input name='resname' type='text' size='30' class='text' value='$resname'/>*</td>
+		  </tr>
 		  <tr>
 		    <td><b>Job Vacancy Title:</b></td>
-		    <td><input name="jobtitle" type="text" size="30" class="text"/>*</td>
+		    <td><input name='jobtitle' type='text' size='30' class='text'/>*</td>
 		  </tr>
 		  <tr>
 		    <td><b>Job Position:</b></td>
-		    <td><input name="jobposition" type="text" size="30" class="text"/>*</td>
+		    <td><input name='jobposition' type='text' size='30' class='text'/>*</td>
 		  </tr>
 		  <tr>
 		    <td><b>Job Desciption:</b></td>
-		    <td><textarea name="jobdescription" cols="55" rows="4" class="textArea"></textarea>*</td>
+		    <td><textarea name='jobdescription' cols='55' rows='4' class='textArea'></textarea>*</td>
 		  </tr>
 		  <tr>
 		    <td><b>Requirements:</b></td>
-		    <td><textarea name="requirements" cols="55" rows="4" class="textArea"></textarea>*</td>
+		    <td><textarea name='requirements' cols='55' rows='4' class='textArea'></textarea>*</td>
 		  </tr>
 		  <tr>
 		    <td><b>Minimum Experience Years:</b></td>
-		    <td><select name="expyears" class="dropUser">
-		    	<option value="1">1</option>
-		    	<option value="2">2</option>
-		    	<option value="3">3</option>
-		    	<option value="4">4</option>
-		    	<option value="5">5</option>
+		    <td><select name='expyears' class='dropUser'>
+		    	<option value='1'>1</option>
+		    	<option value='2'>2</option>
+		    	<option value='3'>3</option>
+		    	<option value='4'>4</option>
+		    	<option value='5'>5</option>
 		    </select>*</td>
 		  </tr>
 		  <tr>
 		    <td><b>Resume Send To:</b></td>
 		    <td>
-		      <input name="resume" type="text" class="text" />*</td>
+		      <input name='resume' type='text' class='text' value='$uemail'/>*</td>
 		  </tr>
 		  <tr>
 		    <td></td>
 		    <td>
-		    <input type="submit" name="submit" value="Submit" class="btn" />
-		    <input type="reset" value="Cancel" class="btn" />
+		    <input type='submit' name='submit' value='Submit' class='btn' />
+		    <input type='reset' value='Cancel' class='btn' />
 		    </td>
 		  </tr>
 		</table>
 	</form>
-</div>
+</div>";
+}
+?>
 
 <!-- footer -->
 <div class="footer">

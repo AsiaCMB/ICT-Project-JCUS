@@ -1,14 +1,14 @@
 <?php
-error_reporting(0);
+error_reporting(1);
 require('connectDTD2.php');
 $resname=$_POST['resname'];
 $resdetail=$_POST['resdetail'];
 $reslocation=$_POST['reslocation'];
+$contactno=$_POST['contactno'];
 $resimage= addslashes(file_get_contents($_FILES['resimage']['tmp_name']));
 $resimagetype= getimagesize($_FILES['resimage']['tmp_name']);
 $resimgtype= $resimagetype['mime'];
 $usertypeS="Seller";
-$resuser=$_POST['userfnameS'];
 $userfnameS=$_POST['userfnameS'];
 $userlnameS=$_POST['userlnameS'];
 $useremailS=$_POST['useremailS'];
@@ -63,7 +63,7 @@ if($submitS)
         else
         {
           $insert=mysql_query("INSERT INTO user (userfname, userlname, useremail, userpass, usertype, dealAccept) VALUES ('$userfnameS','$userlnameS','$useremailS','$userpassS', '$usertypeS', '$dealAcceptS')");
-          $insert2=mysql_query("INSERT INTO restaurant (resuser, resname, resdetail, resimage, resimgtype, reslocation, useremail) VALUES ('$resuser', '$resname', '$resdetail','$resimage','$resimgtype','$reslocation','$useremailS')");
+          $insert2=mysql_query("INSERT INTO restaurant (resname, resdetail, reslocation, contactno, resimage, resimgtype) VALUES ('$resname','$resdetail','$reslocation','$contactno','$resimage','$resimgtype')");
           $uploadres=move_uploaded_file($resimgtype,'userimage/'.$resimage);
           phpAlert("Successfully register!");
           header("Location: DTD_LOGIN.php");
@@ -202,6 +202,12 @@ $(document).ready(function(){
     <td><b>Restaurant Location: </b></td>
     <td><input name="reslocation" type="text" size="30" class="text"/>
       *</td>
+  </tr>
+   <tr>
+    <td><b>Contact number:</b></td>
+    <td>
+      <h5 class="numberPos">+65 <input type="tel" name="contactno" pattern="[0-9]{8}" placeholder="8 digits" size="8" class="number" />
+      *</td></h5>
   </tr>
   <tr>
     <td><b>Restaurant Image:</b></td>

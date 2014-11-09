@@ -4,7 +4,7 @@
 error_reporting(0);
 require('connectDTD2.php');
 
-$resuser=$_SESSION['use'];
+$uemail=$_SESSION['email'];
 
 $proname=$_POST['proname'];
 $prodetail=$_POST['prodetail'];
@@ -18,9 +18,6 @@ $proend=$_POST['proend'];
 $highlights=$_POST['highlights'];
 $conditions=$_POST['conditions'];
 
-$location=$_POST['location'];
-$contactno=$_POST['contactno'];
-
 $proimage= addslashes(file_get_contents($_FILES['proimage']['tmp_name']));
 $proimagetype= getimagesize($_FILES['proimage']['tmp_name']);
 $proimgtype= $proimagetype['mime'];
@@ -33,17 +30,17 @@ function phpAlert($msg) {
 
 if($submit)
 {
-  if($proname&&$highlights&&$conditions&&$proprice&&$nomprice&&$prostart&&$proend&&$location&&$contactno)
+  if($proname&&$highlights&&$conditions&&$proprice&&$nomprice&&$prostart&&$proend)
   {   
 
-      $getquery=mysql_query("SELECT * FROM restaurant WHERE resuser ='$resuser' ");
+      $getquery=mysql_query("SELECT * FROM restaurant WHERE useremail ='$uemail' ");
 
       while($rows=mysql_fetch_array($getquery))
       {
         $id=$rows['id'];
         $resname=$rows['resname'];
 
-        $insert=mysql_query("INSERT INTO promotion (resname, proname, highlights, conditions, proprice, nomprice, prostart, proend, location, contactno, proimage, proimgtype) VALUES ('$resname', '$proname', '$highlights', '$conditions', '$proprice', '$nomprice', '$prostart', '$proend', '$location', '$contactno', '$proimage', '$proimgtype')");        
+        $insert=mysql_query("INSERT INTO promotion (resname, proname, highlights, conditions, proprice, nomprice, prostart, proend, proimage, proimgtype) VALUES ('$resname', '$proname', '$highlights', '$conditions', '$proprice', '$nomprice', '$prostart', '$proend', '$proimage', '$proimgtype')");        
         $uploadpro=move_uploaded_file($proimgtype,'userimage/'.$proimage);
         phpAlert("Successfully create page!");
         header("Location: sellerPromotionAllPage.php");  
@@ -151,17 +148,6 @@ if($submit)
       <input name="proend" type="date" class="number"/>
       *</p></td>
    </tr>
-  <tr>
-    <td><b>Location Address:</b></td>
-    <td><textarea name="location" cols="30" rows="3" class="textAreaPro"></textarea>
-      *</td>
-  </tr>
-  <tr>
-    <td><b>Contact number:</b></td>
-    <td>
-      <h5 class="numberPos">+65 <input type="tel" name="contactno" pattern="[0-9]{8}" placeholder="8 digits" size="8" class="number" />
-      *</td></h5>
-  </tr>
   <tr>
     <td><b>Promotion Image:</b></td>
     <td><input name="proimage" type="file" class="numberPos" />

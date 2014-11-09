@@ -50,21 +50,29 @@
 	while($rows=mysql_fetch_array($getquery))
 	{
 		$id=$rows['id'];
-		$resuser=$rows['resuser'];
+		//$resuser=$rows['resuser'];
 		$resname=$rows['resname'];
-		$reslocation=$rows['reslocation'];
+		//$reslocation=$rows['reslocation'];
 		$jobtitle=$rows['jobtitle'];
+		$jobposition=$rows['jobposition'];
 		$jobdescription=$rows['jobdescription'];
 		$requirements=$rows['requirements'];
 		$expyears=$rows['expyears'];
 		$resume=$rows['resume'];
-		$useremail=$rows['useremail'];
-		$jobposition=$rows['jobposition'];
+		//$useremail=$rows['useremail'];
+		
 
 		echo '<div class="career">';
 		echo '<h1>'. $jobtitle .'</h1>';
-		echo '<p><span style="font-weight:900;">'. $resname .'</span></p>';
-		echo '<p><span style="font-weight:900;">Address:</span> '. $reslocation. ', based in Singapore</p>';
+		echo '<p><span style="font-weight:900;">Restaurant Name: '. $resname .'</span></p>';
+
+		$getloc=mysql_query("SELECT * FROM restaurant WHERE resname ='$resname' ");
+		while($rows=mysql_fetch_array($getloc))
+		{
+			$reslocation=$rows['reslocation'];
+			echo '<p><span style="font-weight:900;">Address:</span> '. $reslocation. ', based in Singapore</p>';
+		}
+		
 		echo '<p><span style="font-weight:900;">Job Position:</span> '. $jobposition. '</p>';
 		echo '<p><span style="font-weight:900;">Job Description: </span></p>';
 		echo '<p>'. $jobdescription . '</p>';

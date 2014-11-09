@@ -58,8 +58,6 @@ while($rows=mysql_fetch_assoc($getquery))
 	$proend=$rows['proend'];
 	$highlights=$rows['highlights'];
 	$conditions=$rows['conditions'];
-	$location=$rows['location'];
-	$contactno=$rows['contactno'];
 	$save = $nomprice - $proprice;
 	$discount = ($save/$nomprice)*100;
 	//$reslink="<a href=\"resLink.php?id=" . $id . "\"> resname </a>";	

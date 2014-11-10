@@ -54,6 +54,8 @@ while($rows=mysql_fetch_array($getquery))
 	$id=$rows['id'];
 	$resname=$rows['resname'];
 	$resdetail=$rows['resdetail'];
+	$reslocation=$rows['reslocation'];
+	$contactno=$rows['contactno'];
 	$resimage=$rows['resimage'];
 	
 	$reslink="<a href=\"restaurantPro.php?resname=" . $resname . "\">";	
@@ -63,7 +65,9 @@ while($rows=mysql_fetch_array($getquery))
 	//echo $link.'<img src="data:image/jpeg;base64,'.base64_encode($image).'"/></a>';
 	echo $reslink. '<img src="data:image/jpeg;base64,'.base64_encode($resimage).'"/> </a>';
 	//echo '</br></br>';
-	echo '<p>' . $resdetail . '</p>';
+	echo '<p><span style="font-weight:900;">Restaurant Detail: </span>' . $resdetail . '</p>';
+		echo '<p><span style="font-weight:900;">Restaurant Location: </span>' . $reslocation . '</p>';
+		echo '<p><span style="font-weight:900;">Contact Number: </span>' . $contactno . '</p>';
 	echo '</div>';
 
 }

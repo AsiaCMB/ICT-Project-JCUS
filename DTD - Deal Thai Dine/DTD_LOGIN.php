@@ -39,6 +39,7 @@ function phpAlert($msg)
           //phpAlert("Login!"); 
           if ($usertype == "Seller")
           {
+            $_SESSION['id']=$id;
             $_SESSION['use']=$userfname;
             $_SESSION['email']=$useremail;
             header("Location: sellerPage.php");
@@ -46,6 +47,7 @@ function phpAlert($msg)
           }
           else
           {
+            $_SESSION['id']=$id;
             $_SESSION['use']=$userfname;
             $_SESSION['email']=$useremail;
             header("Location: buyerPage.php");

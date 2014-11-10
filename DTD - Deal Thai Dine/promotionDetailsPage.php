@@ -51,6 +51,7 @@ $getquery=mysql_query("SELECT * FROM promotion WHERE id='$sellerID'");
 while($rows=mysql_fetch_assoc($getquery))
 {
 	$id=$rows['id'];
+	$resname=$rows['resname'];
 	$proimage=$rows['proimage'];
 	$proprice=$rows['proprice'];
 	$nomprice=$rows['nomprice'];
@@ -88,13 +89,30 @@ while($rows=mysql_fetch_assoc($getquery))
 
 	echo '</div>';
 	echo '<div class="promotionDetails">';
-	echo '<p><span style="font-weight:900;">Details</span></br>' . $location . $contactno. '</p>';
+	$getres=mysql_query("SELECT * FROM restaurant WHERE resname='$resname'");
+	while($rows=mysql_fetch_assoc($getres))
+	{
+		$resname=$rows['resname'];
+		$resdetail=$rows['resdetail'];
+		$reslocation=$rows['reslocation'];
+		$contactno=$rows['contactno'];
+		$resimage=$rows['resimage'];
+
+		
+		echo '<img src="data:image/jpeg;base64,'.base64_encode($resimage).'"/> </a>';
+		echo '<div class="promotionPriceSide">'; 
+		echo '<p><span style="font-weight:900;">Restaurant Name: </span>'.$resname.'</p>';
+		echo '<p><span style="font-weight:900;">Restaurant Detail: </span>' . $resdetail . '</p>';
+		echo '<p><span style="font-weight:900;">Restaurant Location: </span>' . $reslocation . '</p>';
+		echo '<p><span style="font-weight:900;">Contact Number: </span>' . $contactno . '</p>';
+		echo '</div>';
+	}
+	//echo '<p><span style="font-weight:900;">Details</span></br>' . $location . $contactno. '</p>';
 	echo '</div>';
 	echo '</div>';
 
 }
 ?>
-
 <div class="commentSection" >
 	<p><span style="font-weight:900; text-decoration:underline;">Customers: Review</span></p>		
 		<p>

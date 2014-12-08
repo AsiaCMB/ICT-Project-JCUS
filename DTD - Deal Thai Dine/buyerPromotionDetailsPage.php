@@ -85,7 +85,7 @@ while($rows=mysql_fetch_assoc($getquery))
 	echo '<p>Normal Price $'. $nomprice.'</p>';
 	echo '<p>Save $'.$save.'</p>';
 	echo '<p><span style="font-weight:900;">'. round($discount,2).'% Off</span></p>';
-	echo '<form action="#">';
+	echo '<form action="https://www.sandbox.paypal.com/cgi-bin/webscr">';
 	echo '<input class="submitBtn" type="submit" value="Buy...!!!">';
 	echo '</form>';
 	echo '</div>';
@@ -133,6 +133,15 @@ while($rows=mysql_fetch_assoc($getquery))
 <div class="commentSection" >
 	<form id="commentForm" action="buyerPromotionDetailsPage.php" method="POST">
 		<textarea rows="4" name="comment" form="commentForm" placeholder="Enter Review Here...." class="text"></textarea></br>
+		<img id="starImage" border="0"  src="image/stars/star.png" alt="Star">
+		Rating: 
+		<select size="1" name="rate" class="dropDeal">
+    		<option value="1">1</option>
+    		<option value="2">2</option>
+    		<option value="3">3</option>
+    		<option value="4">4</option>
+    		<option value="5">5</option>  
+    	
 		<input type="submit" name="submit" value="Submit" class="commentSubmit">
 		<input type="hidden" name="proID" value="<?php echo $proID; ?>";
 	</form>
@@ -142,6 +151,7 @@ while($rows=mysql_fetch_assoc($getquery))
 		require('connectDTD2.php');
 		$name=$_SESSION['use'];
 		$comment=$_POST['comment'];
+		$rate=$_POST['rate'];
 		$submit=$_POST['submit'];	
 		$proID=$_SESSION['proID'];
 		//echo $proID;
@@ -151,7 +161,7 @@ while($rows=mysql_fetch_assoc($getquery))
 			
 			if($name&&$comment)
 			{	
-				$insert=mysql_query("INSERT INTO comment (proID, name, comment) VALUES ('$proID','$name','$comment')");
+				$insert=mysql_query("INSERT INTO comment (proID, name, comment,rate) VALUES ('$proID','$name','$comment','$rate')");
 			}
 			else
 			{
@@ -170,9 +180,37 @@ while($rows=mysql_fetch_assoc($getquery))
 				$id=$rows['id'];
 				$name=$rows['name'];
 				$comment=$rows['comment'];
+				$rate=$rows['rate'];
+				$star = '<img src="image/star.png">';
 
+
+				if ($rate == '1')
+				{
+					//$star = '<img src="image/stars/star.png">';
+					echo '<b>Name: '.$name .'</b><br />' . '<b>Rating: ' . $star . '</b><br />' . '<br /><b>Comment: </b>' . $comment .  '<br />' . '<hr align="left" width="500px" />';
+				}
+				elseif ($rate == '2') 
+				{
+					//$star = '<img src="image/stars/star2.png">';
+					echo '<b>Name: '.$name .'</b><br />' . '<b>Rating: ' . $star . $star .'</b><br />' . '<br /><b>Comment: </b>' . $comment .  '<br />' . '<hr align="left" width="500px" />';
+				}
+				elseif ($rate == '3') 
+				{
+					//$star = '<img src="image/stars/star.png" alt="Star">';
+					echo '<b>Name: '.$name .'</b><br />' . '<b>Rating: ' . $star . $star . $star . '</b><br />' . '<br /><b>Comment: </b>' . $comment .  '<br />' . '<hr align="left" width="500px" />';
+				}
+				elseif ($rate == '4') 
+				{
+					//$star = '<img src="image/stars/star.png" alt="Star">';
+					echo '<b>Name: '.$name .'</b><br />' . '<b>Rating: ' . $star . $star . $star . $star . '</b><br />' . '<br /><b>Comment: </b>' . $comment .  '<br />' . '<hr align="left" width="500px" />';
+				}
+				elseif ($rate == '5') 
+				{
+					//$star = '<img src="image/stars/star.png" alt="Star">';		
+					echo '<b>Name: '.$name .'</b><br />' . '<b>Rating: ' . $star . $star . $star . $star . $star . '</b><br />' . '<br /><b>Comment: </b>' . $comment .  '<br />' . '<hr align="left" width="500px" />';
+				}
 				//$dellink="<a href=\"delete.php?id=" . $id . "\"> Delete </a>";	
-				echo '<b>Name: '.$name . '</b><br />' . '<br />' . $comment .  '<br />' . '<hr align="left" width="500px" />';
+				//echo '<b>Name: '.$name .'</b><br />' . '<b>Rating: ' . $star . '</b><br />' . '<br />' . $comment .  '<br />' . '<hr align="left" width="500px" />';
 			}
 			?>
 		</p>

@@ -85,9 +85,14 @@ while($rows=mysql_fetch_assoc($getquery))
 	echo '<p>Normal Price $'. $nomprice.'</p>';
 	echo '<p>Save $'.$save.'</p>';
 	echo '<p><span style="font-weight:900;">'. round($discount,2).'% Off</span></p>';
-	echo '<form action="https://www.sandbox.paypal.com/cgi-bin/webscr">';
-	echo '<input class="submitBtn" type="submit" value="Buy...!!!">';
-	echo '</form>';
+	echo '<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="QD6TDK2SNFL8Q">
+<input type="image" src="https://www.sandbox.paypal.com/en_GB/SG/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online.">
+<img alt="" border="0" src="https://www.sandbox.paypal.com/en_GB/i/scr/pixel.gif" width="1" height="1">
+</form>
+';
+
 	echo '</div>';
 
 	echo '<div class="promotionPriceDetails">';

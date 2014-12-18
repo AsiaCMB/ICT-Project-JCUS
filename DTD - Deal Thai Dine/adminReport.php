@@ -33,7 +33,7 @@
 <div id='cssmenu' class='align-center'>
 <ul>
    <li class='active'><a href='#'><img id="detailsImage" border="0" src="image/details.png" alt="Details"><span>Promotion Reports</span></a></li>
-   <li><a href='adminExpired.php'><img id="expiredImage" border="0" src="image/expired.png" alt="Expired"><span>Expired Promotion</span></a></li>
+   <li><a href='adminOrder.php'><img id="orderImage" border="0" src="image/order.png" alt="Expired"><span>Order Reports</span></a></li>
    <li><a href='adminUserManagement.php'><img id="userManagementImage" border="0" src="image/career.png" alt="Career"><span>User Management</span></a></li>
 </ul>
 </div>

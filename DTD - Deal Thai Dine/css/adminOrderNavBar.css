@@ -75,10 +75,10 @@
   -ms-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
-#expiredImage{
-  height: 40px;
+#orderImage{
+  height: 45px;
   position: absolute;
-  left: -20px;
+  left: -3px;
   top: 5px;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
@@ -86,9 +86,9 @@
   -ms-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
-#cssmenu ul li a:hover #expiredImage{
-  height: 40px;
-  left: -20px;
+#cssmenu ul li a:hover #orderImage{
+  height: 45px;
+  left: -3px;
   top: 8px;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;

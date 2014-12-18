@@ -8,8 +8,8 @@
 <script type="text/javascript" src="script/stickNavBar.js"></script>
 
 <link rel="stylesheet" type="text/css" href="css/homepage.css">
-<link rel="stylesheet" type="text/css" href="css/adminExpired.css">
-<link rel="stylesheet" type="text/css" href="css/adminExpiredNavBar.css">
+<link rel="stylesheet" type="text/css" href="css/adminOrder.css">
+<link rel="stylesheet" type="text/css" href="css/adminOrderNavBar.css">
 <link rel="stylesheet" type="text/css" href="css/otherSocMed.css">
 <link rel="stylesheet" type="text/css" href="css/otherFooter.css">
 </head>
@@ -34,7 +34,7 @@
 <div id='cssmenu' class='align-center'>
 <ul>
    <li><a href='adminReport.php'><img id="detailsImage" border="0" src="image/details.png" alt="details"><span>Promotion Reports</span></a></li>
-   <li class='active'><a href='#'><img id="expiredImage" border="0" src="image/expired.png" alt="expired"><span>Expired Promotion</span></a></li>
+   <li class='active'><a href='#'><img id="orderImage" border="0" src="image/order.png" alt="expired"><span>Order Reports</span></a></li>
    <li><a href='adminUserManagement.php'><img id="userManagementImage" border="0" src="image/career.png" alt="user management"><span>User Management</span></a></li>
 </ul>
 </div>
@@ -43,26 +43,29 @@
 	<form>
 		<table cellspacing="2" border="1">
 			<tr><br>
-				<td>Promotion</td>
-				<td>Start Date</td>
-				<td>End Date</td>
-				<td>Expired Status</td>
+				<td>Track ID</td>
+				<td>Payer Email</td>
+				<td>Item Name</td>
+				<td>Promotion Price</td>
 			</tr>
 			<?php
 			error_reporting(0);
 			require('connectDTD2.php');
 
-			$getquery=mysql_query("SELECT * FROM promotion ORDER BY id ASC");
+			$getquery=mysql_query("SELECT * FROM orders ORDER BY order_id ASC");
 			while($rows=mysql_fetch_array($getquery))
 			{
-				$id=$rows['id'];
-				$proname=$rows['proname'];
+				$id=$rows['order_id'];
+				$txnid=$rows['txn_id'];
+				$payer_email=$rows['payer_email'];
+				$item_name=$rows['item_name'];
+				$mc_gross=$rows['mc_gross'];
 
 				echo '<tr>';
-				echo '<td>'. $proname .'</td>';
-				echo '<td></td>';
-				echo '<td></td>';
-				echo '<td></td>';
+				echo '<td>'. $txnid .'</td>';
+				echo '<td>'. $payer_email .'</td>';
+				echo '<td>'. $item_name .'</td>';
+				echo '<td>'. $mc_gross.'</td>';
 				echo '</tr>';
 			}
 			?>

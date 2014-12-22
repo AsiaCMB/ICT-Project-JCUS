@@ -47,32 +47,31 @@
 				<td>Promotion</td>
 				<td>Start Date</td>
 				<td>End Date</td>
-				<td>Expired Status</td>
 				<td>Price</td>
-				<td>Total Sold</td>
-				<td>Profit</td>
-				<td>Debt to Seller</td>
+				<td>Restaurant Name</td>
+				<td></td>
 			</tr>
 			<?php
 			error_reporting(0);
 			require('connectDTD2.php');
 
-			$getquery=mysql_query("SELECT * FROM promotion ORDER BY id ASC");
+			$getquery=mysql_query("SELECT * FROM promotion ORDER BY proend ASC");
 			while($rows=mysql_fetch_array($getquery))
 			{
 				$id=$rows['id'];
 				$proname=$rows['proname'];
 				$proprice=$rows['proprice'];
+				$prostart=$rows['prostart'];
+				$proend=$rows['proend'];
+				$resname=$rows['resname'];
 
 				echo '<tr>';
 				echo '<td>'. $proname .'</td>';
-				echo '<td></td>';
-				echo '<td></td>';
-				echo '<td></td>';
-				echo '<td>$'. $proprice .'</td>';
-				echo '<td></td>';
-				echo '<td></td>';
-				echo '<td></td>';
+				echo '<td>'. $prostart .'</td>';
+				echo '<td>'. $proend .'</td>';
+				echo '<td>'. $proprice .'</td>';
+				echo '<td>$'. $resname .'</td>';
+				echo '<td><input type="submit" name="delete" value="Deactivate"/></td>';
 				echo '</tr>';
 			}
 			?>

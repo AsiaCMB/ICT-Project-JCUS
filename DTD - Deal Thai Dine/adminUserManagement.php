@@ -65,13 +65,17 @@
 				$useremail=$rows['useremail'];
 				$usertype=$rows['usertype'];
 
+				$dellink="<a href=\"deleteUser.php?id=" . $id . "\"> Deactivate </a>";
+
 				echo '<tr>';
 				echo '<td>'. $userfname .' '. $userlname .'</td>';
 				echo '<td>'. $useremail .'</td>';
 				echo '<td>'. $usertype .'</td>';
 				echo '<td><a href="#">Send Message</a></td>';
-				echo '<td><input type="submit" name="delete" value="Deactivate"/></td>';
+				echo '<td>'. $dellink .'</td>';
 				echo '</tr>';
+
+
 			}
 			?>
 		</table>

@@ -65,13 +65,15 @@
 				$proend=$rows['proend'];
 				$resname=$rows['resname'];
 
+				$dellink="<a href=\"deletePro.php?id=" . $id . "\"> Deactivate </a>";
+
 				echo '<tr>';
 				echo '<td>'. $proname .'</td>';
 				echo '<td>'. $prostart .'</td>';
 				echo '<td>'. $proend .'</td>';
 				echo '<td>'. $proprice .'</td>';
 				echo '<td>$'. $resname .'</td>';
-				echo '<td><input type="submit" name="delete" value="Deactivate"/></td>';
+				echo '<td>'. $dellink .'</td>';
 				echo '</tr>';
 			}
 			?>

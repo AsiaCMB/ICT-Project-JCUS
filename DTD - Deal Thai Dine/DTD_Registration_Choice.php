@@ -63,7 +63,7 @@ if($submitS)
         else
         {
           $insert=mysql_query("INSERT INTO user (userfname, userlname, useremail, userpass, usertype, dealAccept) VALUES ('$userfnameS','$userlnameS','$useremailS','$userpassS', '$usertypeS', '$dealAcceptS')");
-          $insert2=mysql_query("INSERT INTO restaurant (resname, resdetail, reslocation, contactno, resimage, resimgtype) VALUES ('$resname','$resdetail','$reslocation','$contactno','$resimage','$resimgtype')");
+          $insert2=mysql_query("INSERT INTO restaurant (useremail, resname, resdetail, reslocation, contactno, resimage, resimgtype) VALUES ('$useremailS','$resname','$resdetail','$reslocation','$contactno','$resimage','$resimgtype')");
           $uploadres=move_uploaded_file($resimgtype,'userimage/'.$resimage);
           phpAlert("Successfully register!");
           header("Location: DTD_LOGIN.php");
